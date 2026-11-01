@@ -1,0 +1,29 @@
+{
+ "id": "hijo-de-amigo-de",
+ "seccion": "poder",
+ "formato": "Opinión",
+ "titulo": "Hijo de, amigo de",
+ "bajada": "El problema no es que el hijo del policía sea policía. Es que sea la única forma segura de entrar.",
+ "autor": "Franco Martín López",
+ "fecha": "2026-10-21",
+ "imagen": "img/hijo-de-amigo-de.svg",
+ "alt": "Un círculo cerrado de personas y una figura que mira desde afuera",
+ "resumido": [
+  "En cada institución hay una puerta ancha para los conocidos y una angosta para el resto.",
+  "Seguir el oficio de los padres no es un problema; que sea un privilegio, sí.",
+  "La democracia se sostiene con instituciones, no con herederos ni con dueños."
+ ],
+ "extendido": [
+  "Todos conocemos la frase: “ese está porque es el hijo de”. Se dice en voz baja en la oficina, en el hospital, en la facultad y en la comisaría. Casi nadie se sorprende, y ese es el problema.",
+  "No se trata de desconfiar de quien sigue el oficio de sus padres. Muchas familias transmiten un saber valioso. Se trata de que el apellido o el contacto no sean la forma más segura de entrar, y de que quien no tiene ninguno de los dos pueda competir en serio."
+ ],
+ "completo": [
+  "Todos conocemos la frase: “ese está porque es el hijo de”. Se dice en voz baja en la oficina, en el hospital, en la facultad y en la comisaría. Casi nadie se sorprende, y ese es el problema.",
+  "No se trata de desconfiar de quien sigue el oficio de sus padres. Muchas familias transmiten un saber valioso. Se trata de que el apellido o el contacto no sean la forma más segura de entrar, y de que quien no tiene ninguno de los dos pueda competir en serio.",
+  "## Abrir el círculo",
+  "Concursos con jurados sorteados, nombramientos publicados con sus vínculos familiares y la posibilidad de impugnar cualquier designación. No son medidas contra nadie. Son la manera de que el círculo deje de ser cerrado."
+ ],
+ "referencias": [
+  "Decreto 93/2018 sobre designación de familiares en la Administración Pública Nacional."
+ ]
+}

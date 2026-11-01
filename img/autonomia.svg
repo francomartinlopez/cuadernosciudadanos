@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img" aria-label="Un globo terráqueo con una aguja de brújula"><defs><pattern id="pt" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.6" fill="#1a1a1a" opacity=".22"/></pattern><pattern id="pto" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.7" fill="#eb671c" opacity=".55"/></pattern></defs>
+<rect width="480" height="320" fill="#efebe6"/>
+<rect x="300" y="0" width="180" height="150" fill="url(#pt)"/>
+<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="240" cy="162" r="104" fill="#fbfaf8"/>
+<path d="M206,92 C232,84 254,104 248,128 C242,152 270,170 262,200 C254,230 232,250 222,268 C212,240 214,212 200,190 C186,166 180,120 206,92 Z" fill="#eb671c"/>
+<g fill="none"><ellipse cx="240" cy="162" rx="44" ry="104"/><line x1="136" y1="162" x2="344" y2="162"/><line x1="150" y1="112" x2="330" y2="112"/><line x1="150" y1="212" x2="330" y2="212"/></g>
+</g>
+<polygon points="240,40 256,162 240,162" fill="#e84b49" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<polygon points="240,40 224,162 240,162" fill="#e84b49" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<polygon points="240,284 256,162 224,162" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="240" cy="162" r="8" fill="#f9b50f" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>

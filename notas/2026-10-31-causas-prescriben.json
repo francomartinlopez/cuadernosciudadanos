@@ -1,0 +1,31 @@
+{
+ "id": "causas-prescriben",
+ "seccion": "policiales",
+ "formato": "Análisis",
+ "titulo": "Las causas que se terminan sin juicio",
+ "bajada": "Cuando un expediente tarda demasiado, la acción penal prescribe y nadie llega a ser juzgado. No es un accidente: es una forma de impunidad.",
+ "autor": "Redacción",
+ "fecha": "2026-10-31",
+ "imagen": "img/causas-prescriben.svg",
+ "alt": "Una pila de expedientes junto a un reloj",
+ "resumido": [
+  "La prescripción existe para que nadie quede sospechado para siempre.",
+  "Pero las demoras largas convierten la garantía en una salida para quien puede esperar.",
+  "Medir y publicar cuánto tarda cada causa es el primer paso para corregirlo."
+ ],
+ "extendido": [
+  "La prescripción es una garantía razonable: el Estado no puede tener a una persona bajo sospecha toda la vida. Si en un plazo determinado no logra juzgarla, pierde el derecho a hacerlo.",
+  "El problema aparece cuando las demoras dejan de ser excepcionales. Un expediente que pasa años entre recursos, peritajes y cambios de juzgado puede terminar sin que nadie haya sido absuelto ni condenado. Quien tiene recursos para litigar sin apuro gana con el tiempo; la víctima pierde.",
+  "Por eso las causas que se terminan sin juicio no son un problema técnico. Son una de las formas más silenciosas de la desigualdad ante la justicia."
+ ],
+ "completo": [
+  "La prescripción es una garantía razonable: el Estado no puede tener a una persona bajo sospecha toda la vida. Si en un plazo determinado no logra juzgarla, pierde el derecho a hacerlo.",
+  "El problema aparece cuando las demoras dejan de ser excepcionales. Un expediente que pasa años entre recursos, peritajes y cambios de juzgado puede terminar sin que nadie haya sido absuelto ni condenado. Quien tiene recursos para litigar sin apuro gana con el tiempo; la víctima pierde.",
+  "Por eso las causas que se terminan sin juicio no son un problema técnico. Son una de las formas más silenciosas de la desigualdad ante la justicia.",
+  "## Lo que se puede medir",
+  "Hoy es difícil saber cuántas causas prescriben, en qué fueros y después de cuánto tiempo. Un registro público, con la duración de cada etapa por juzgado, permitiría ver dónde se traban los expedientes y exigir explicaciones con datos. La justicia que no se mide no se puede mejorar."
+ ],
+ "referencias": [
+  "Código Penal de la Nación, artículos 62 a 67."
+ ]
+}

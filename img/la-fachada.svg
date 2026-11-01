@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img" aria-label="Una fachada de cartón sostenida por puntales, con figuras detrás"><defs><pattern id="pt" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.6" fill="#1a1a1a" opacity=".22"/></pattern><pattern id="pto" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.7" fill="#eb671c" opacity=".55"/></pattern></defs>
+<rect x="0" y="0" width="480" height="320" fill="#efebe6"/>
+<circle cx="395" cy="72" r="30" fill="#f9b50f"/>
+<rect x="0" y="262" width="480" height="58" fill="url(#pt)"/>
+<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"><line x1="352" y1="128" x2="430" y2="262"/><line x1="352" y1="200" x2="402" y2="262"/></g>
+<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="#1a1a1a"><circle cx="410" cy="223.5" r="10.559999999999999"/><path d="M393.5,262 Q393.5,236.7 410,236.7 Q426.5,236.7 426.5,262 Z"/></g><g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="#1a1a1a"><circle cx="448" cy="232.25" r="8.16"/><path d="M435.25,262 Q435.25,242.45 448,242.45 Q460.75,242.45 460.75,262 Z"/></g>
+<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+<polygon points="110,118 236,62 362,118" fill="#fbfaf8"/>
+<rect x="110" y="118" width="252" height="144" fill="#fbfaf8"/>
+<rect x="132" y="132" width="24" height="130" fill="#eb671c"/><rect x="186" y="132" width="24" height="130" fill="#eb671c"/>
+<rect x="262" y="132" width="24" height="130" fill="#eb671c"/><rect x="316" y="132" width="24" height="130" fill="#eb671c"/>
+<rect x="219" y="196" width="34" height="66" fill="#1a1a1a"/>
+<line x1="20" y1="262" x2="460" y2="262"/>
+</g>
+<circle cx="236" cy="96" r="9" fill="#1a1a1a"/></svg>

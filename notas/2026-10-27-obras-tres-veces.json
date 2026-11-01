@@ -1,0 +1,31 @@
+{
+ "id": "obras-tres-veces",
+ "seccion": "territorio",
+ "formato": "Análisis",
+ "titulo": "La obra que se anuncia tres veces",
+ "bajada": "Se planifica poco y se termina menos. El problema de la infraestructura argentina no es solo de plata.",
+ "autor": "Redacción",
+ "fecha": "2026-10-27",
+ "imagen": "img/obras-tres-veces.svg",
+ "alt": "Un puente sin terminar sobre un río",
+ "resumido": [
+  "Muchas obras se anuncian, se licitan y se paralizan, y vuelven a anunciarse años después.",
+  "Sin un plan que sobreviva a los gobiernos, cada gestión empieza de nuevo.",
+  "Una obra parada cuesta más que una terminada: se deteriora lo hecho y se pierde lo invertido."
+ ],
+ "extendido": [
+  "En casi cualquier provincia hay una obra que la gente conoce de memoria: el acueducto, la ruta o el puente que se anunció hace años, se empezó, se paró y se volvió a anunciar. Cada anuncio trae una foto y ninguna trae una fecha cumplida.",
+  "El problema no es solo de financiamiento. Falta un plan de infraestructura que priorice con criterios públicos, que sobreviva a los cambios de gobierno y que obligue a terminar lo empezado antes de inaugurar lo nuevo.",
+  "Una obra paralizada no es neutra. El hormigón se deteriora, los proyectos quedan desactualizados y lo invertido se pierde. Terminar es casi siempre más barato que volver a empezar."
+ ],
+ "completo": [
+  "En casi cualquier provincia hay una obra que la gente conoce de memoria: el acueducto, la ruta o el puente que se anunció hace años, se empezó, se paró y se volvió a anunciar. Cada anuncio trae una foto y ninguna trae una fecha cumplida.",
+  "El problema no es solo de financiamiento. Falta un plan de infraestructura que priorice con criterios públicos, que sobreviva a los cambios de gobierno y que obligue a terminar lo empezado antes de inaugurar lo nuevo.",
+  "Una obra paralizada no es neutra. El hormigón se deteriora, los proyectos quedan desactualizados y lo invertido se pierde. Terminar es casi siempre más barato que volver a empezar.",
+  "## Terminar antes de anunciar",
+  "Una regla simple cambiaría mucho: ninguna obra nueva se licita en una región mientras haya obras paradas del mismo tipo sin un plan de terminación publicado. Sumada a un registro abierto de cada obra, con avance físico y financiero actualizado, la discusión deja de ser de anuncios y pasa a ser de resultados."
+ ],
+ "referencias": [
+  "Ley 13.064 de Obras Públicas (1947)."
+ ]
+}

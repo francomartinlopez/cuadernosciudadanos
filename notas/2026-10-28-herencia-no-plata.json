@@ -1,0 +1,33 @@
+{
+ "id": "herencia-no-plata",
+ "seccion": "sociedad",
+ "formato": "Ensayo",
+ "titulo": "La herencia que no es plata",
+ "bajada": "Lo que más se hereda no es una cuenta bancaria. Es la casa, con todo lo que trae: la violencia, el silencio, la deuda o el abandono.",
+ "autor": "Franco Martín López",
+ "fecha": "2026-10-28",
+ "imagen": "img/herencia-no-plata.svg",
+ "alt": "Una escalera a la que le faltan los peldaños de abajo",
+ "resumido": [
+  "El mismo rasgo tiene consecuencias distintas según dónde se nace.",
+  "La vulnerabilidad se hereda; el destino no.",
+  "Ningún sistema saca a nadie solo: lo hacen personas que se quedan y ponen condiciones."
+ ],
+ "extendido": [
+  "Dos chicos de quince años tienen el mismo carácter: son rebeldes, faltan al colegio y se meten en problemas. Al primero se le dice que está en una etapa. Tiene un abogado si hace falta, un tratamiento si lo necesita y un trabajo esperando cuando termine. Al segundo le sacan la moto y le queda la esquina.",
+  "Mismo rasgo, distinta consecuencia. Esa diferencia no figura en ninguna estadística de ingresos, pero decide vidas. La escalera existe para los dos. Al segundo le faltan los peldaños de abajo.",
+  "No es la sangre. Nadie nace condenado. Pero la vulnerabilidad se transmite de una generación a otra con una eficacia que ninguna ley de herencia podría igualar."
+ ],
+ "completo": [
+  "Dos chicos de quince años tienen el mismo carácter: son rebeldes, faltan al colegio y se meten en problemas. Al primero se le dice que está en una etapa. Tiene un abogado si hace falta, un tratamiento si lo necesita y un trabajo esperando cuando termine. Al segundo le sacan la moto y le queda la esquina.",
+  "Mismo rasgo, distinta consecuencia. Esa diferencia no figura en ninguna estadística de ingresos, pero decide vidas. La escalera existe para los dos. Al segundo le faltan los peldaños de abajo.",
+  "No es la sangre. Nadie nace condenado. Pero la vulnerabilidad se transmite de una generación a otra con una eficacia que ninguna ley de herencia podría igualar.",
+  "## Echar no es ordenar",
+  "Cuando un chico así se mete en problemas, la respuesta habitual de las instituciones es expulsarlo: de la escuela, del club, del barrio. Es la forma más barata de ordenar, y la menos eficaz. Se castiga el síntoma y se deja intacto lo que lo produce.",
+  "Las historias de quienes logran salir tienen algo en común: alguien que se quedó. Un maestro, una entrenadora, un vecino, un empleador que puso reglas claras y no se fue a la primera falta. Ningún programa reemplaza eso, pero un Estado puede organizarse para que esas personas existan y tengan con qué sostenerse."
+ ],
+ "referencias": [
+  "Raj Chetty y otros, “Where is the Land of Opportunity?”, Quarterly Journal of Economics (2014)."
+ ],
+ "portada": "destacada"
+}

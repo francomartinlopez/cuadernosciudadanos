@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cuadernos ciudadanos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..800;1,6..72,400..700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* Revista editorial: masthead con tipografía de libro, índice fijo arriba, portada en grilla de una principal + destacadas + columnas, notas de lectura cómoda a 65 caracteres */
+:root{
+  --paper:#ffffff;
+  --sheet:#f4f3f1;
+  --ink:#141312;
+  --muted:#5e5a56;
+  --rule:#e2dfdb;
+  --acc:#c4500f;
+  --grad:linear-gradient(110deg,#f9b50f 0%,#eb671c 38%,#e84f2b 70%,#e84b49 100%);
+  --fd:"Newsreader",Georgia,"Times New Roman",serif;
+  --fu:"Plus Jakarta Sans",system-ui,-apple-system,sans-serif;
+  --fs:1;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#383633;--sheet:#43403c;--ink:#f2eee8;--muted:#c9c2b9;--rule:#524e49;--acc:#f7955c;color-scheme:dark;}}
+:root[data-theme="dark"]{--paper:#383633;--sheet:#43403c;--ink:#f2eee8;--muted:#c9c2b9;--rule:#524e49;--acc:#f7955c;color-scheme:dark;}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--fu);font-size:16px;line-height:1.5}
+a{color:inherit;text-decoration:none}
+img,svg{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+button{font:inherit;color:inherit}
+
+/* Aviso de maqueta */
+.aviso{background:var(--sheet);border-bottom:1px solid var(--rule);font-size:13px;color:var(--muted);text-align:center;padding:7px 16px}
+
+/* Masthead */
+.mast{padding-top:22px;padding-bottom:16px}
+.mast-top{display:flex;justify-content:space-between;gap:12px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.logo{display:block;font-family:var(--fd);font-weight:700;font-size:clamp(40px,8vw,84px);line-height:.95;letter-spacing:-.02em;margin:14px 0 8px}
+.logo em{font-style:italic;font-weight:500}
+.lema{font-family:var(--fd);font-style:italic;font-size:clamp(16px,2.2vw,20px);color:var(--muted);margin:0}
+.barra{height:5px;background:var(--grad)}
+
+/* Índice */
+.indice{position:sticky;top:0;z-index:10;background:var(--paper);border-bottom:1px solid var(--rule)}
+.indice .wrap{display:flex;align-items:center;gap:6px;overflow-x:auto;scrollbar-width:none}
+.indice .wrap::-webkit-scrollbar{display:none}
+.indice a{white-space:nowrap;font-size:14px;font-weight:600;padding:13px 9px 11px;border-bottom:3px solid transparent;color:var(--muted)}
+.indice a:hover{color:var(--ink)}
+.indice a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--acc)}
+.indice .sep{width:1px;height:18px;background:var(--rule);flex:none;margin:0 4px}
+
+/* Niveles */
+.indice .fila-nav{display:flex;align-items:center;gap:10px;overflow:visible}
+@media (max-width:560px){.btn-menu{padding:7px 9px}.btn-menu span{display:none}.letra button{padding:6px 8px}}
+.indice #indice{flex:1;min-width:0;padding:0}
+.btn-menu{flex:none;display:inline-flex;align-items:center;gap:7px;border:1px solid var(--ink);background:var(--paper);border-radius:999px;padding:6px 13px;font-size:13px;font-weight:700;cursor:pointer}
+.btn-menu svg{width:15px;height:15px}
+.letra{flex:none;display:inline-flex;align-items:center;border:1px solid var(--rule);border-radius:999px;overflow:hidden}
+.letra button{border:0;background:transparent;cursor:pointer;font-weight:800;padding:6px 11px;line-height:1}
+.letra button:first-child{font-size:13px}.letra button:last-child{font-size:17px}
+.letra button + button{border-left:1px solid var(--rule)}
+.letra button:disabled{opacity:.35;cursor:default}
+.panel{border-top:1px solid var(--rule);background:var(--paper);box-shadow:0 14px 24px rgba(0,0,0,.12)}
+.panel[hidden]{display:none}
+.indice .panel .wrap{display:block;overflow:visible}
+.panel ul{list-style:none;margin:0;padding:16px 0 20px;display:grid;grid-template-columns:repeat(4,1fr);gap:4px 24px}
+.panel a{display:block;padding:8px 0;border-bottom:1px solid var(--rule);font-family:var(--fd);font-size:19px;font-weight:600}
+.panel a:hover,.panel a[aria-current="page"]{color:var(--acc)}
+.panel .extra-cat a{font-family:var(--fu);font-size:15px;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
+.lectura{font-size:13.5px;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:6px}
+.lectura b{color:var(--acc);font-size:15px}
+.nota-ctrl{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.chip-not{background:var(--acc)}
+@media (max-width:900px){.panel ul{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.panel a{font-size:16.5px}.panel .extra-cat a{font-size:13px}}
+.seg{display:inline-flex;border:1px solid var(--ink);border-radius:999px;overflow:hidden}
+.seg button{border:0;background:transparent;padding:6px 14px;font-size:13px;font-weight:700;cursor:pointer;display:flex;flex-direction:column;align-items:center;line-height:1.2}
+.seg button + button{border-left:1px solid var(--ink)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.seg small{font-weight:500;font-size:11px;opacity:.75}
+
+/* Rótulos */
+.volanta{font-size:11.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--acc)}
+.volanta .fmt{color:var(--muted);font-weight:700}
+.firma{font-size:13px;color:var(--muted);font-weight:500}
+.firma b{color:var(--ink);font-weight:700}
+.chip-op{display:inline-block;background:var(--ink);color:var(--paper);font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:3px;vertical-align:2px;margin-right:6px}
+
+h1,h2,h3{font-family:var(--fd);text-wrap:balance;margin:0;letter-spacing:-.01em}
+.bajada{font-family:var(--fd);color:var(--muted);margin:0;line-height:1.4}
+
+/* Ilustraciones */
+.ilu{background:#efebe6;border-radius:14px;overflow:hidden;aspect-ratio:3/2}
+.ilu img{width:100%;height:100%;object-fit:cover}
+
+/* Portada */
+.principal{display:grid;grid-template-columns:1.25fr 1fr;gap:32px;padding:30px 0;border-bottom:1px solid var(--rule);align-items:center}
+.principal h2{font-size:clamp(32px,4.6vw,54px);line-height:1.02;margin:10px 0 14px;font-weight:700}
+.principal .bajada{font-size:clamp(18px,2vw,22px);margin-bottom:14px}
+.extra{margin-top:14px;font-size:15px}
+.extra ul{margin:0;padding-left:18px;display:grid;gap:6px}
+.extra p{font-family:var(--fd);font-size:17px;line-height:1.55;margin:12px 0 0}
+
+.destacadas{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;padding:28px 0;border-bottom:1px solid var(--rule)}
+.card{display:flex;flex-direction:column;gap:9px}
+.card h3{font-size:24px;line-height:1.1;font-weight:700}
+.card .bajada{font-size:16.5px}
+.card a:hover h3,.fila a:hover h3,.principal a:hover h2{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+
+.columnas{display:grid;grid-template-columns:2fr 1fr;gap:40px;padding:28px 0;border-bottom:1px solid var(--rule)}
+.titbloque{display:flex;justify-content:space-between;align-items:baseline;border-top:3px solid var(--ink);padding-top:8px;margin-bottom:6px}
+.titbloque h2{font-size:26px;font-weight:700}
+.titbloque a{font-size:13px;font-weight:700;color:var(--acc)}
+.fila{display:grid;grid-template-columns:1fr 132px;gap:18px;padding:16px 0;border-bottom:1px solid var(--rule)}
+.fila:last-child{border-bottom:0}
+.fila h3{font-size:21px;line-height:1.15;margin:5px 0 6px;font-weight:700}
+.fila .bajada{font-size:15.5px;margin-bottom:6px}
+.fila .ilu{align-self:start}
+.op{padding:16px 0;border-bottom:1px solid var(--rule)}
+.op:last-child{border-bottom:0}
+.op .autor{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.avatar{width:38px;height:38px;border-radius:50%;background:var(--grad);color:#fff;display:grid;place-items:center;font-weight:800;font-size:13px;flex:none}
+.op h3{font-size:21px;line-height:1.15;font-style:italic;font-weight:600}
+
+.secciones{display:grid;grid-template-columns:repeat(4,1fr);gap:0 28px;padding:28px 0 40px}
+.secciones .titbloque{margin-top:22px}
+.secciones .titbloque h2{font-size:21px}
+.secc-nota{display:flex;flex-direction:column;gap:8px;padding-top:8px}
+.secc-nota h3{font-size:19px;line-height:1.15;font-weight:700}
+
+/* Sección */
+.cab-seccion{padding:34px 0 22px;border-bottom:3px solid var(--ink)}
+.cab-seccion h1{font-size:clamp(38px,6vw,64px);font-weight:700;line-height:1}
+.cab-seccion p{font-family:var(--fd);font-size:20px;color:var(--muted);margin:10px 0 0;max-width:62ch}
+.grilla{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;padding:28px 0 48px}
+.contacto{max-width:760px;padding:28px 0 56px;display:grid;gap:18px}
+.contacto > p{font-family:var(--fd);font-size:calc(20px*var(--fs));line-height:1.55;margin:0}
+.via{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;border:1px solid var(--rule);border-radius:14px;padding:18px 20px;background:var(--sheet)}
+.via b{display:block;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.via a.dato{font-family:var(--fd);font-size:calc(clamp(18px,5vw,24px)*var(--fs));font-weight:700;color:var(--ink);overflow-wrap:anywhere}
+.via .acc{display:flex;gap:8px;flex-wrap:wrap}
+.via .acc a,.via .acc button{border:1px solid var(--ink);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:700;background:var(--paper);cursor:pointer}
+.via .acc a.prim{background:var(--ink);color:var(--paper)}
+.vacio{padding:40px 0 60px;font-family:var(--fd);font-size:19px;color:var(--muted)}
+
+/* Nota */
+.nota{max-width:760px;margin:0 auto;padding:22px 20px 40px}
+.migas{font-size:13px;font-weight:600;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap}
+.migas a{color:var(--acc)}
+.nota h1{font-size:clamp(34px,5.6vw,56px);line-height:1.03;margin:14px 0 14px;font-weight:700}
+.nota .bajada{font-size:clamp(19px,2.4vw,23px);margin-bottom:18px}
+.nota-meta{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;padding:14px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.nota figure{margin:24px 0 6px}
+.nota figcaption{font-size:12px;color:var(--muted);margin-top:6px}
+.cuerpo{font-family:var(--fd);font-size:20px;line-height:1.62;max-width:65ch}
+.cuerpo p{margin:0 0 1.05em}
+.cuerpo h2{font-size:26px;margin:1.4em 0 .5em;font-weight:700}
+.cuerpo > p:first-of-type::first-letter{font-size:3.3em;float:left;line-height:.85;padding:6px 8px 0 0;font-weight:700;color:var(--acc)}
+.resumen-box{background:var(--sheet);border-left:4px solid var(--acc);padding:18px 22px;margin:22px 0}
+.resumen-box h2{font-family:var(--fu);font-size:12px;letter-spacing:.09em;text-transform:uppercase;margin:0 0 10px;color:var(--muted)}
+.resumen-box ul{margin:0;padding-left:20px;display:grid;gap:8px;font-family:var(--fd);font-size:19px;line-height:1.45}
+.ficha{font-family:var(--fu);font-size:15px;line-height:1.55;background:var(--sheet);padding:18px 22px;margin:22px 0;display:grid;gap:10px}
+.ficha b{display:block;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.aviso-op{font-family:var(--fu);font-size:13.5px;color:var(--muted);border:1px solid var(--rule);padding:10px 14px;margin:20px 0}
+.refs{font-family:var(--fu);font-size:14.5px;border-top:1px solid var(--rule);margin-top:28px;padding-top:14px}
+.refs h2{font-family:var(--fu);font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.refs ol{margin:0;padding-left:20px;display:grid;gap:6px}
+.citar{font-family:var(--fu);font-size:14px;background:var(--sheet);padding:14px 18px;margin-top:16px}
+.citar b{display:block;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.mas-nivel{font-family:var(--fu);font-size:14px;margin-top:10px}
+.mas-nivel button{background:none;border:0;padding:0;color:var(--acc);font-weight:700;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.volver{display:inline-flex;align-items:center;gap:8px;margin-top:28px;border:1px solid var(--ink);border-radius:999px;padding:9px 18px;font-weight:700;font-size:14px}
+.volver:hover{background:var(--ink);color:var(--paper)}
+.seguir{border-top:3px solid var(--ink);margin-top:40px}
+
+/* Pie */
+footer{background:var(--sheet);border-top:1px solid var(--rule);margin-top:10px}
+footer .wrap{padding-top:30px;padding-bottom:36px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px;font-size:14px;color:var(--muted)}
+footer .logo{font-size:32px;margin:0 0 6px;color:var(--ink)}
+footer h3{font-family:var(--fu);font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink);margin:0 0 8px}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:5px}
+footer a:hover{color:var(--ink)}
+
+@media (max-width:900px){
+  .principal{grid-template-columns:1fr;gap:18px}
+  .destacadas,.grilla{grid-template-columns:1fr 1fr}
+  .columnas{grid-template-columns:1fr}
+  .secciones{grid-template-columns:1fr 1fr}
+  footer .wrap{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .destacadas,.grilla,.secciones{grid-template-columns:1fr}
+  .fila{grid-template-columns:1fr 96px;gap:12px}
+  .fila h3{font-size:19px}
+  .cuerpo{font-size:18.5px}
+  .seg button{padding:6px 10px}
+  .mast-top span:last-child{display:none}
+}
+/* Tamaño de letra elegido por el lector */
+.cuerpo{font-size:calc(20px*var(--fs))}
+.resumen-box ul{font-size:calc(19px*var(--fs))}
+.nota .bajada{font-size:calc(clamp(19px,2.4vw,23px)*var(--fs))}
+.nota h1{font-size:calc(clamp(34px,5.6vw,56px)*var(--fs))}
+.principal h2{font-size:calc(clamp(32px,4.6vw,54px)*var(--fs))}
+.principal .bajada{font-size:calc(clamp(18px,2vw,22px)*var(--fs))}
+.card h3{font-size:calc(24px*var(--fs))}
+.card .bajada{font-size:calc(16.5px*var(--fs))}
+.fila h3,.op h3{font-size:calc(21px*var(--fs))}
+.fila .bajada,.op .bajada{font-size:calc(15.5px*var(--fs))!important}
+.secc-nota h3{font-size:calc(19px*var(--fs))}
+.ficha,.refs,.citar,.aviso-op{font-size:calc(15px*var(--fs))}
+.firma{font-size:calc(13px*var(--fs))}
+.cab-seccion p{font-size:calc(20px*var(--fs))}
+@media (max-width:560px){.cuerpo{font-size:calc(18.5px*var(--fs))}.fila h3{font-size:calc(19px*var(--fs))}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+
+
+<header class="wrap mast">
+  <div class="mast-top"><span id="hoy"></span></div>
+  <a class="logo" href="#inicio">Cuadernos <em>ciudadanos</em></a>
+  <p class="lema">Ensayos, análisis e investigación para pensar la Argentina</p>
+</header>
+<div class="barra"></div>
+<nav class="indice" aria-label="Índice">
+  <div class="wrap fila-nav">
+    <button class="btn-menu" id="btnMenu" type="button" aria-expanded="false" aria-controls="panel"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 4h12M2 8h12M2 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Secciones</span></button>
+    <div class="wrap" id="indice"></div>
+    <div class="letra" role="group" aria-label="Tamaño de letra"><button type="button" data-fs="-1" aria-label="Achicar la letra">A−</button><button type="button" data-fs="1" aria-label="Agrandar la letra">A+</button></div>
+  </div>
+  <div class="panel" id="panel" hidden><div class="wrap"><ul id="panelLista"></ul></div></div>
+</nav>
+
+<main id="app"></main>
+
+<footer><div class="wrap">
+  <div>
+    <p class="logo">Cuadernos <em>ciudadanos</em></p>
+    <p>Las notas de opinión expresan la mirada de su autor. Los textos se publican bajo licencia Creative Commons Atribución 4.0: se pueden copiar y difundir citando la fuente.</p>
+  </div>
+  <div><h3>La revista</h3><ul>
+    <li>Fe de erratas</li>
+    <li>Cómo citar</li>
+  </ul></div>
+  <div><h3><a href="#contacto">Contacto</a></h3><ul>
+    <li><a href="mailto:francomartinlopez@gmail.com?subject=Cuadernos%20ciudadanos">francomartinlopez@gmail.com</a></li>
+    <li><a href="https://wa.me/5493415117224" target="_blank" rel="noopener">+54 9 341 511-7224 (WhatsApp)</a></li>
+  </ul></div>
+</div></footer>
+
+<script src="datos.js"></script>
+<script>
+const SEC=[
+ ["poder","Poder","El poder que no se ve, la captura de las instituciones y los círculos que se reparten el país."],
+ ["tecnologia","Tecnología y libertad","Vigilancia, datos personales e inteligencia artificial: quién mira a quién."],
+ ["estado","Estado e instituciones","Reglas, organismos y cómo se reforma lo que no funciona."],
+ ["policiales","Policiales y judiciales","Hechos de interés público, causas y cómo funciona la justicia. Se nombran los hechos; no se nombra a personas investigadas sin condena."],
+ ["economia","Economía y producción","Trabajo, impuestos, industria y campo."],
+ ["sociedad","Sociedad","Herencia, oportunidades, familia y educación."],
+ ["territorio","Territorio","Ciudades, infraestructura, agua y el interior."],
+ ["mundo","Mundo","Geopolítica, Occidente y autonomía."],
+ ["ideas","Ideas","Filosofía, ética, religión e historia del pensamiento."],
+ ["ciencia","Ciencia","Salud, ambiente, energía y método científico."],
+ ["historia","Historia y memoria","Los procesos que explican el presente."],
+ ["cultura","Cultura","Libros, cine, arte y lo que una sociedad dice de sí misma."]
+];
+const SN=Object.fromEntries(SEC.map(s=>[s[0],s[1]]));
+const NIV=["Resumido","Extendido","Completo"];
+const CAT={noticias:["Noticias","Noticia","Noticias breves de interés público, más allá de la sección a la que pertenecen."],opinion:["Opinión","Opinión","Todas las notas de opinión, de cualquier sección. Cada una expresa la mirada de su autor."]};
+
+/* ---------- Notas (vienen de datos.js, que arma armar.py) ---------- */
+const N=(window.NOTAS||[]).map(o=>({id:o.id,sec:o.seccion,fmt:o.formato,titulo:o.titulo,bajada:o.bajada,autor:o.autor,fecha:o.fecha,img:o.imagen,alt:o.alt,
+  res:o.resumido,ext:o.extendido,compTxt:o.completo,refs:o.referencias,w:o.palabras,portada:o.portada||"",
+  inv:o.investigacion?{resumen:o.investigacion.resumen,claves:o.investigacion.palabras_clave,metodo:o.investigacion.metodo}:null}));
+const ilu=n=>`<div class="ilu"><img src="${n.img}" alt="${n.alt.replace(/"/g,"&quot;")}" loading="lazy" width="480" height="320"></div>`;
+
+/* ---------- Estado ---------- */
+let nivel=0;
+function setNivel(v){nivel=v;render()}
+const ESC=[0.9,1,1.12,1.25,1.4];let fsi=1;
+try{const g=localStorage.getItem("cc-letra");if(g!==null)fsi=Math.min(4,Math.max(0,+g))}catch(e){}
+function aplicarLetra(){document.documentElement.style.setProperty("--fs",ESC[fsi]);document.querySelectorAll('[data-fs="-1"]').forEach(b=>b.disabled=fsi===0);document.querySelectorAll('[data-fs="1"]').forEach(b=>b.disabled=fsi===ESC.length-1)}
+function cambiarLetra(d){fsi=Math.min(ESC.length-1,Math.max(0,fsi+d));try{localStorage.setItem("cc-letra",fsi)}catch(e){};aplicarLetra()}
+
+const meses=["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+const fCorta=f=>{const[a,m,d]=f.split("-");return `${d}.${m}.${a}`};
+const fLarga=f=>{const[a,m,d]=f.split("-");return `${+d} de ${meses[+m-1]} de ${a}`};
+function tiempo(w){const s=Math.round(w/230*60);return s<60?`${Math.max(10,Math.round(s/10)*10)} s`:`${Math.round(s/60)} min`}
+const esc=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+const volanta=n=>`<div class="volanta">${SN[n.sec]} <span class="fmt">· ${n.fmt}</span></div>`;
+const chip=n=>n.fmt==="Opinión"?'<span class="chip-op">Opinión</span>':n.fmt==="Noticia"?'<span class="chip-op chip-not">Noticia</span>':"";
+const firma=n=>`<div class="firma">${chip(n)}<b>${n.autor}</b> — ${fCorta(n.fecha)}</div>`;
+function extra(n,corto){
+  return "";
+  let h=`<div class="extra"><ul>${n.res.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`;
+  if(nivel===2&&!corto) h+=`<p>${esc(n.ext[0])}</p>`;
+  return h+"</div>";
+}
+const ord=[...N].sort((a,b)=>b.fecha.localeCompare(a.fecha));
+
+/* ---------- Vistas ---------- */
+function vPortada(){
+  const p=ord.find(n=>n.portada==="principal")||ord[0];
+  const dest=ord.filter(n=>n!==p&&n.portada==="destacada").concat(ord.filter(n=>n!==p&&n.portada!=="destacada"&&n.fmt!=="Noticia"&&n.fmt!=="Opinión")).slice(0,3);
+  const usadas=new Set([p,...dest].map(n=>n.id));
+  const ult=ord.filter(n=>!usadas.has(n.id)&&n.fmt!=="Opinión"&&n.fmt!=="Noticia").slice(0,5);
+  const nots=ord.filter(n=>n.fmt==="Noticia").slice(0,4);
+  const ops=ord.filter(n=>n.fmt==="Opinión");
+  return `<div class="wrap">
+  <section class="principal">
+    <a href="#${p.id}">${ilu(p)}</a>
+    <div>${volanta(p)}<a href="#${p.id}"><h2>${p.titulo}</h2></a><p class="bajada">${p.bajada}</p>${firma(p)}${extra(p)}</div>
+  </section>
+  <section class="destacadas" aria-label="Destacadas">
+    ${dest.map(n=>`<article class="card"><a href="#${n.id}">${ilu(n)}</a>${volanta(n)}<a href="#${n.id}"><h3>${n.titulo}</h3></a><p class="bajada">${n.bajada}</p>${firma(n)}${extra(n,true)}</article>`).join("")}
+  </section>
+  <div class="columnas">
+    <section><div class="titbloque"><h2>Últimas</h2></div>
+      ${ult.map(n=>`<article class="fila"><div>${volanta(n)}<a href="#${n.id}"><h3>${n.titulo}</h3></a><p class="bajada">${n.bajada}</p>${firma(n)}${extra(n,true)}</div><a href="#${n.id}" tabindex="-1">${ilu(n)}</a></article>`).join("")}
+    </section>
+    <aside><div class="titbloque"><h2>Noticias</h2><a href="#noticias">Ver todas</a></div>
+      ${nots.map(n=>`<article class="op">${volanta(n)}<a href="#${n.id}"><h3 style="font-style:normal;font-weight:700;margin-top:5px">${n.titulo}</h3></a><div class="firma" style="margin-top:6px">${fCorta(n.fecha)}</div></article>`).join("")}
+      <div class="titbloque" style="margin-top:22px"><h2>Opinión</h2><a href="#opinion">Ver todas</a></div>
+      ${ops.map(n=>`<article class="op"><div class="autor"><span class="avatar">${n.autor.split(" ").map(x=>x[0]).slice(0,2).join("")}</span><span class="firma"><b>${n.autor}</b><br>${fCorta(n.fecha)}</span></div><a href="#${n.id}"><h3>${n.titulo}</h3></a><p class="bajada" style="font-size:15.5px;margin-top:6px">${n.bajada}</p></article>`).join("")}
+    </aside>
+  </div>
+  <section class="secciones" aria-label="Secciones">
+    ${SEC.map(([id,nom])=>{const n=ord.find(x=>x.sec===id);return `<div><div class="titbloque"><h2>${nom}</h2><a href="#${id}">Ver todas</a></div>${n?`<div class="secc-nota">${n.fmt==="Opinión"?"":""}<a href="#${n.id}"><h3>${n.titulo}</h3></a><div class="firma"><b>${n.autor}</b> — ${fCorta(n.fecha)}</div></div>`:""}</div>`}).join("")}
+  </section></div>`;
+}
+function grilla(lista){
+  if(!lista.length) return `<p class="vacio">Todavía no hay notas en esta sección.</p>`;
+  return `<div class="grilla">${lista.map(n=>`<article class="card"><a href="#${n.id}">${ilu(n)}</a>${volanta(n)}<a href="#${n.id}"><h3>${n.titulo}</h3></a><p class="bajada">${n.bajada}</p>${firma(n)}${extra(n,true)}</article>`).join("")}</div>`;
+}
+function vSeccion(id){const s=SEC.find(x=>x[0]===id);
+  return `<div class="wrap"><header class="cab-seccion"><div class="volanta">Sección</div><h1>${s[1]}</h1><p>${s[2]}</p></header>${grilla(ord.filter(n=>n.sec===id))}</div>`}
+function vContacto(){
+  return `<div class="wrap"><header class="cab-seccion"><div class="volanta">La revista</div><h1>Contacto</h1><p>Para proponer un artículo, acercar una denuncia o un dato, o comentar lo publicado.</p></header>
+  <div class="contacto">
+    <p>Los Cuadernos están abiertos a quien quiera escribir. Si tiene un texto, una investigación o información sobre un hecho de interés público, puede mandarla por mail o por WhatsApp. Las denuncias se verifican antes de publicarse.</p>
+    <div class="via"><div><b>Mail</b><a class="dato" href="mailto:francomartinlopez@gmail.com?subject=Cuadernos%20ciudadanos">francomartinlopez@gmail.com</a></div>
+      <div class="acc"><a class="prim" href="mailto:francomartinlopez@gmail.com?subject=Cuadernos%20ciudadanos">Escribir un mail</a><button type="button" data-copiar="francomartinlopez@gmail.com">Copiar</button></div></div>
+    <div class="via"><div><b>Teléfono y WhatsApp</b><a class="dato" href="https://wa.me/5493415117224" target="_blank" rel="noopener">+54 9 341 511-7224</a></div>
+      <div class="acc"><a class="prim" href="https://wa.me/5493415117224" target="_blank" rel="noopener">Escribir por WhatsApp</a><a href="tel:+5493415117224">Llamar</a><button type="button" data-copiar="+5493415117224">Copiar</button></div></div>
+  </div></div>`}
+function vCat(k){const c=CAT[k];
+  return `<div class="wrap"><header class="cab-seccion"><div class="volanta">Categoría</div><h1>${c[0]}</h1><p>${c[2]}</p></header>${grilla(ord.filter(n=>n.fmt===c[1]))}</div>`}
+function segHTML(n){return NIV.map((t,i)=>`<button type="button" aria-pressed="${nivel===i}" data-niv="${i}">${t}${n?`<small>${tiempo(n.w[i])}</small>`:""}</button>`).join("")}
+function cuerpo(arr){return arr.map(p=>p.startsWith("## ")?`<h2>${esc(p.slice(3))}</h2>`:`<p>${esc(p)}</p>`).join("")}
+function vNota(n){
+  let b="";
+  if(n.fmt==="Opinión") b+=`<div class="aviso-op">Nota de opinión: expresa la mirada de su autor.</div>`;
+  if(n.fmt==="Noticia") b+=`<div class="aviso-op">Noticia: información de corto plazo. Se actualiza si cambian los hechos.</div>`;
+  if(nivel===0){
+    b+=`<div class="resumen-box"><h2>En resumen</h2><ul>${n.res.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div><div class="mas-nivel">¿Quiere leer más? <button data-niv="1">Pasar al nivel Extendido</button></div>`;
+  }else if(nivel===1){
+    b+=`<div class="cuerpo">${cuerpo(n.ext)}</div><div class="mas-nivel"><button data-niv="2">Leer el texto completo, con referencias</button></div>`;
+  }else{
+    if(n.inv) b+=`<div class="ficha"><div><b>Resumen</b>${esc(n.inv.resumen)}</div><div><b>Palabras clave</b>${esc(n.inv.claves)}</div><div><b>Método</b>${esc(n.inv.metodo)}</div></div>`;
+    b+=`<div class="cuerpo">${cuerpo(n.compTxt)}</div>`;
+    if(n.refs) b+=`<div class="refs"><h2>Referencias</h2><ol>${n.refs.map(r=>`<li>${esc(r)}</li>`).join("")}</ol></div>`;
+    b+=`<div class="citar"><b>Cómo citar</b>${n.autor==="Redacción"?"Cuadernos ciudadanos":n.autor.split(" ").slice(-1)[0]+", "+n.autor.split(" ").slice(0,-1).join(" ")} (${n.fecha.slice(0,4)}). “${n.titulo}”. <i>Cuadernos ciudadanos</i>, ${fLarga(n.fecha)}. Licencia CC BY 4.0.</div>`;
+  }
+  const mas=ord.filter(x=>x.id!==n.id&&x.sec===n.sec).concat(ord.filter(x=>x.id!==n.id&&x.sec!==n.sec)).slice(0,3);
+  return `<article class="nota">
+    <div class="migas"><a href="#inicio">Portada</a><span>/</span><a href="#${n.sec}">${SN[n.sec]}</a>${n.fmt==="Opinión"?'<span>/</span><a href="#opinion">Opinión</a>':n.fmt==="Noticia"?'<span>/</span><a href="#noticias">Noticias</a>':""}</div>
+    <div style="margin-top:18px">${volanta(n)}</div>
+    <h1>${n.titulo}</h1><p class="bajada">${n.bajada}</p>
+    <div class="nota-meta"><div class="firma">${chip(n)}Por <b>${n.autor}</b> — ${fLarga(n.fecha)}</div></div>
+    <figure>${ilu(n)}<figcaption>Ilustración: Cuadernos ciudadanos</figcaption></figure>
+    <div class="nota-meta" style="border-top:0;margin-bottom:6px"><div class="lectura">Tiempo de lectura: <b>${tiempo(n.w[nivel])}</b> · ${NIV[nivel]}</div><div class="nota-ctrl"><div class="seg" role="group" aria-label="Nivel de lectura de esta nota">${segHTML(n)}</div><div class="letra" role="group" aria-label="Tamaño de letra"><button type="button" data-fs="-1" aria-label="Achicar la letra">A−</button><button type="button" data-fs="1" aria-label="Agrandar la letra">A+</button></div></div></div>
+    ${b}
+    <a class="volver" href="#inicio">← Volver a la portada</a>
+  </article>
+  <div class="wrap seguir"><div class="titbloque" style="border-top:0"><h2>Seguir leyendo</h2></div>${grilla(mas)}</div>`;
+}
+
+/* ---------- Router ---------- */
+const app=document.getElementById("app");
+function ruta(){return (location.hash||"#inicio").slice(1)||"inicio"}
+function render(){
+  const r=ruta();let html,act=r;
+  const nota=N.find(n=>n.id===r);
+  if(nota){html=vNota(nota);act=nota.sec}
+  else if(CAT[r])html=vCat(r);
+  else if(r==="contacto")html=vContacto();
+  else if(SN[r])html=vSeccion(r);
+  else{html=vPortada();act="inicio"}
+  app.innerHTML=html;
+  const ac=id=>act===id?' aria-current="page"':"";
+  document.getElementById("indice").innerHTML=`<a href="#inicio"${ac("inicio")}>Portada</a>`+SEC.map(([id,nom])=>`<a href="#${id}"${ac(id)}>${nom}</a>`).join("")+`<span class="sep"></span><a href="#noticias"${ac("noticias")}>Noticias</a><a href="#opinion"${ac("opinion")}>Opinión</a>`;
+  document.getElementById("panelLista").innerHTML=`<li><a href="#inicio"${ac("inicio")}>Portada</a></li>`+SEC.map(([id,nom])=>`<li><a href="#${id}"${ac(id)}>${nom}</a></li>`).join("")+`<li class="extra-cat"><a href="#noticias"${ac("noticias")}>Noticias</a></li><li class="extra-cat"><a href="#opinion"${ac("opinion")}>Opinión</a></li><li class="extra-cat"><a href="#contacto"${ac("contacto")}>Contacto</a></li>`;
+  aplicarLetra();
+  document.title=nota?nota.titulo+" · Cuadernos ciudadanos":"Cuadernos ciudadanos";
+  const cur=document.querySelector('.indice a[aria-current="page"]');if(cur)cur.scrollIntoView({block:"nearest",inline:"center"});
+}
+const panel=document.getElementById("panel"),btnMenu=document.getElementById("btnMenu");
+function menu(abrir){panel.hidden=!abrir;btnMenu.setAttribute("aria-expanded",abrir)}
+btnMenu.addEventListener("click",()=>menu(panel.hidden));
+document.addEventListener("keydown",e=>{if(e.key==="Escape")menu(false)});
+document.addEventListener("click",e=>{const b=e.target.closest("[data-niv]");if(b){setNivel(+b.dataset.niv);return}
+  const cp=e.target.closest("[data-copiar]");if(cp){const t=cp.textContent;const ok=()=>{cp.textContent="Copiado";setTimeout(()=>cp.textContent=t,1600)};try{navigator.clipboard.writeText(cp.dataset.copiar).then(ok,()=>{cp.textContent="Copie el texto de arriba"})}catch(err){cp.textContent="Copie el texto de arriba"}return}
+  const f=e.target.closest("[data-fs]");if(f){cambiarLetra(+f.dataset.fs);return}
+  if(!panel.hidden&&!e.target.closest(".indice"))menu(false)});
+window.addEventListener("hashchange",()=>{menu(false);nivel=0;render();window.scrollTo(0,0)});
+{const d=new Date(),dias=["domingo","lunes","martes","miércoles","jueves","viernes","sábado"];const t=`${dias[d.getDay()]} ${d.getDate()} de ${meses[d.getMonth()]} de ${d.getFullYear()}`;document.getElementById("hoy").textContent=t[0].toUpperCase()+t.slice(1)}
+render();
+</script>
+</body>
+</html>

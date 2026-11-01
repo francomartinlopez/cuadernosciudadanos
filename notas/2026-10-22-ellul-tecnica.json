@@ -1,0 +1,29 @@
+{
+ "id": "ellul-tecnica",
+ "seccion": "cultura",
+ "formato": "Reseña",
+ "titulo": "Ellul y la técnica que nadie eligió",
+ "bajada": "En 1954, un sociólogo francés advirtió que la técnica se organiza según sus propias necesidades. Setenta años después, el libro se lee como un diagnóstico.",
+ "autor": "Redacción",
+ "fecha": "2026-10-22",
+ "imagen": "img/ellul-tecnica.svg",
+ "alt": "Un libro con un engranaje en la tapa y una persona al lado",
+ "resumido": [
+  "La técnica o el desafío del siglo describe una lógica que avanza sin que nadie la decida.",
+  "Ellul no era enemigo de las máquinas: pedía que la sociedad volviera a decidir sobre ellas.",
+  "Leído hoy, anticipa la dependencia de plataformas y la vigilancia barata."
+ ],
+ "extendido": [
+  "Jacques Ellul publicó La técnica o el desafío del siglo en 1954, cuando la computadora era una rareza de laboratorio. Su tesis era incómoda: la técnica ya no es un conjunto de herramientas que usamos, sino un ambiente que nos adapta a él.",
+  "Cada técnica se justifica por eficiencia, y la eficiencia no admite discusión. Así, decisiones que deberían ser políticas se presentan como inevitables. Ellul no proponía volver atrás: proponía que la sociedad recuperara la capacidad de decidir qué técnicas adopta y en qué condiciones."
+ ],
+ "completo": [
+  "Jacques Ellul publicó La técnica o el desafío del siglo en 1954, cuando la computadora era una rareza de laboratorio. Su tesis era incómoda: la técnica ya no es un conjunto de herramientas que usamos, sino un ambiente que nos adapta a él.",
+  "Cada técnica se justifica por eficiencia, y la eficiencia no admite discusión. Así, decisiones que deberían ser políticas se presentan como inevitables. Ellul no proponía volver atrás: proponía que la sociedad recuperara la capacidad de decidir qué técnicas adopta y en qué condiciones.",
+  "## Por qué leerlo ahora",
+  "La lectura es densa y por momentos pesimista, pero ofrece algo que pocos libros recientes dan: una explicación de por qué la tecnología llega sin que nadie la haya votado. Para pensar la inteligencia artificial o la vigilancia digital, es un buen punto de partida."
+ ],
+ "referencias": [
+  "Jacques Ellul, La técnica o el desafío del siglo (1954)."
+ ]
+}

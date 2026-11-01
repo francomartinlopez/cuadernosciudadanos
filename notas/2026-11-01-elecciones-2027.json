@@ -1,0 +1,29 @@
+{
+ "id": "elecciones-2027",
+ "seccion": "estado",
+ "formato": "Noticia",
+ "titulo": "Elecciones 2027: faltan menos de doce meses",
+ "bajada": "Las elecciones generales están previstas para el domingo 24 de octubre de 2027, con un posible balotaje en noviembre.",
+ "autor": "Redacción",
+ "fecha": "2026-11-01",
+ "imagen": "img/elecciones-2027.svg",
+ "alt": "Un atril con micrófonos bajo un sol con rayos",
+ "resumido": [
+  "Las elecciones generales serán el 24 de octubre de 2027.",
+  "Si ninguna fórmula presidencial alcanza los votos necesarios, habrá segunda vuelta en noviembre.",
+  "El calendario electoral oficial todavía tiene que confirmar los plazos de cada etapa."
+ ],
+ "extendido": [
+  "Las elecciones generales nacionales están previstas para el domingo 24 de octubre de 2027. Se elegirán presidente y vicepresidente, la mitad de la Cámara de Diputados y un tercio del Senado.",
+  "Si ninguna fórmula presidencial obtiene más del 45 % de los votos válidos, o el 40 % con una diferencia de diez puntos sobre la segunda, habrá balotaje en noviembre."
+ ],
+ "completo": [
+  "Las elecciones generales nacionales están previstas para el domingo 24 de octubre de 2027. Se elegirán presidente y vicepresidente, la mitad de la Cámara de Diputados y un tercio del Senado.",
+  "Si ninguna fórmula presidencial obtiene más del 45 % de los votos válidos, o el 40 % con una diferencia de diez puntos sobre la segunda, habrá balotaje en noviembre.",
+  "La Cámara Nacional Electoral publicará el cronograma con los plazos de cada etapa: cierre de padrones, presentación de alianzas y oficialización de candidaturas. Esta nota se actualizará cuando esté disponible."
+ ],
+ "referencias": [
+  "Constitución Nacional, artículos 97 y 98.",
+  "Código Electoral Nacional (Ley 19.945)."
+ ]
+}

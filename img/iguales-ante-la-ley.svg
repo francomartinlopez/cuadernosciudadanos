@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img" aria-label="Un libro abierto con una balanza desequilibrada encima"><defs><pattern id="pt" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.6" fill="#1a1a1a" opacity=".22"/></pattern><pattern id="pto" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.7" fill="#eb671c" opacity=".55"/></pattern></defs>
+<rect width="480" height="320" fill="#efebe6"/>
+<circle cx="240" cy="96" r="70" fill="url(#pto)"/>
+<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+<line x1="240" y1="210" x2="240" y2="58"/>
+<line x1="150" y1="78" x2="330" y2="98"/>
+<path d="M150,78 L124,140 M150,78 L176,140 M330,98 L304,168 M330,98 L356,168" fill="none"/>
+<path d="M116,140 H184 Q150,170 116,140 Z" fill="#f9b50f"/>
+<path d="M296,168 H364 Q330,198 296,168 Z" fill="#eb671c"/>
+<rect x="318" y="146" width="22" height="22" fill="#1a1a1a"/><rect x="296" y="152" width="18" height="16" fill="#1a1a1a"/>
+<path d="M80,282 Q160,256 240,282 V206 Q160,180 80,206 Z" fill="#fbfaf8"/>
+<path d="M400,282 Q320,256 240,282 V206 Q320,180 400,206 Z" fill="#fbfaf8"/>
+<path d="M104,222 Q160,206 216,222 M104,242 Q160,226 216,242 M264,222 Q320,206 376,222 M264,242 Q320,226 376,242" fill="none" stroke-width="2"/>
+</g></svg>

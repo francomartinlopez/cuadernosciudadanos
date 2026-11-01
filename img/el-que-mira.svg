@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img" aria-label="Un ojo cuya pupila es la lente de una cámara, mirando a tres personas"><defs><pattern id="pt" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.6" fill="#1a1a1a" opacity=".22"/></pattern><pattern id="pto" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.7" fill="#eb671c" opacity=".55"/></pattern></defs>
+<rect width="480" height="320" fill="#efebe6"/>
+<rect x="0" y="0" width="200" height="140" fill="url(#pt)"/>
+<g stroke="#1a1a1a" stroke-width="2.5" stroke-dasharray="2 9" stroke-linecap="round">
+<line x1="240" y1="196" x2="120" y2="248"/><line x1="240" y1="196" x2="240" y2="240"/><line x1="240" y1="196" x2="362" y2="248"/>
+</g>
+<path d="M70,124 Q240,0 410,124 Q240,248 70,124 Z" fill="#fbfaf8" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="240" cy="124" r="58" fill="#eb671c" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="240" cy="124" r="36" fill="#1a1a1a"/>
+<circle cx="240" cy="124" r="22" fill="none" stroke="#3a3836" stroke-width="3"/>
+<circle cx="228" cy="110" r="7" fill="#fbfaf8"/>
+<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="#fbfaf8"><circle cx="120" cy="265" r="9.6"/><path d="M105,300 Q105,277 120,277 Q135,277 135,300 Z"/></g><g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="#f9b50f"><circle cx="240" cy="265" r="9.6"/><path d="M225,300 Q225,277 240,277 Q255,277 255,300 Z"/></g><g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="#fbfaf8"><circle cx="362" cy="265" r="9.6"/><path d="M347,300 Q347,277 362,277 Q377,277 377,300 Z"/></g></svg>

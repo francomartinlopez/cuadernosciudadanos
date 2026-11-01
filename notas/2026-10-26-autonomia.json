@@ -1,0 +1,29 @@
+{
+ "id": "autonomia",
+ "seccion": "mundo",
+ "formato": "Ensayo",
+ "titulo": "Autonomía sin aislamiento",
+ "bajada": "Comerciar con todos, no depender de nadie y medir a todos los gobiernos con la misma vara.",
+ "autor": "Redacción",
+ "fecha": "2026-10-26",
+ "imagen": "img/autonomia.svg",
+ "alt": "Un globo terráqueo con una aguja de brújula",
+ "resumido": [
+  "La Argentina no gana nada eligiendo un solo socio.",
+  "Autonomía no es aislamiento: es poder decir que no sin quedarse solo.",
+  "Una sola vara de derechos humanos para todos los gobiernos, amigos o no."
+ ],
+ "extendido": [
+  "La política exterior argentina oscila entre alineamientos automáticos. Cada giro se presenta como definitivo y cada uno deja al país más expuesto al siguiente. Un país mediano, lejos de los centros de poder, necesita otra cosa: margen.",
+  "Ese margen se construye comerciando con todos, diversificando socios y evitando exclusividades que después se cobran caro. Se construye también con coherencia: la credibilidad de un país se pierde cuando condena a unos y calla ante otros por conveniencia."
+ ],
+ "completo": [
+  "La política exterior argentina oscila entre alineamientos automáticos. Cada giro se presenta como definitivo y cada uno deja al país más expuesto al siguiente. Un país mediano, lejos de los centros de poder, necesita otra cosa: margen.",
+  "Ese margen se construye comerciando con todos, diversificando socios y evitando exclusividades que después se cobran caro. Se construye también con coherencia: la credibilidad de un país se pierde cuando condena a unos y calla ante otros por conveniencia.",
+  "## La vara única",
+  "Medir a todos los gobiernos con la misma vara no es ingenuidad. Es lo que da autoridad para hablar. Un país que denuncia violaciones de derechos humanos solo en los gobiernos que no le convienen pierde la voz justamente cuando más la necesita."
+ ],
+ "referencias": [
+  "Helio Jaguaribe, “Autonomía periférica y hegemonía céntrica” (1979)."
+ ]
+}

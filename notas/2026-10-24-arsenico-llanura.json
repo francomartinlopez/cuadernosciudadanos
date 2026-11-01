@@ -1,0 +1,41 @@
+{
+ "id": "arsenico-llanura",
+ "seccion": "ciencia",
+ "formato": "Investigación",
+ "titulo": "Arsénico en el agua de la llanura: lo que se sabe",
+ "bajada": "Una parte de la población del centro y el norte del país consume agua con arsénico de origen natural. Qué dice la evidencia y qué falta medir.",
+ "autor": "Redacción",
+ "fecha": "2026-10-24",
+ "imagen": "img/arsenico-llanura.svg",
+ "alt": "Una gota de agua con una molécula dentro y un tubo de ensayo",
+ "resumido": [
+  "El arsénico llega al agua subterránea desde los sedimentos, sin intervención humana.",
+  "Su consumo durante años se asocia a lesiones de piel y a distintos tipos de cáncer.",
+  "La referencia de la OMS es de 10 microgramos por litro; falta un mapa público y actualizado de dónde se supera."
+ ],
+ "extendido": [
+  "En amplias zonas de la llanura chaco-pampeana, el agua de pozo contiene arsénico de origen geológico. No lo agrega ninguna industria: proviene de las cenizas volcánicas depositadas en los sedimentos y se disuelve en el agua subterránea.",
+  "El consumo prolongado produce un cuadro conocido en el país como hidroarsenicismo crónico regional endémico (HACRE), con lesiones en la piel y mayor riesgo de varios tipos de cáncer. Los efectos aparecen después de años, por eso el problema suele pasar inadvertido.",
+  "La Organización Mundial de la Salud fija un valor guía de 10 microgramos por litro. El Código Alimentario Argentino adoptó ese valor, con plazos de adecuación que se fueron prorrogando."
+ ],
+ "completo": [
+  "En amplias zonas de la llanura chaco-pampeana, el agua de pozo contiene arsénico de origen geológico. No lo agrega ninguna industria: proviene de las cenizas volcánicas depositadas en los sedimentos y se disuelve en el agua subterránea.",
+  "El consumo prolongado produce un cuadro conocido en el país como hidroarsenicismo crónico regional endémico (HACRE), con lesiones en la piel y mayor riesgo de varios tipos de cáncer. Los efectos aparecen después de años, por eso el problema suele pasar inadvertido.",
+  "La Organización Mundial de la Salud fija un valor guía de 10 microgramos por litro. El Código Alimentario Argentino adoptó ese valor, con plazos de adecuación que se fueron prorrogando.",
+  "## Lo que falta medir",
+  "La principal carencia no es técnica: hay tecnologías conocidas para remover arsénico, desde plantas de ósmosis inversa hasta sistemas domiciliarios. Falta un relevamiento público, por localidad, de las concentraciones en el agua que efectivamente se consume, incluida la de pozos particulares.",
+  "## Conclusión",
+  "El arsénico en el agua es un problema de salud pública silencioso, de causa natural y solución conocida. Un mapa abierto y actualizado sería el primer paso para priorizar obras donde más se necesitan."
+ ],
+ "investigacion": {
+  "resumen": "Se revisa la evidencia disponible sobre la presencia natural de arsénico en aguas subterráneas de la llanura chaco-pampeana, sus efectos sobre la salud asociados al consumo prolongado (hidroarsenicismo crónico regional endémico, HACRE) y el marco normativo argentino frente a la referencia de la Organización Mundial de la Salud.",
+  "palabras_clave": "arsénico, agua potable, HACRE, llanura chaco-pampeana, salud ambiental",
+  "metodo": "Revisión narrativa de literatura científica y normativa vigente. Nota de ejemplo para la maqueta: el método, los datos y las referencias deben completarse y verificarse antes de publicar."
+ },
+ "referencias": [
+  "Organización Mundial de la Salud, Guías para la calidad del agua de consumo humano, 4.ª ed. (2017).",
+  "Código Alimentario Argentino, artículo 982.",
+  "Ministerio de Salud de la Nación, Epidemiología del HACRE en la República Argentina."
+ ],
+ "portada": "destacada"
+}

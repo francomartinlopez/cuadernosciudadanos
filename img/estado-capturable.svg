@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img" aria-label="Un candado abierto y una llave a su lado"><defs><pattern id="pt" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.6" fill="#1a1a1a" opacity=".22"/></pattern><pattern id="pto" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.7" fill="#eb671c" opacity=".55"/></pattern></defs>
+<rect width="480" height="320" fill="#efebe6"/>
+<circle cx="96" cy="88" r="44" fill="url(#pto)"/>
+<path d="M196,150 V92 a44,44 0 0 1 88,0 V112" fill="none" stroke="#1a1a1a" stroke-width="14" stroke-linecap="round"/>
+<rect x="160" y="140" width="160" height="128" rx="14" fill="#eb671c" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="240" cy="192" r="13" fill="#1a1a1a"/><rect x="233" y="198" width="14" height="32" rx="3" fill="#1a1a1a"/>
+<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="384" cy="230" r="24" fill="#f9b50f"/><circle cx="384" cy="230" r="9" fill="#efebe6"/>
+<path d="M360,232 H300 M318,232 V246 M332,232 V242" fill="none"/></g>
+<rect x="0" y="282" width="480" height="38" fill="url(#pt)"/></svg>
