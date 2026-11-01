@@ -20,8 +20,8 @@
  ],
  "completo": [
   "En amplias zonas de la llanura chaco-pampeana, el agua de pozo contiene arsénico de origen geológico. No lo agrega ninguna industria: proviene de las cenizas volcánicas depositadas en los sedimentos y se disuelve en el agua subterránea.",
-  "El consumo prolongado produce un cuadro conocido en el país como hidroarsenicismo crónico regional endémico (HACRE), con lesiones en la piel y mayor riesgo de varios tipos de cáncer. Los efectos aparecen después de años, por eso el problema suele pasar inadvertido.",
-  "La Organización Mundial de la Salud fija un valor guía de 10 microgramos por litro. El Código Alimentario Argentino adoptó ese valor, con plazos de adecuación que se fueron prorrogando.",
+  "El consumo prolongado produce un cuadro conocido en el país como hidroarsenicismo crónico regional endémico (HACRE) [3], con lesiones en la piel y mayor riesgo de varios tipos de cáncer. Los efectos aparecen después de años, por eso el problema suele pasar inadvertido.",
+  "La Organización Mundial de la Salud fija un valor guía de 10 microgramos por litro [1]. El Código Alimentario Argentino adoptó ese valor [2], con plazos de adecuación que se fueron prorrogando.",
   "## Lo que falta medir",
   "La principal carencia no es técnica: hay tecnologías conocidas para remover arsénico, desde plantas de ósmosis inversa hasta sistemas domiciliarios. Falta un relevamiento público, por localidad, de las concentraciones en el agua que efectivamente se consume, incluida la de pozos particulares.",
   "## Conclusión",
@@ -37,5 +37,8 @@
   "Código Alimentario Argentino, artículo 982.",
   "Ministerio de Salud de la Nación, Epidemiología del HACRE en la República Argentina."
  ],
- "portada": "destacada"
+ "portada": "destacada",
+ "bibliografia": [
+  "Bundschuh, J. y otros (2012). “One century of arsenic exposure in Latin America”. Science of the Total Environment, 429."
+ ]
 }

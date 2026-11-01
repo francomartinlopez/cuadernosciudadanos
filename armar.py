@@ -42,6 +42,15 @@ for ruta in sorted(glob.glob("notas/*.json")):
         errores.append(f"{ruta}: no existe la imagen {n['imagen']}")
     if n.get("formato") == "Investigación" and not n.get("investigacion"):
         errores.append(f"{ruta}: una Investigación necesita «investigacion» (resumen, palabras_clave, metodo)")
+    for k in ("referencias", "bibliografia"):
+        if k in n and not (isinstance(n[k], list) and all(isinstance(x, str) and x.strip() for x in n[k])):
+            errores.append(f"{ruta}: «{k}» tiene que ser una lista de textos")
+    citas = [int(x) for t in n.get("completo", []) for g in re.findall(r"\[(\d+(?:[,–-]\s?\d+)*)\]", t) for x in re.split(r"[,–-]\s?", g)]
+    if citas and max(citas) > len(n.get("referencias", [])):
+        errores.append(f"{ruta}: hay una cita [{max(citas)}] pero solo {len(n.get('referencias', []))} referencias")
+    for c in n.get("correcciones", []):
+        if not (isinstance(c, dict) and re.fullmatch(r"\d{4}-\d{2}-\d{2}", c.get("fecha", "")) and c.get("texto")):
+            errores.append(f"{ruta}: cada corrección necesita «fecha» (AAAA-MM-DD) y «texto»")
     n["palabras"] = [
         palabras(n.get("resumido", [])) + palabras(n.get("bajada", "")),
         palabras(n.get("extendido", [])),

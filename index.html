@@ -159,7 +159,8 @@ h1,h2,h3{font-family:var(--fd);text-wrap:balance;margin:0;letter-spacing:-.01em}
 .cab-seccion h1{font-size:clamp(38px,6vw,64px);font-weight:700;line-height:1}
 .cab-seccion p{font-family:var(--fd);font-size:20px;color:var(--muted);margin:10px 0 0;max-width:62ch}
 .grilla{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;padding:28px 0 48px}
-.contacto{max-width:760px;padding:28px 0 56px;display:grid;gap:18px}
+.contacto{max-width:760px;padding:28px 0 56px;display:grid;grid-template-columns:minmax(0,1fr);gap:18px}
+.citar,.via span,.refs li{overflow-wrap:anywhere}
 .contacto > p{font-family:var(--fd);font-size:calc(20px*var(--fs));line-height:1.55;margin:0}
 .via{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;border:1px solid var(--rule);border-radius:14px;padding:18px 20px;background:var(--sheet)}
 .via b{display:block;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
@@ -193,6 +194,15 @@ h1,h2,h3{font-family:var(--fd);text-wrap:balance;margin:0;letter-spacing:-.01em}
 .refs ol{margin:0;padding-left:20px;display:grid;gap:6px}
 .citar{font-family:var(--fu);font-size:14px;background:var(--sheet);padding:14px 18px;margin-top:16px}
 .citar b{display:block;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.cita{font-family:var(--fu);font-size:.62em;line-height:1;vertical-align:.6em;font-weight:700;color:var(--acc)}
+.cita button{background:none;border:0;padding:0 1px;color:inherit;font:inherit;cursor:pointer}
+.refs li.marcada{background:#f9b50f44;border-radius:4px}
+.refs ul{margin:0;padding-left:20px;display:grid;gap:6px}
+.correc{font-family:var(--fu);font-size:calc(14.5px*var(--fs));border-left:4px solid var(--acc);background:var(--sheet);padding:12px 18px;margin-top:22px}
+.correc h2{font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin:0 0 6px;font-family:var(--fu)}
+.correc p{margin:4px 0}
+.aviso-err{font-family:var(--fu);font-size:13.5px;color:var(--muted);margin-top:22px}
+.aviso-err a{color:var(--acc);font-weight:700}
 .mas-nivel{font-family:var(--fu);font-size:14px;margin-top:10px}
 .mas-nivel button{background:none;border:0;padding:0;color:var(--acc);font-weight:700;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
 .volver{display:inline-flex;align-items:center;gap:8px;margin-top:28px;border:1px solid var(--ink);border-radius:999px;padding:9px 18px;font-weight:700;font-size:14px}
@@ -269,8 +279,8 @@ footer a:hover{color:var(--ink)}
     <p style="font-size:12px">Actualizado el 1 de noviembre de 2026.</p>
   </div>
   <div><h3>La revista</h3><ul>
-    <li>Fe de erratas</li>
-    <li>Cómo citar</li>
+    <li><a href="#erratas">Fe de erratas</a></li>
+    <li><a href="#citar">Cómo citar</a></li>
   </ul></div>
   <div><h3><a href="#contacto">Contacto</a></h3><ul>
     <li><a href="mailto:francomartinlopez@gmail.com?subject=Cuadernos%20ciudadanos">francomartinlopez@gmail.com</a></li>
@@ -300,7 +310,7 @@ const CAT={noticias:["Noticias","Noticia","Noticias breves de interés público,
 
 /* ---------- Notas (vienen de datos.js, que arma armar.py) ---------- */
 const N=(window.NOTAS||[]).map(o=>({id:o.id,sec:o.seccion,fmt:o.formato,titulo:o.titulo,bajada:o.bajada,autor:o.autor,fecha:o.fecha,img:o.imagen,alt:o.alt,
-  res:o.resumido,ext:o.extendido,compTxt:o.completo,refs:o.referencias,w:o.palabras,portada:o.portada||"",
+  res:o.resumido,ext:o.extendido,compTxt:o.completo,refs:o.referencias,w:o.palabras,portada:o.portada||"",bib:o.bibliografia,corr:o.correcciones||[],
   inv:o.investigacion?{resumen:o.investigacion.resumen,claves:o.investigacion.palabras_clave,metodo:o.investigacion.metodo}:null}));
 const ilu=n=>`<div class="ilu"><img src="${n.img}" alt="${n.alt.replace(/"/g,"&quot;")}" loading="lazy" width="480" height="320"></div>`;
 
@@ -373,33 +383,54 @@ function vContacto(){
     <div class="via"><div><b>Teléfono y WhatsApp</b><a class="dato" href="https://wa.me/5493415117224" target="_blank" rel="noopener">+54 9 341 511-7224</a></div>
       <div class="acc"><a class="prim" href="https://wa.me/5493415117224" target="_blank" rel="noopener">Escribir por WhatsApp</a><a href="tel:+5493415117224">Llamar</a><button type="button" data-copiar="+5493415117224">Copiar</button></div></div>
   </div></div>`}
+function vErratas(){
+  const lista=[];N.forEach(n=>n.corr.forEach(c=>lista.push({n,c})));lista.sort((a,b)=>b.c.fecha.localeCompare(a.c.fecha));
+  return `<div class="wrap"><header class="cab-seccion"><div class="volanta">La revista</div><h1>Fe de erratas</h1><p>Cuando una nota publicada tiene un error, se corrige en el texto y se deja constancia aquí y al pie de la nota, con la fecha y lo que se cambió. Las notas no se borran ni se reescriben en silencio.</p></header>
+  <div class="contacto">${lista.length?lista.map(({n,c})=>`<div class="via"><div><b>${fLarga(c.fecha)} · ${SN[n.sec]}</b><a class="dato" style="font-size:calc(21px*var(--fs))" href="#${n.id}">${n.titulo}</a><p style="margin:6px 0 0;font-size:15px">${esc(c.texto)}</p></div></div>`).join(""):`<p>Hasta ahora no hubo correcciones.</p>`}
+  <p style="font-size:calc(17px*var(--fs))">Para avisar de un error, escriba por <a href="#contacto" style="color:var(--acc)">mail o WhatsApp</a> indicando la nota y el dato a corregir.</p></div></div>`}
+function vCitar(){
+  const ej=N[0];
+  return `<div class="wrap"><header class="cab-seccion"><div class="volanta">La revista</div><h1>Cómo citar</h1><p>Los textos de Cuadernos ciudadanos se publican bajo licencia Creative Commons Atribución 4.0: se pueden copiar, difundir y adaptar, siempre que se cite la fuente.</p></header>
+  <div class="contacto">
+    <p>Cada nota trae su cita lista al final del nivel Completo. El formato sigue las normas APA: autor, año, título, revista, fecha y dirección.</p>
+    <div class="via"><div><b>Formato</b><span style="font-size:15.5px">Apellido, Nombre (año). “Título de la nota”. <i>Cuadernos ciudadanos</i>, día de mes de año. Dirección de la nota.</span></div></div>
+    ${ej?`<div class="via"><div><b>Ejemplo</b><span style="font-size:15.5px">${citaDe(ej)}</span></div></div>`:""}
+    <p>Las notas firmadas por la Redacción se citan con “Cuadernos ciudadanos” como autor. Dentro de cada nota, los números entre corchetes remiten a sus referencias, y la bibliografía reúne las obras consultadas.</p>
+  </div></div>`}
 function vCat(k){const c=CAT[k];
   return `<div class="wrap"><header class="cab-seccion"><div class="volanta">Categoría</div><h1>${c[0]}</h1><p>${c[2]}</p></header>${grilla(ord.filter(n=>n.fmt===c[1]))}</div>`}
 function segHTML(n){return NIV.map((t,i)=>`<button type="button" aria-pressed="${nivel===i}" data-niv="${i}">${t}${n?`<small>${tiempo(n.w[i])}</small>`:""}</button>`).join("")}
-function cuerpo(arr){return arr.map(p=>p.startsWith("## ")?`<h2>${esc(p.slice(3))}</h2>`:`<p>${esc(p)}</p>`).join("")}
+const sinCitas=t=>t.replace(/ ?\[(\d+(?:[,–-]\s?\d+)*)\]/g,"");
+const conCitas=t=>t.replace(/\[(\d+(?:[,–-]\s?\d+)*)\]/g,(m,g)=>`<sup class="cita">[${g.split(/,\s?/).map(x=>{const k=x.split(/[–-]/)[0];return `<button type="button" data-ref="${k}">${x}</button>`}).join(", ")}]</sup>`);
+function cuerpo(arr,citas){return arr.map(p=>p.startsWith("## ")?`<h2>${esc(p.slice(3))}</h2>`:`<p>${citas?conCitas(esc(p)):esc(sinCitas(p))}</p>`).join("")}
+const citaDe=n=>`${n.autor==="Redacción"?"Cuadernos ciudadanos":n.autor.split(" ").slice(-1)[0]+", "+n.autor.split(" ").slice(0,-1).join(" ")} (${n.fecha.slice(0,4)}). “${n.titulo}”. <i>Cuadernos ciudadanos</i>, ${fLarga(n.fecha)}. https://cuadernosciudadanos.netlify.app/#${n.id}`;
+const correcciones=n=>n.corr.length?`<div class="correc"><h2>Correcciones</h2>${n.corr.map(c=>`<p><b>${fLarga(c.fecha)}.</b> ${esc(c.texto)}</p>`).join("")}</div>`:"";
 function vNota(n){
   let b="";
   if(n.fmt==="Opinión") b+=`<div class="aviso-op">Nota de opinión: expresa la mirada de su autor.</div>`;
   if(n.fmt==="Noticia") b+=`<div class="aviso-op">Noticia: información de corto plazo. Se actualiza si cambian los hechos.</div>`;
   if(nivel===0){
-    b+=`<div class="resumen-box"><h2>En resumen</h2><ul>${n.res.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div><div class="mas-nivel">¿Quiere leer más? <button data-niv="1">Pasar al nivel Extendido</button></div>`;
+    b+=`<div class="resumen-box"><h2>En resumen</h2><ul>${n.res.map(x=>`<li>${esc(sinCitas(x))}</li>`).join("")}</ul></div><div class="mas-nivel">¿Quiere leer más? <button data-niv="1">Pasar al nivel Extendido</button></div>`;
   }else if(nivel===1){
     b+=`<div class="cuerpo">${cuerpo(n.ext)}</div><div class="mas-nivel"><button data-niv="2">Leer el texto completo, con referencias</button></div>`;
   }else{
     if(n.inv) b+=`<div class="ficha"><div><b>Resumen</b>${esc(n.inv.resumen)}</div><div><b>Palabras clave</b>${esc(n.inv.claves)}</div><div><b>Método</b>${esc(n.inv.metodo)}</div></div>`;
-    b+=`<div class="cuerpo">${cuerpo(n.compTxt)}</div>`;
-    if(n.refs) b+=`<div class="refs"><h2>Referencias</h2><ol>${n.refs.map(r=>`<li>${esc(r)}</li>`).join("")}</ol></div>`;
-    b+=`<div class="citar"><b>Cómo citar</b>${n.autor==="Redacción"?"Cuadernos ciudadanos":n.autor.split(" ").slice(-1)[0]+", "+n.autor.split(" ").slice(0,-1).join(" ")} (${n.fecha.slice(0,4)}). “${n.titulo}”. <i>Cuadernos ciudadanos</i>, ${fLarga(n.fecha)}. Licencia CC BY 4.0.</div>`;
+    b+=`<div class="cuerpo">${cuerpo(n.compTxt,true)}</div>`;
+    if(n.refs&&n.refs.length) b+=`<div class="refs"><h2>Referencias</h2><ol>${n.refs.map((r,i)=>`<li id="ref-${i+1}">${esc(r)}</li>`).join("")}</ol></div>`;
+    if(n.bib&&n.bib.length) b+=`<div class="refs"><h2>Bibliografía</h2><ul>${n.bib.map(r=>`<li>${esc(r)}</li>`).join("")}</ul></div>`;
+    b+=`<div class="citar"><b>Cómo citar esta nota</b>${citaDe(n)}<div style="margin-top:6px">Licencia CC BY 4.0. <a href="#citar" style="color:var(--acc);font-weight:700">Más sobre cómo citar</a></div></div>`;
   }
   const mas=ord.filter(x=>x.id!==n.id&&x.sec===n.sec).concat(ord.filter(x=>x.id!==n.id&&x.sec!==n.sec)).slice(0,3);
   return `<article class="nota">
     <div class="migas"><a href="#inicio">Portada</a><span>/</span><a href="#${n.sec}">${SN[n.sec]}</a>${n.fmt==="Opinión"?'<span>/</span><a href="#opinion">Opinión</a>':n.fmt==="Noticia"?'<span>/</span><a href="#noticias">Noticias</a>':""}</div>
     <div style="margin-top:18px">${volanta(n)}</div>
     <h1>${n.titulo}</h1><p class="bajada">${n.bajada}</p>
-    <div class="nota-meta"><div class="firma">${chip(n)}Por <b>${n.autor}</b> — ${fLarga(n.fecha)}</div></div>
+    <div class="nota-meta"><div class="firma">${chip(n)}Por <b>${n.autor}</b> — ${fLarga(n.fecha)}${n.corr.length?` · <a href="#erratas" style="color:var(--acc)">Corregida el ${fLarga(n.corr[n.corr.length-1].fecha)}</a>`:""}</div></div>
     <figure>${ilu(n)}<figcaption>Ilustración: Cuadernos ciudadanos</figcaption></figure>
     <div class="nota-meta" style="border-top:0;margin-bottom:6px"><div class="lectura">Tiempo de lectura: <b>${tiempo(n.w[nivel])}</b> · ${NIV[nivel]}</div><div class="nota-ctrl"><div class="seg" role="group" aria-label="Nivel de lectura de esta nota">${segHTML(n)}</div><div class="letra" role="group" aria-label="Tamaño de letra"><button type="button" data-fs="-1" aria-label="Achicar la letra">A−</button><button type="button" data-fs="1" aria-label="Agrandar la letra">A+</button></div></div></div>
     ${b}
+    ${correcciones(n)}
+    <div class="aviso-err">¿Encontró un error? <a href="#contacto">Avísenos</a>. Las correcciones se registran en la <a href="#erratas">fe de erratas</a>.</div>
     <a class="volver" href="#inicio">← Volver a la portada</a>
   </article>
   <div class="wrap seguir"><div class="titbloque" style="border-top:0"><h2>Seguir leyendo</h2></div>${grilla(mas)}</div>`;
@@ -414,6 +445,8 @@ function render(){
   if(nota){html=vNota(nota);act=nota.sec}
   else if(CAT[r])html=vCat(r);
   else if(r==="contacto")html=vContacto();
+  else if(r==="erratas")html=vErratas();
+  else if(r==="citar")html=vCitar();
   else if(SN[r])html=vSeccion(r);
   else{html=vPortada();act="inicio"}
   app.innerHTML=html;
@@ -429,6 +462,7 @@ function menu(abrir){panel.hidden=!abrir;btnMenu.setAttribute("aria-expanded",ab
 btnMenu.addEventListener("click",()=>menu(panel.hidden));
 document.addEventListener("keydown",e=>{if(e.key==="Escape")menu(false)});
 document.addEventListener("click",e=>{const b=e.target.closest("[data-niv]");if(b){setNivel(+b.dataset.niv);return}
+  const rf=e.target.closest("[data-ref]");if(rf){const li=document.getElementById("ref-"+rf.dataset.ref);if(li){li.scrollIntoView({behavior:"smooth",block:"center"});li.classList.add("marcada");setTimeout(()=>li.classList.remove("marcada"),1800)}return}
   const cp=e.target.closest("[data-copiar]");if(cp){const t=cp.textContent;const ok=()=>{cp.textContent="Copiado";setTimeout(()=>cp.textContent=t,1600)};try{navigator.clipboard.writeText(cp.dataset.copiar).then(ok,()=>{cp.textContent="Copie el texto de arriba"})}catch(err){cp.textContent="Copie el texto de arriba"}return}
   const f=e.target.closest("[data-fs]");if(f){cambiarLetra(+f.dataset.fs);return}
   if(!panel.hidden&&!e.target.closest(".indice"))menu(false)});
