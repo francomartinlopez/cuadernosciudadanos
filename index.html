@@ -283,6 +283,7 @@ footer a:hover{color:var(--ink)}
     <li><a href="#citar">Cómo citar</a></li>
   </ul></div>
   <div><h3><a href="#contacto">Contacto</a></h3><ul>
+    <li style="color:var(--ink);font-weight:600">¿Quiere publicar? Escríbanos:</li>
     <li><a href="mailto:francomartinlopez@gmail.com?subject=Cuadernos%20ciudadanos">francomartinlopez@gmail.com</a></li>
     <li><a href="https://wa.me/5493415117224" target="_blank" rel="noopener">+54 9 341 511-7224 (WhatsApp)</a></li>
   </ul></div>
@@ -375,7 +376,7 @@ function grilla(lista){
 function vSeccion(id){const s=SEC.find(x=>x[0]===id);
   return `<div class="wrap"><header class="cab-seccion"><div class="volanta">Sección</div><h1>${s[1]}</h1><p>${s[2]}</p></header>${grilla(ord.filter(n=>n.sec===id))}</div>`}
 function vContacto(){
-  return `<div class="wrap"><header class="cab-seccion"><div class="volanta">La revista</div><h1>Contacto</h1><p>Para proponer un artículo, acercar una denuncia o un dato, o comentar lo publicado.</p></header>
+  return `<div class="wrap"><header class="cab-seccion"><div class="volanta">La revista</div><h1>Contacto</h1><p>¿Quiere publicar? Escríbanos. También para acercar una denuncia o un dato, o comentar lo publicado.</p></header>
   <div class="contacto">
     <p>Los Cuadernos están abiertos a quien quiera escribir. Si tiene un texto, una investigación o información sobre un hecho de interés público, puede mandarla por mail o por WhatsApp. Las denuncias se verifican antes de publicarse.</p>
     <div class="via"><div><b>Mail</b><a class="dato" href="mailto:francomartinlopez@gmail.com?subject=Cuadernos%20ciudadanos">francomartinlopez@gmail.com</a></div>
