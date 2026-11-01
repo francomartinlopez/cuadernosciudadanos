@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img" aria-label="Tres cuadros colgados en una pared con paisajes"><defs><pattern id="pt" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.6" fill="#1a1a1a" opacity=".22"/></pattern><pattern id="pto" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.7" fill="#eb671c" opacity=".55"/></pattern></defs><rect width="480" height="320" fill="#efebe6"/>
+<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="40" y="70" width="120" height="150" fill="#fbfaf8"/><rect x="180" y="50" width="130" height="100" fill="#fbfaf8"/><rect x="330" y="80" width="110" height="140" fill="#fbfaf8"/>
+<rect x="196" y="166" width="100" height="80" fill="#fbfaf8"/>
+<path d="M52,190 L90,140 L120,170 L148,130 V208 H52 Z" fill="#eb671c"/><circle cx="130" cy="98" r="12" fill="#f9b50f"/>
+<path d="M192,120 Q245,90 298,120 V138 H192 Z" fill="#f9b50f"/><line x1="192" y1="120" x2="298" y2="120"/>
+<path d="M346,208 L385,110 L424,208 Z" fill="#fbfaf8"/><path d="M370,148 L385,110 L400,148 Z" fill="#eb671c"/>
+<path d="M210,230 H284 M246,180 V230 M226,196 Q246,176 266,196" fill="none"/></g>
+<rect x="0" y="262" width="480" height="58" fill="url(#pt)"/><line x1="20" y1="262" x2="460" y2="262" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>

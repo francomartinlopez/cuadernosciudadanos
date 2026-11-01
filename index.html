@@ -203,6 +203,23 @@ h1,h2,h3{font-family:var(--fd);text-wrap:balance;margin:0;letter-spacing:-.01em}
 .correc p{margin:4px 0}
 .aviso-err{font-family:var(--fu);font-size:13.5px;color:var(--muted);margin-top:22px}
 .aviso-err a{color:var(--acc);font-weight:700}
+.cuerpo.poema p{white-space:pre-line;margin-bottom:1.4em}
+.cuerpo.poema > p:first-of-type::first-letter{font-size:inherit;float:none;padding:0;color:inherit;font-weight:inherit;line-height:inherit}
+.etq{font-family:var(--fu)!important;font-size:12px!important;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin:26px 0 10px!important}
+.presenta{font-family:var(--fd);font-size:calc(19px*var(--fs));line-height:1.55;margin:22px 0}
+.presenta p{margin:0 0 .8em}
+.medio{margin:22px 0;border-radius:14px;overflow:hidden;background:var(--sheet)}
+.medio iframe{display:block;width:100%;border:0}
+.medio.video iframe{aspect-ratio:16/9;height:auto}
+.medio-vacio{display:grid;place-items:center;text-align:center;padding:40px 20px;font-family:var(--fu);font-size:14px;color:var(--muted);aspect-ratio:16/9}
+.medio.audio .medio-vacio{aspect-ratio:auto;padding:30px 20px}
+.galeria{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0}
+.galeria figure{margin:0}
+.galeria img{width:100%;border-radius:14px;display:block}
+.galeria figcaption{font-family:var(--fu);font-size:13px;color:var(--muted);margin-top:6px}
+.capnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:28px;font-family:var(--fu);font-weight:700;font-size:14px}
+.capnav a{border:1px solid var(--rule);border-radius:999px;padding:9px 16px;color:var(--acc)}
+@media (max-width:560px){.galeria{grid-template-columns:1fr}}
 .mas-nivel{font-family:var(--fu);font-size:14px;margin-top:10px}
 .mas-nivel button{background:none;border:0;padding:0;color:var(--acc);font-weight:700;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
 .volver{display:inline-flex;align-items:center;gap:8px;margin-top:28px;border:1px solid var(--ink);border-radius:999px;padding:9px 18px;font-weight:700;font-size:14px}
@@ -303,7 +320,7 @@ const SEC=[
  ["ideas","Ideas","Filosofía, ética, religión e historia del pensamiento."],
  ["ciencia","Ciencia","Salud, ambiente, energía y método científico."],
  ["historia","Historia y memoria","Los procesos que explican el presente."],
- ["cultura","Cultura","Libros, cine, arte y lo que una sociedad dice de sí misma."]
+ ["cultura","Cultura y creación","Obras propias y comentario cultural: cuentos, poemas, novelas por capítulos, videos, audios, imágenes, y reseñas de libros, cine y arte."]
 ];
 const SN=Object.fromEntries(SEC.map(s=>[s[0],s[1]]));
 const NIV=["Resumido","Extendido","Completo"];
@@ -311,7 +328,7 @@ const CAT={noticias:["Noticias","Noticia","Noticias breves de interés público,
 
 /* ---------- Notas (vienen de datos.js, que arma armar.py) ---------- */
 const N=(window.NOTAS||[]).map(o=>({id:o.id,sec:o.seccion,fmt:o.formato,titulo:o.titulo,bajada:o.bajada,autor:o.autor,fecha:o.fecha,img:o.imagen,alt:o.alt,
-  res:o.resumido,ext:o.extendido,compTxt:o.completo,refs:o.referencias,w:o.palabras,portada:o.portada||"",bib:o.bibliografia,corr:o.correcciones||[],
+  res:o.resumido,ext:o.extendido,compTxt:o.completo,refs:o.referencias,w:o.palabras,portada:o.portada||"",obra:o.obra||"",cap:o.capitulo||0,medio:o.medio||null,gal:o.galeria||[],bib:o.bibliografia,corr:o.correcciones||[],
   inv:o.investigacion?{resumen:o.investigacion.resumen,claves:o.investigacion.palabras_clave,metodo:o.investigacion.metodo}:null}));
 const ilu=n=>`<div class="ilu"><img src="${n.img}" alt="${n.alt.replace(/"/g,"&quot;")}" loading="lazy" width="480" height="320"></div>`;
 
@@ -406,11 +423,49 @@ const conCitas=t=>t.replace(/\[(\d+(?:[,–-]\s?\d+)*)\]/g,(m,g)=>`<sup class="c
 function cuerpo(arr,citas){return arr.map(p=>p.startsWith("## ")?`<h2>${esc(p.slice(3))}</h2>`:`<p>${citas?conCitas(esc(p)):esc(sinCitas(p))}</p>`).join("")}
 const citaDe=n=>`${n.autor==="Redacción"?"Cuadernos ciudadanos":n.autor.split(" ").slice(-1)[0]+", "+n.autor.split(" ").slice(0,-1).join(" ")} (${n.fecha.slice(0,4)}). “${n.titulo}”. <i>Cuadernos ciudadanos</i>, ${fLarga(n.fecha)}. https://cuadernosciudadanos.netlify.app/#${n.id}`;
 const correcciones=n=>n.corr.length?`<div class="correc"><h2>Correcciones</h2>${n.corr.map(c=>`<p><b>${fLarga(c.fecha)}.</b> ${esc(c.texto)}</p>`).join("")}</div>`:"";
+const FIC=["Cuento","Poema","Novela"],MED=["Video","Audio","Imágenes"];
+function embed(u){
+  if(!u)return "";let m;
+  if(m=u.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/)([\w-]{6,})/))return "https://www.youtube-nocookie.com/embed/"+m[1];
+  if(m=u.match(/vimeo\.com\/(\d+)/))return "https://player.vimeo.com/video/"+m[1];
+  if(m=u.match(/open\.spotify\.com\/(track|episode|album|playlist|show)\/(\w+)/))return `https://open.spotify.com/embed/${m[1]}/${m[2]}`;
+  if(/soundcloud\.com\//.test(u))return "https://w.soundcloud.com/player/?url="+encodeURIComponent(u)+"&color=%23eb671c";
+  return "";
+}
+function medio(n){
+  if(n.fmt==="Imágenes")return n.gal.length?`<div class="galeria">${n.gal.map(g=>`<figure><img src="${g.src}" alt="${esc(g.pie||"")}" loading="lazy">${g.pie?`<figcaption>${esc(g.pie)}</figcaption>`:""}</figure>`).join("")}</div>`:"";
+  const tipo=n.fmt==="Video"?"video":"audio",src=embed(n.medio&&n.medio.url),alto=/spotify/.test(src)?152:166;
+  return `<div class="medio ${tipo}">${src?`<iframe src="${src}" title="${esc(n.titulo)}" loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen${tipo==="audio"?` style="height:${alto}px"`:""}></iframe>`:`<div class="medio-vacio">Aquí va el ${tipo==="video"?"video (YouTube o Vimeo)":"audio (Spotify o SoundCloud)"}.</div>`}</div>`;
+}
+function capnav(n){
+  if(!n.obra)return "";const caps=N.filter(x=>x.obra===n.obra).sort((a,b)=>a.cap-b.cap),i=caps.indexOf(n);
+  return `<div class="capnav">${i>0?`<a href="#${caps[i-1].id}">← Capítulo ${caps[i-1].cap}</a>`:"<span></span>"}${i<caps.length-1?`<a href="#${caps[i+1].id}">Capítulo ${caps[i+1].cap} →</a>`:""}</div>`;
+}
+function cuerpoObra(n){
+  const fic=FIC.includes(n.fmt),poe=n.fmt==="Poema";
+  let b="";
+  if(nivel===0){
+    b+=`<div class="presenta"><h2 class="etq">Presentación</h2>${n.res.map(x=>`<p>${esc(sinCitas(x))}</p>`).join("")}</div>`;
+    if(!fic)b+=medio(n);
+    b+=`<div class="mas-nivel"><button data-niv="${fic?1:2}">${fic?"Leer un fragmento":"Ver la obra con su ficha completa"}</button></div>`;
+  }else if(nivel===1){
+    if(!fic)b+=medio(n);
+    b+=`${fic?`<h2 class="etq">${poe?"Poema":"Fragmento"}</h2>`:""}<div class="cuerpo${poe?" poema":""}">${cuerpo(n.ext)}</div><div class="mas-nivel"><button data-niv="2">${fic?"Leer la obra completa":"Ver la ficha completa"}</button></div>`;
+  }else{
+    if(!fic)b+=medio(n);
+    b+=`<div class="cuerpo${poe?" poema":""}">${cuerpo(n.compTxt,true)}</div>`;
+    if(n.refs&&n.refs.length) b+=`<div class="refs"><h2>Referencias</h2><ol>${n.refs.map((r,i)=>`<li id="ref-${i+1}">${esc(r)}</li>`).join("")}</ol></div>`;
+    if(n.bib&&n.bib.length) b+=`<div class="refs"><h2>Bibliografía</h2><ul>${n.bib.map(r=>`<li>${esc(r)}</li>`).join("")}</ul></div>`;
+    b+=`<div class="citar"><b>Cómo citar esta obra</b>${citaDe(n)}<div style="margin-top:6px">Licencia CC BY 4.0. <a href="#citar" style="color:var(--acc);font-weight:700">Más sobre cómo citar</a></div></div>`;
+  }
+  return b+capnav(n);
+}
 function vNota(n){
   let b="";
   if(n.fmt==="Opinión") b+=`<div class="aviso-op">Nota de opinión: expresa la mirada de su autor.</div>`;
   if(n.fmt==="Noticia") b+=`<div class="aviso-op">Noticia: información de corto plazo. Se actualiza si cambian los hechos.</div>`;
-  if(nivel===0){
+  if(FIC.includes(n.fmt)||MED.includes(n.fmt)){b+=cuerpoObra(n)}
+  else if(nivel===0){
     b+=`<div class="resumen-box"><h2>En resumen</h2><ul>${n.res.map(x=>`<li>${esc(sinCitas(x))}</li>`).join("")}</ul></div><div class="mas-nivel">¿Quiere leer más? <button data-niv="1">Pasar al nivel Extendido</button></div>`;
   }else if(nivel===1){
     b+=`<div class="cuerpo">${cuerpo(n.ext)}</div><div class="mas-nivel"><button data-niv="2">Leer el texto completo, con referencias</button></div>`;

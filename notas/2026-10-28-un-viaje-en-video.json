@@ -1,0 +1,26 @@
+{
+ "id": "un-viaje-en-video",
+ "seccion": "cultura",
+ "formato": "Video",
+ "titulo": "Un viaje en diez minutos",
+ "bajada": "Ejemplo de nota con video: el reproductor aparece cuando se carga el enlace de YouTube o Vimeo.",
+ "autor": "Redacción",
+ "fecha": "2026-10-28",
+ "imagen": "img/un-viaje-en-video.svg",
+ "alt": "Una cámara de cine con un botón de reproducción",
+ "medio": {
+  "url": ""
+ },
+ "resumido": [
+  "Un recorrido filmado por pueblos del interior, contado por la gente que vive en ellos."
+ ],
+ "extendido": [
+  "El video se publica en YouTube o Vimeo y la revista lo muestra con su propio reproductor. Debajo va una descripción breve de la obra."
+ ],
+ "completo": [
+  "El video se publica en YouTube o Vimeo y la revista lo muestra con su propio reproductor. Debajo va una descripción breve de la obra.",
+  "## Ficha",
+  "Realización, música y lugares de filmación, con los créditos de cada persona que participó."
+ ],
+ "portada": ""
+}

@@ -7,7 +7,8 @@ import json, glob, os, re, sys
 
 SECCIONES = ["poder", "tecnologia", "estado", "policiales", "economia", "sociedad",
              "territorio", "mundo", "ideas", "ciencia", "historia", "cultura"]
-FORMATOS = ["Ensayo", "Opinión", "Noticia", "Análisis", "Crónica", "Entrevista", "Reseña", "Investigación"]
+FORMATOS = ["Ensayo", "Opinión", "Noticia", "Análisis", "Crónica", "Entrevista", "Reseña", "Investigación",
+            "Cuento", "Poema", "Novela", "Video", "Audio", "Imágenes"]
 OBLIG = ["id", "seccion", "formato", "titulo", "bajada", "autor", "fecha", "imagen", "alt",
          "resumido", "extendido", "completo"]
 
@@ -51,6 +52,19 @@ for ruta in sorted(glob.glob("notas/*.json")):
     for c in n.get("correcciones", []):
         if not (isinstance(c, dict) and re.fullmatch(r"\d{4}-\d{2}-\d{2}", c.get("fecha", "")) and c.get("texto")):
             errores.append(f"{ruta}: cada corrección necesita «fecha» (AAAA-MM-DD) y «texto»")
+    f = n.get("formato")
+    if f == "Novela" and not (n.get("obra") and isinstance(n.get("capitulo"), int)):
+        errores.append(f"{ruta}: una Novela necesita «obra» (id de la novela) y «capitulo» (número)")
+    if f in ("Video", "Audio") and not isinstance(n.get("medio"), dict):
+        errores.append(f"{ruta}: un {f} necesita «medio» con «url» (YouTube, Vimeo, Spotify o SoundCloud)")
+    if f == "Imágenes":
+        gal = n.get("galeria")
+        if not (isinstance(gal, list) and gal and all(isinstance(g, dict) and g.get("src") for g in gal)):
+            errores.append(f"{ruta}: Imágenes necesita «galeria» con al menos una imagen (src y pie)")
+        else:
+            for g in gal:
+                if not os.path.exists(g["src"]):
+                    errores.append(f"{ruta}: no existe la imagen {g['src']}")
     n["palabras"] = [
         palabras(n.get("resumido", [])) + palabras(n.get("bajada", "")),
         palabras(n.get("extendido", [])),
