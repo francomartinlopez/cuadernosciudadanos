@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img" aria-label="Una balanza con una gorra militar en un platillo y un libro de leyes en el otro, más pesado"><defs><pattern id="pt" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.6" fill="#1a1a1a" opacity=".22"/></pattern><pattern id="pto" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.7" fill="#eb671c" opacity=".55"/></pattern></defs><rect width="480" height="320" fill="#efebe6"/>
+<rect x="0" y="0" width="170" height="120" fill="url(#pt)"/>
+<circle cx="380" cy="70" r="34" fill="url(#pto)"/>
+<rect x="0" y="282" width="480" height="38" fill="url(#pt)"/>
+<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M200,282 H280 L262,262 H218 Z" fill="#fbfaf8"/>
+ <line x1="240" y1="262" x2="240" y2="56"/>
+ <circle cx="240" cy="52" r="8" fill="#f9b50f"/>
+ <line x1="128" y1="70" x2="352" y2="104"/>
+ <path d="M128,70 L96,148 M128,70 L160,148 M352,104 L320,198 M352,104 L384,198" fill="none"/>
+ <path d="M88,148 H168 Q128,178 88,148 Z" fill="#fbfaf8"/>
+ <path d="M312,198 H392 Q352,228 312,198 Z" fill="#fbfaf8"/>
+ <path d="M106,146 Q106,120 128,118 Q150,120 150,146 Z" fill="#8a847d"/>
+ <path d="M98,146 H164" fill="none" stroke-width="5"/>
+ <rect x="122" y="124" width="12" height="9" fill="#f9b50f" stroke-width="2"/>
+ <rect x="322" y="168" width="60" height="30" rx="3" fill="#eb671c"/>
+ <path d="M330,176 H374 M330,184 H366" fill="none" stroke="#fbfaf8" stroke-width="2.5"/>
+ <line x1="30" y1="282" x2="450" y2="282"/>
+</g></svg>
