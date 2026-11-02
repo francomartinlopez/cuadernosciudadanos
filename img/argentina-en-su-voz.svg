@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img" aria-label="Una guitarra criolla de cuya boca salen ondas de sonido que llegan a un grupo de figuras humanas de pie"><defs><pattern id="pt" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.6" fill="#1a1a1a" opacity=".22"/></pattern><pattern id="pto" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.7" fill="#eb671c" opacity=".55"/></pattern></defs><rect width="480" height="320" fill="#efebe6"/>
+<rect x="330" y="0" width="150" height="100" fill="url(#pt)"/>
+<rect x="0" y="270" width="480" height="50" fill="url(#pt)"/>
+<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M150,118 L222,32" fill="none" stroke-width="12" stroke="#1a1a1a"/>
+ <path d="M150,118 L222,32" fill="none" stroke-width="6" stroke="#8a847d"/>
+ <path d="M214,40 L236,14 L250,26 L228,52 Z" fill="#8a847d"/>
+ <path d="M150,118 C176,128 184,156 168,176 C188,196 184,240 150,254 C116,268 70,250 64,212 C58,180 80,166 96,164 C98,140 124,108 150,118 Z" fill="#eb671c"/>
+ <circle cx="128" cy="186" r="16" fill="#1a1a1a"/>
+ <path d="M96,236 L132,226" fill="none" stroke-width="5"/>
+ <path d="M172,170 Q186,186 172,204 M196,156 Q220,186 196,218 M222,142 Q254,186 222,232" fill="none" stroke="#f9b50f" stroke-width="5"/>
+ <circle cx="300" cy="150" r="13" fill="#fbfaf8"/>
+ <path d="M282,270 V196 Q300,172 318,196 V270 Z" fill="#fbfaf8"/>
+ <circle cx="352" cy="140" r="13" fill="#f9b50f"/>
+ <path d="M334,270 V186 Q352,162 370,186 V270 Z" fill="#f9b50f"/>
+ <circle cx="404" cy="152" r="13" fill="#8a847d"/>
+ <path d="M386,270 V198 Q404,174 422,198 V270 Z" fill="#8a847d"/>
+ <circle cx="444" cy="168" r="11" fill="#fbfaf8"/>
+ <path d="M430,270 V210 Q444,190 458,210 V270 Z" fill="#e84b49"/>
+ <line x1="10" y1="270" x2="470" y2="270"/>
+</g></svg>

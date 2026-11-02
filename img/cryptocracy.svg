@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img" aria-label="Un iceberg con una pequeña cúpula de parlamento sobre el agua y una enorme masa oscura con un candado oculta debajo, mientras dos figuras votan en la superficie"><defs><pattern id="pt" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.6" fill="#1a1a1a" opacity=".22"/></pattern><pattern id="pto" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.7" fill="#eb671c" opacity=".55"/></pattern></defs><rect width="480" height="320" fill="#efebe6"/>
+<rect x="0" y="0" width="160" height="100" fill="url(#pt)"/>
+<circle cx="392" cy="58" r="30" fill="url(#pto)"/>
+<rect x="0" y="128" width="480" height="192" fill="url(#pt)"/>
+<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M150,128 L120,186 L96,236 L132,292 L232,306 L338,288 L382,226 L350,170 L318,128 Z" fill="#8a847d"/>
+ <path d="M150,262 L196,240 L250,268 L300,236" fill="none" stroke="#efebe6" stroke-width="2.5"/>
+ <path d="M178,128 L200,86 L226,70 L254,74 L280,98 L296,128 Z" fill="#fbfaf8"/>
+ <rect x="214" y="90" width="52" height="14" fill="#fbfaf8"/>
+ <path d="M216,90 Q240,58 264,90 Z" fill="#f9b50f"/>
+ <line x1="240" y1="66" x2="240" y2="54"/>
+ <path d="M222,104 V122 M234,104 V122 M246,104 V122 M258,104 V122" fill="none" stroke-width="2.5"/>
+ <path d="M40,128 Q60,122 80,128 T120,128 M330,128 Q350,122 370,128 T410,128 T450,128" fill="none" stroke-width="2.5"/>
+ <circle cx="380" cy="94" r="8" fill="#fbfaf8"/><path d="M380,102 V120 M380,108 L368,116 M380,108 L392,114" fill="none"/>
+ <circle cx="420" cy="92" r="8" fill="#fbfaf8"/><path d="M420,100 V120 M420,106 L410,114 M420,106 L432,100" fill="none"/>
+ <rect x="396" y="104" width="16" height="16" fill="#eb671c" stroke-width="2.5"/>
+ <path d="M216,196 V182 Q216,166 234,166 Q252,166 252,182 V196" fill="none" stroke-width="5"/>
+ <rect x="206" y="194" width="56" height="44" rx="4" fill="#e84b49"/>
+ <path d="M234,208 V222" fill="none" stroke="#1a1a1a" stroke-width="5"/>
+ <line x1="10" y1="128" x2="470" y2="128"/>
+</g></svg>

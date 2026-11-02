@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img" aria-label="Una figura sin rostro camina arrastrando una gran moneda encadenada a su tobillo, con un barco de guerra en el horizonte"><defs><pattern id="pt" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.6" fill="#1a1a1a" opacity=".22"/></pattern><pattern id="pto" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.7" fill="#eb671c" opacity=".55"/></pattern></defs><rect width="480" height="320" fill="#efebe6"/>
+<rect x="0" y="0" width="160" height="104" fill="url(#pt)"/>
+<rect x="0" y="262" width="480" height="58" fill="url(#pt)"/>
+<circle cx="404" cy="60" r="30" fill="url(#pto)"/>
+<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+ <line x1="250" y1="128" x2="470" y2="128" stroke="#8a847d" stroke-width="2.5"/>
+ <path d="M330,128 L340,112 H436 L446,128 Z" fill="#8a847d"/>
+ <path d="M372,112 V96 H392 V112 M398,112 V100 H410 V112" fill="#8a847d"/>
+ <path d="M410,104 H432" fill="none" stroke-width="3"/>
+ <line x1="382" y1="96" x2="382" y2="76"/>
+ <path d="M382,78 L398,84 L382,90" fill="#e84b49"/>
+ <circle cx="122" cy="122" r="17" fill="#fbfaf8"/>
+ <path d="M128,140 L160,206" fill="none" stroke-width="5"/>
+ <path d="M136,156 L112,184 M140,162 L104,168" fill="none"/>
+ <path d="M160,206 L140,262 M160,206 L188,248" fill="none" stroke-width="4"/>
+ <path d="M128,262 H146" fill="none" stroke-width="4"/>
+ <path d="M184,250 L196,246" fill="none" stroke-width="4"/>
+ <ellipse cx="196" cy="250" rx="7" ry="4.5" fill="none" transform="rotate(10 196 250)"/> <ellipse cx="208" cy="251" rx="7" ry="4.5" fill="none" transform="rotate(-10 208 251)"/> <ellipse cx="220" cy="252" rx="7" ry="4.5" fill="none" transform="rotate(10 220 252)"/> <ellipse cx="232" cy="252" rx="7" ry="4.5" fill="none" transform="rotate(-8 232 252)"/> <ellipse cx="244" cy="251" rx="7" ry="4.5" fill="none" transform="rotate(8 244 251)"/> <ellipse cx="256" cy="250" rx="7" ry="4.5" fill="none" transform="rotate(-6 256 250)"/> <ellipse cx="268" cy="249" rx="7" ry="4.5" fill="none" transform="rotate(6 268 249)"/> <ellipse cx="280" cy="248" rx="7" ry="4.5" fill="none" transform="rotate(-4 280 248)"/>
+ <circle cx="340" cy="214" r="48" fill="#eb671c"/>
+ <circle cx="340" cy="214" r="32" fill="#f9b50f"/>
+ <path d="M328,214 H352 M340,202 V226" fill="none" stroke-width="4"/>
+ <line x1="10" y1="262" x2="470" y2="262"/>
+</g></svg>

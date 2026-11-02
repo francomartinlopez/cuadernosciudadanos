@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img" aria-label="Una escalera que sale de un planeta colmado de casas hacia un planeta rojo vacío, con una figura que sube"><defs><pattern id="pt" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.6" fill="#1a1a1a" opacity=".22"/></pattern><pattern id="pto" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.7" fill="#eb671c" opacity=".55"/></pattern></defs><rect width="480" height="320" fill="#efebe6"/>
+<rect x="0" y="0" width="160" height="120" fill="url(#pt)"/>
+<circle cx="372" cy="92" r="88" fill="url(#pto)"/>
+<rect x="0" y="292" width="480" height="28" fill="url(#pt)"/>
+<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M-10,320 Q120,214 290,292 L300,320 Z" fill="#fbfaf8"/>
+ <path d="M30,276 v-18 l10,-8 l10,8 v18 Z M58,262 v-20 l10,-8 l10,8 v20 Z M86,254 v-18 l10,-8 l10,8 v18 Z M114,250 v-20 l10,-8 l10,8 v20 Z M142,250 v-18 l10,-8 l10,8 v18 Z M170,254 v-20 l10,-8 l10,8 v20 Z M198,262 v-18 l10,-8 l10,8 v18 Z" fill="#8a847d"/>
+ <path d="M44,286 v-14 l9,-7 l9,7 v14 Z M72,278 v-14 l9,-7 l9,7 v14 Z M100,272 v-14 l9,-7 l9,7 v14 Z M128,270 v-14 l9,-7 l9,7 v14 Z M156,272 v-14 l9,-7 l9,7 v14 Z M184,276 v-14 l9,-7 l9,7 v14 Z" fill="#f9b50f"/>
+ <circle cx="372" cy="92" r="56" fill="#e84b49"/>
+ <circle cx="350" cy="78" r="9" fill="#eb671c"/><circle cx="392" cy="114" r="12" fill="#eb671c"/><circle cx="394" cy="66" r="5" fill="#eb671c"/>
+ <path d="M232,236 L322,138 M252,250 L340,152" fill="none"/>
+ <path d="M240,232 L258,246 M256,214 L274,228 M272,196 L290,210 M288,178 L306,192 M304,160 L322,174" fill="none"/>
+</g>
+<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="#1a1a1a"><circle cx="280" cy="170" r="9"/><path d="M267,206 Q267,184 280,184 Q293,184 293,206 Z"/><path d="M290,188 L300,174" fill="none"/></g>
+</svg>

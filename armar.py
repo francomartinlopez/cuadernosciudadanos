@@ -80,6 +80,26 @@ if errores:
     print("\n".join(errores)); sys.exit(1)
 
 notas.sort(key=lambda n: n["fecha"], reverse=True)
+# El texto completo de cada nota va en su propio archivo (se descarga al abrir el nivel Completo)
+# y el buscador usa textos.json, que se descarga en la primera búsqueda.
+import shutil
+shutil.rmtree("completos", ignore_errors=True)
+os.makedirs("completos")
+textos = {}
+livianas = []
+def plano(t):
+    t = re.sub(r"^(#+ |> )", "", t)
+    t = re.sub(r"^!\[(.*)\]\(.+\)$", r"\1", t)
+    t = re.sub(r"\s*\[\d+(?:[,\-–]\s*\d+)*\]", "", t)
+    return t.replace("**", "")
+for n in notas:
+    comp = {k: n.get(k, []) for k in ("completo", "referencias", "bibliografia")}
+    with open(f"completos/{n['id']}.json", "w", encoding="utf-8") as f:
+        json.dump(comp, f, ensure_ascii=False, separators=(",", ":"))
+    textos[n["id"]] = "\n".join(plano(t) for t in comp["completo"])
+    livianas.append({k: v for k, v in n.items() if k not in comp})
+with open("textos.json", "w", encoding="utf-8") as f:
+    json.dump(textos, f, ensure_ascii=False, separators=(",", ":"))
 with open("datos.js", "w", encoding="utf-8") as f:
-    f.write("window.NOTAS=" + json.dumps(notas, ensure_ascii=False, separators=(",", ":")) + ";\n")
+    f.write("window.NOTAS=" + json.dumps(livianas, ensure_ascii=False, separators=(",", ":")) + ";\n")
 print(f"datos.js: {len(notas)} notas")

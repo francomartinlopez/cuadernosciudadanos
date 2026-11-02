@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img" aria-label="Siluetas humanas recortadas sobre una pared, de distintas alturas, y una vela encendida delante"><defs><pattern id="pt" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.6" fill="#1a1a1a" opacity=".22"/></pattern><pattern id="pto" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.7" fill="#eb671c" opacity=".55"/></pattern></defs><rect width="480" height="320" fill="#efebe6"/>
+<rect x="0" y="250" width="480" height="70" fill="url(#pt)"/>
+<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+ <rect x="40" y="56" width="400" height="194" fill="#fbfaf8"/>
+ <circle cx="92" cy="117" r="12" fill="#8a847d"/>
+ <path d="M70,250 V154 Q70,134 92,134 Q114,134 114,154 V250 Z" fill="#8a847d"/>
+ <circle cx="158" cy="105" r="12" fill="#8a847d"/>
+ <path d="M135,250 V142 Q135,122 158,122 Q181,122 181,142 V250 Z" fill="#8a847d"/>
+ <circle cx="222" cy="163" r="10" fill="#8a847d"/>
+ <path d="M206,250 V200 Q206,180 222,180 Q238,180 238,200 V250 Z" fill="#8a847d"/>
+ <circle cx="290" cy="113" r="12" fill="#8a847d"/>
+ <path d="M268,250 V150 Q268,130 290,130 Q312,130 312,150 V250 Z" fill="#8a847d"/>
+ <circle cx="356" cy="125" r="12" fill="#8a847d"/>
+ <path d="M334,250 V162 Q334,142 356,142 Q378,142 378,162 V250 Z" fill="#8a847d"/>
+ <circle cx="412" cy="169" r="10" fill="#8a847d"/>
+ <path d="M397,250 V206 Q397,186 412,186 Q427,186 427,206 V250 Z" fill="#8a847d"/>
+ <line x1="20" y1="250" x2="460" y2="250"/>
+</g>
+<circle cx="240" cy="230" r="34" fill="url(#pto)"/>
+<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+ <rect x="226" y="254" width="28" height="50" fill="#fbfaf8"/>
+ <line x1="240" y1="254" x2="240" y2="244"/>
+ <path d="M240,208 Q256,230 240,244 Q224,230 240,208 Z" fill="#eb671c"/>
+ <path d="M240,224 Q247,234 240,241 Q233,234 240,224 Z" fill="#f9b50f" stroke-width="2"/>
+ <path d="M206,304 H274" fill="none"/>
+</g></svg>

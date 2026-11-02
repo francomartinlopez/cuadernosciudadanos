@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img" aria-label="Una misma regla de medir apoyada sobre dos casas iguales"><defs><pattern id="pt" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.6" fill="#1a1a1a" opacity=".22"/></pattern><pattern id="pto" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.7" fill="#eb671c" opacity=".55"/></pattern></defs><rect width="480" height="320" fill="#efebe6"/>
+<rect x="0" y="0" width="130" height="80" fill="url(#pt)"/>
+<circle cx="240" cy="226" r="34" fill="url(#pto)"/>
+<rect x="0" y="262" width="480" height="58" fill="url(#pt)"/>
+<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M52,262 V176 L112,126 L172,176 V262 Z" fill="#fbfaf8"/>
+ <rect x="70" y="190" width="24" height="24" fill="#f9b50f"/><rect x="130" y="190" width="24" height="24" fill="#f9b50f"/>
+ <rect x="98" y="222" width="28" height="40" fill="#eb671c"/>
+ <path d="M308,262 V176 L368,126 L428,176 V262 Z" fill="#fbfaf8"/>
+ <rect x="326" y="190" width="24" height="24" fill="#f9b50f"/><rect x="386" y="190" width="24" height="24" fill="#f9b50f"/>
+ <rect x="354" y="222" width="28" height="40" fill="#eb671c"/>
+ <rect x="36" y="96" width="408" height="30" fill="#f9b50f"/>
+ <g stroke-width="2"><line x1="60" y1="96" x2="60" y2="104"/><line x1="80" y1="96" x2="80" y2="110"/><line x1="100" y1="96" x2="100" y2="104"/><line x1="120" y1="96" x2="120" y2="110"/><line x1="140" y1="96" x2="140" y2="104"/><line x1="160" y1="96" x2="160" y2="110"/><line x1="180" y1="96" x2="180" y2="104"/><line x1="200" y1="96" x2="200" y2="110"/><line x1="220" y1="96" x2="220" y2="104"/><line x1="240" y1="96" x2="240" y2="110"/><line x1="260" y1="96" x2="260" y2="104"/><line x1="280" y1="96" x2="280" y2="110"/><line x1="300" y1="96" x2="300" y2="104"/><line x1="320" y1="96" x2="320" y2="110"/><line x1="340" y1="96" x2="340" y2="104"/><line x1="360" y1="96" x2="360" y2="110"/><line x1="380" y1="96" x2="380" y2="104"/><line x1="400" y1="96" x2="400" y2="110"/><line x1="420" y1="96" x2="420" y2="104"/></g>
+ <line x1="20" y1="262" x2="460" y2="262"/>
+</g></svg>

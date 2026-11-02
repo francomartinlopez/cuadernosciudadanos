@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img" aria-label="Una mesa volcada con monedas rodando por el piso, junto a una figura de pie que la empujó y otra figura intacta a un costado"><defs><pattern id="pt" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.6" fill="#1a1a1a" opacity=".22"/></pattern><pattern id="pto" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.7" fill="#eb671c" opacity=".55"/></pattern></defs><rect width="480" height="320" fill="#efebe6"/>
+<rect x="0" y="0" width="150" height="100" fill="url(#pt)"/>
+<circle cx="400" cy="70" r="36" fill="url(#pto)"/>
+<rect x="0" y="266" width="480" height="54" fill="url(#pt)"/>
+<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+ <circle cx="96" cy="128" r="16" fill="#fbfaf8"/>
+ <path d="M74,266 V176 Q96,146 118,176 V266 Z" fill="#fbfaf8"/>
+ <path d="M114,184 L190,170" fill="none"/>
+ <path d="M188,266 L196,130 L214,131 L208,266 Z" fill="#eb671c"/>
+ <path d="M211,160 H284 V172 M210,236 H284 V266 M246,160 V236" fill="none"/>
+ <path d="M210,196 H246" fill="none" stroke-width="2"/>
+ <circle cx="300" cy="258" r="8" fill="#f9b50f"/>
+ <circle cx="326" cy="252" r="8" fill="#f9b50f"/>
+ <ellipse cx="350" cy="262" rx="8" ry="4" fill="#f9b50f"/>
+ <circle cx="300" cy="236" r="7" fill="#e84b49"/>
+ <path d="M314,246 l-8,-4 M338,240 l-6,-6" fill="none" stroke-width="2"/>
+ <circle cx="404" cy="138" r="15" fill="#8a847d"/>
+ <path d="M384,266 V184 Q404,158 424,184 V266 Z" fill="#8a847d"/>
+ <line x1="10" y1="266" x2="470" y2="266"/>
+</g></svg>

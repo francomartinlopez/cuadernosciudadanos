@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img" aria-label="Un brazo robótico apila bloques mientras una figura humana, con las manos vacías, lo mira desde el costado"><defs><pattern id="pt" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.6" fill="#1a1a1a" opacity=".22"/></pattern><pattern id="pto" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.7" fill="#eb671c" opacity=".55"/></pattern></defs><rect width="480" height="320" fill="#efebe6"/>
+<rect x="0" y="0" width="150" height="110" fill="url(#pt)"/>
+<circle cx="392" cy="70" r="40" fill="url(#pto)"/>
+<rect x="0" y="262" width="480" height="58" fill="url(#pt)"/>
+<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+ <rect x="226" y="206" width="76" height="56" fill="#f9b50f"/>
+ <rect x="234" y="158" width="60" height="48" fill="#fbfaf8"/>
+ <rect x="244" y="96" width="40" height="40" fill="#eb671c"/>
+ <path d="M264,136 V150" fill="none" stroke-dasharray="2 7"/>
+ <rect x="372" y="236" width="68" height="26" fill="#8a847d"/>
+ <path d="M406,236 L392,150" fill="none" stroke-width="16"/>
+ <path d="M406,236 L392,150" fill="none" stroke="#fbfaf8" stroke-width="10"/>
+ <path d="M392,150 L296,76" fill="none" stroke-width="14"/>
+ <path d="M392,150 L296,76" fill="none" stroke="#fbfaf8" stroke-width="8"/>
+ <circle cx="406" cy="236" r="10" fill="#1a1a1a"/>
+ <circle cx="392" cy="150" r="11" fill="#f9b50f"/>
+ <circle cx="296" cy="76" r="9" fill="#f9b50f"/>
+ <path d="M296,76 L264,84 M240,84 H288 M240,84 V100 M288,84 V100" fill="none"/>
+ <circle cx="104" cy="160" r="15" fill="#1a1a1a"/>
+ <path d="M80,262 V206 Q80,182 104,182 Q128,182 128,206 V262 Z" fill="#1a1a1a"/>
+ <path d="M84,204 L58,232 M124,204 L150,232" fill="none" stroke-width="5"/>
+ <path d="M50,232 H66 M142,232 H158" fill="none"/>
+ <line x1="20" y1="262" x2="460" y2="262"/>
+</g></svg>

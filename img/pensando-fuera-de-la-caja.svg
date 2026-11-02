@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img" aria-label="Una figura humana sale de una caja abierta con un pie todavía adentro y el brazo extendido hacia un sol amarillo"><defs><pattern id="pt" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.6" fill="#1a1a1a" opacity=".22"/></pattern><pattern id="pto" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.7" fill="#eb671c" opacity=".55"/></pattern></defs><rect width="480" height="320" fill="#efebe6"/>
+<rect x="310" y="0" width="170" height="110" fill="url(#pt)"/>
+<circle cx="398" cy="78" r="30" fill="url(#pto)"/>
+<rect x="0" y="270" width="480" height="50" fill="url(#pt)"/>
+<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+ <circle cx="398" cy="78" r="22" fill="#f9b50f"/>
+ <path d="M96,270 V170 H236 V270 Z" fill="#eb671c"/>
+ <path d="M236,170 L270,148 V248 L236,270 Z" fill="#e84b49"/>
+ <path d="M96,170 L130,148 H270 L236,170 Z" fill="#8a847d"/>
+ <path d="M96,170 L62,128 L104,108 L130,148" fill="#fbfaf8"/>
+ <path d="M130,148 L150,98 L196,104 L170,148" fill="#fbfaf8"/>
+ <path d="M116,206 H150 M116,222 H140" fill="none" stroke="#fbfaf8" stroke-width="2.5"/>
+ <path d="M286,170 L252,160 L238,152" fill="none" stroke-width="3.5"/>
+ <circle cx="306" cy="98" r="13" fill="#fbfaf8"/>
+ <path d="M304,111 L288,170" fill="none" stroke-width="5"/>
+ <path d="M300,126 L336,100 M300,126 L276,146" fill="none"/>
+ <path d="M288,170 L322,214 L332,268 M332,268 H346" fill="none"/>
+ <line x1="20" y1="270" x2="460" y2="270"/>
+</g></svg>

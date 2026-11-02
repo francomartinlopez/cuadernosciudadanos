@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img" aria-label="Una urna de la que brota una rama de magnolia en flor, con un crisantemo marchito caído en el suelo a su lado"><defs><pattern id="pt" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.6" fill="#1a1a1a" opacity=".22"/></pattern><pattern id="pto" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.7" fill="#eb671c" opacity=".55"/></pattern></defs><rect width="480" height="320" fill="#efebe6"/>
+<circle cx="390" cy="72" r="38" fill="url(#pto)"/>
+<rect x="0" y="272" width="480" height="48" fill="url(#pt)"/>
+<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M243,160 C236,136 248,112 242,84" fill="none"/>
+ <path d="M240,140 C222,136 208,122 206,108 C222,108 236,120 240,140 Z" fill="#8a847d"/>
+ <path d="M243,118 C258,110 274,112 284,120 C270,130 254,128 243,118 Z" fill="#8a847d"/>
+ <path d="M242,86 C220,80 212,52 230,36 C236,54 240,70 242,86 Z" fill="#fbfaf8"/>
+ <path d="M242,86 C264,80 272,52 254,36 C248,54 244,70 242,86 Z" fill="#fbfaf8"/>
+ <path d="M242,86 C230,64 232,40 242,24 C252,40 254,64 242,86 Z" fill="#fbfaf8"/>
+ <path d="M236,86 Q242,94 248,86" fill="#f9b50f"/>
+ <path d="M164,170 L184,150 H330 L316,170 Z" fill="#fbfaf8"/>
+ <path d="M316,170 L330,150 V250 L316,272 Z" fill="#8a847d"/>
+ <rect x="164" y="170" width="152" height="102" fill="#fbfaf8"/>
+ <rect x="164" y="204" width="152" height="26" fill="#eb671c"/>
+  <path d="M222,162 L230,156 H264 L256,162 Z" fill="#1a1a1a"/>
+ <path d="M98,262 C120,266 136,266 150,258" fill="none"/>
+ <circle cx="76" cy="248" r="24" fill="#8a847d"/>
+ <path d="M56,236 L96,260 M60,264 L92,232 M52,248 H100 M76,224 V272" fill="none" stroke-width="2"/>
+ <circle cx="76" cy="248" r="7" fill="#efebe6"/>
+ <path d="M112,270 l6,-4 l4,5 Z M128,271 l5,-5 l3,6 Z" fill="#8a847d" stroke-width="2"/>
+ <line x1="10" y1="272" x2="470" y2="272"/>
+</g></svg>

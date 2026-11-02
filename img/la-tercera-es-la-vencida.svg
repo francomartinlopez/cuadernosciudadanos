@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img" aria-label="Tres columnas: dos quebradas, con sus fustes caídos en el suelo, y una tercera en pie"><defs><pattern id="pt" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.6" fill="#1a1a1a" opacity=".22"/></pattern><pattern id="pto" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.7" fill="#eb671c" opacity=".55"/></pattern></defs><rect width="480" height="320" fill="#efebe6"/>
+<rect x="0" y="0" width="140" height="100" fill="url(#pt)"/>
+<circle cx="396" cy="72" r="46" fill="url(#pto)"/>
+<rect x="0" y="262" width="480" height="58" fill="url(#pt)"/>
+<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M48,252 V202 L58,192 L68,204 L80,194 L92,202 V252 Z" fill="#fbfaf8"/>
+ <path d="M62,252 V210 M78,252 V208" fill="none" stroke-width="2"/>
+ <rect x="38" y="252" width="64" height="10" fill="#fbfaf8"/>
+ <path d="M196,252 V170 L206,160 L216,172 L228,162 L240,170 V252 Z" fill="#fbfaf8"/>
+ <path d="M210,252 V178 M226,252 V176" fill="none" stroke-width="2"/>
+ <rect x="186" y="252" width="64" height="10" fill="#fbfaf8"/>
+
+ <path d="M104,262 V240 H178 L172,248 L178,256 V262 Z" fill="#8a847d"/>
+ <path d="M254,262 V242 H330 L324,250 L330,256 V262 Z" fill="#8a847d"/>
+ <rect x="374" y="96" width="44" height="156" fill="#f9b50f"/>
+ <path d="M388,104 V244 M404,104 V244" fill="none" stroke-width="2"/>
+ <rect x="362" y="80" width="68" height="16" fill="#fbfaf8"/>
+ <rect x="364" y="252" width="64" height="10" fill="#fbfaf8"/>
+ <line x1="20" y1="262" x2="460" y2="262"/>
+</g></svg>

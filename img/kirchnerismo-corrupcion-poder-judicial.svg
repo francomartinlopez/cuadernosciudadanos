@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img" aria-label="Un caracol con una carpeta en el lomo sube con lentitud las escalinatas de un edificio de columnas"><defs><pattern id="pt" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.6" fill="#1a1a1a" opacity=".22"/></pattern><pattern id="pto" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.7" fill="#eb671c" opacity=".55"/></pattern></defs><rect width="480" height="320" fill="#efebe6"/>
+<rect x="0" y="0" width="150" height="110" fill="url(#pt)"/>
+<rect x="0" y="270" width="480" height="50" fill="url(#pt)"/>
+<circle cx="420" cy="58" r="30" fill="url(#pto)"/>
+<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M196,92 L318,40 L440,92 Z" fill="#fbfaf8"/>
+ <circle cx="318" cy="72" r="9" fill="#f9b50f"/>
+ <rect x="196" y="92" width="244" height="16" fill="#8a847d"/>
+ <rect x="212" y="108" width="20" height="104" fill="#fbfaf8"/>
+ <rect x="268" y="108" width="20" height="104" fill="#fbfaf8"/>
+ <rect x="348" y="108" width="20" height="104" fill="#fbfaf8"/>
+ <rect x="404" y="108" width="20" height="104" fill="#fbfaf8"/>
+ <path d="M302,212 V140 Q318,124 334,140 V212 Z" fill="#1a1a1a"/>
+ <path d="M188,212 H448 V226 H188 Z" fill="#fbfaf8"/>
+ <path d="M170,226 H466 V240 H170 Z" fill="#fbfaf8"/>
+ <path d="M152,240 H470 V254 H152 Z" fill="#fbfaf8"/>
+ <path d="M134,254 H470 V270 H134 Z" fill="#fbfaf8"/>
+ <path d="M30,270 H134 Q140,262 124,258 Q104,252 96,240 L60,262 Q40,266 30,270 Z" fill="#8a847d"/>
+ <path d="M104,244 L112,222 M112,248 L124,230" fill="none" stroke-width="2.5"/>
+ <circle cx="112" cy="220" r="3" fill="#1a1a1a"/><circle cx="124" cy="228" r="3" fill="#1a1a1a"/>
+ <circle cx="70" cy="226" r="38" fill="#eb671c"/>
+ <path d="M70,226 m0,-8 a8,8 0 1,1 -8,8 a16,16 0 0,1 16,-16 a24,24 0 0,1 24,24 a30,30 0 0,1 -30,30" fill="none" stroke-width="2.5"/>
+ <rect x="44" y="172" width="44" height="30" rx="2" fill="#fbfaf8" transform="rotate(-8 66 187)"/>
+ <path d="M50,181 H80 M50,189 H74" fill="none" stroke-width="2" transform="rotate(-8 66 187)"/>
+ <line x1="10" y1="270" x2="470" y2="270"/>
+</g></svg>

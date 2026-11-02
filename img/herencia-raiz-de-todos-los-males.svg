@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img" aria-label="Una casa cerrada con candado y tablas en la ventana, con raíces que se ramifican bajo el suelo como un árbol genealógico"><defs><pattern id="pt" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.6" fill="#1a1a1a" opacity=".22"/></pattern><pattern id="pto" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.7" fill="#eb671c" opacity=".55"/></pattern></defs><rect width="480" height="320" fill="#efebe6"/>
+<rect x="330" y="0" width="150" height="110" fill="url(#pt)"/>
+<circle cx="80" cy="66" r="38" fill="url(#pto)"/>
+<rect x="0" y="176" width="480" height="144" fill="url(#pt)"/>
+<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M240,176 V212 M240,212 L180,240 M240,212 L300,240 M180,240 L146,272 M180,240 L204,280 M300,240 L276,280 M300,240 L338,270 M146,272 L120,300 M146,272 L160,304 M204,280 L196,308 M276,280 L286,308 M338,270 L326,304 M338,270 L370,298" fill="none" stroke="#eb671c" stroke-width="5"/>
+ <circle cx="240" cy="212" r="6" fill="#f9b50f"/><circle cx="180" cy="240" r="6" fill="#f9b50f"/><circle cx="300" cy="240" r="6" fill="#f9b50f"/>
+ <circle cx="146" cy="272" r="5" fill="#fbfaf8"/><circle cx="204" cy="280" r="5" fill="#fbfaf8"/><circle cx="276" cy="280" r="5" fill="#fbfaf8"/><circle cx="338" cy="270" r="5" fill="#fbfaf8"/>
+ <path d="M164,176 V100 L240,52 L316,100 V176 Z" fill="#fbfaf8"/>
+ <path d="M150,108 L240,44 L330,108" fill="none" stroke-width="5"/>
+ <path d="M240,60 L236,96 L246,120 L238,150" fill="none" stroke-width="2"/>
+ <rect x="182" y="112" width="40" height="34" fill="#8a847d"/>
+ <path d="M176,120 L228,138 M176,138 L228,122" fill="none" stroke-width="4"/>
+ <rect x="258" y="116" width="38" height="60" fill="#eb671c"/>
+ <path d="M266,140 Q266,128 277,128 Q288,128 288,140" fill="none"/>
+ <rect x="262" y="140" width="30" height="24" rx="3" fill="#f9b50f"/>
+ <circle cx="277" cy="151" r="3" fill="#1a1a1a" stroke-width="1"/>
+ <line x1="20" y1="176" x2="460" y2="176"/>
+</g></svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img" aria-label="Un jinete a caballo en una llanura roja mira caer del cielo un gran bloque de hielo, con un planeta lejano en lo alto"><defs><pattern id="pt" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.6" fill="#1a1a1a" opacity=".22"/></pattern><pattern id="pto" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.7" fill="#eb671c" opacity=".55"/></pattern></defs><rect width="480" height="320" fill="#efebe6"/>
+<rect x="0" y="0" width="150" height="110" fill="url(#pt)"/>
+<circle cx="78" cy="62" r="34" fill="#8a847d"/>
+<circle cx="78" cy="62" r="34" fill="url(#pt)"/>
+<path d="M330,236 Q380,196 440,232 Z" fill="#e84b49"/>
+<path d="M0,240 Q120,226 240,236 T480,230 V320 H0 Z" fill="#eb671c"/>
+<path d="M0,266 Q140,254 260,266 T480,260 V320 H0 Z" fill="url(#pto)"/>
+<rect x="0" y="300" width="480" height="20" fill="url(#pt)"/>
+<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M0,240 Q120,226 240,236 T480,230" fill="none"/>
+ <path d="M300,12 L324,40 M334,4 L346,34 M370,6 L370,34" fill="none" stroke-width="2"/>
+ <rect x="312" y="40" width="80" height="62" rx="4" transform="rotate(-10 352 71)" fill="#fbfaf8"/>
+ <path d="M324,62 L370,54 M328,82 L354,78" fill="none" stroke-width="2" transform="rotate(-10 352 71)"/>
+ <path d="M136,206 L130,234 M150,208 L150,236 M222,208 L226,236 M236,206 L244,232" fill="none"/>
+ <path d="M132,190 Q132,170 152,168 L222,166 Q236,166 244,156 L256,132 Q260,124 268,128 L292,142 Q296,148 290,152 L268,150 L256,180 Q250,204 228,208 L148,210 Q132,208 132,190 Z" fill="#f9b50f"/>
+ <path d="M132,182 Q114,188 112,214" fill="none"/>
+ <path d="M258,128 L258,114 L266,126" fill="#f9b50f"/>
+ <circle cx="270" cy="136" r="1.5" fill="#1a1a1a"/>
+ <path d="M178,168 L176,132 L196,132 L198,168" fill="#fbfaf8"/>
+ <path d="M186,168 L192,194" fill="none"/>
+ <circle cx="186" cy="116" r="12" fill="#fbfaf8"/>
+ <path d="M170,108 H202" fill="none" stroke-width="4"/>
+ <path d="M176,108 Q186,92 196,108" fill="#8a847d"/>
+ <path d="M194,138 L218,114 L238,82" fill="none"/>
+</g>
+</svg>

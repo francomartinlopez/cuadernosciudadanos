@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img" aria-label="Una figura humana esquemática recorrida por una ola que baja desde la cabeza por la espalda, y una lupa que muestra la piel con los vellos erizados"><defs><pattern id="pt" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.6" fill="#1a1a1a" opacity=".22"/></pattern><pattern id="pto" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.7" fill="#eb671c" opacity=".55"/></pattern></defs><clipPath id="lupa"><circle cx="340" cy="180" r="86"/></clipPath><rect width="480" height="320" fill="#efebe6"/>
+<rect x="320" y="0" width="160" height="110" fill="url(#pt)"/>
+<rect x="0" y="282" width="480" height="38" fill="url(#pt)"/>
+<circle cx="70" cy="60" r="34" fill="url(#pto)"/>
+<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+ <circle cx="150" cy="70" r="30" fill="#fbfaf8"/>
+ <path d="M110,282 V170 Q110,116 150,112 Q190,116 190,170 V282 Z" fill="#fbfaf8"/>
+ <path d="M110,150 L80,232 M190,150 L222,226" fill="none"/>
+ <path d="M150,48 Q140,78 158,100 Q140,132 160,160 Q140,192 158,222 Q142,250 150,272" fill="none" stroke="#eb671c" stroke-width="5"/>
+ <path d="M150,48 l-8,-12 M150,48 l8,-12" fill="none" stroke="#f9b50f" stroke-width="3"/>
+ <line x1="214" y1="208" x2="262" y2="186"/>
+ <circle cx="340" cy="180" r="86" fill="#fbfaf8"/>
+ <path d="M258,206 Q300,196 340,206 T422,206" fill="none"/>
+ <path d="M250,206 Q300,196 340,206 T430,206 V280 H250 Z" fill="#f9b50f" clip-path="url(#lupa)"/>
+ <circle cx="288" cy="200" r="7" fill="#eb671c"/><circle cx="326" cy="204" r="7" fill="#eb671c"/><circle cx="364" cy="204" r="7" fill="#eb671c"/><circle cx="398" cy="200" r="7" fill="#eb671c"/>
+ <path d="M288,193 L282,140 M326,197 L324,132 M364,197 L370,134 M398,193 L408,142" fill="none"/>
+ <path d="M300,170 L310,160 M344,160 L352,150 M382,168 L390,158" fill="none" stroke="#e84b49" stroke-width="2.5"/>
+ <circle cx="340" cy="180" r="86" fill="none" stroke-width="5"/>
+ <line x1="30" y1="282" x2="450" y2="282"/>
+</g></svg>

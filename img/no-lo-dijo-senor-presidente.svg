@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img" aria-label="Una venda blanca anudada sobre un expediente y un micrófono en una mesa de tribunal, con ondas de sonido que se apagan"><defs><pattern id="pt" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.6" fill="#1a1a1a" opacity=".22"/></pattern><pattern id="pto" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.7" fill="#eb671c" opacity=".55"/></pattern></defs><rect width="480" height="320" fill="#efebe6"/>
+<rect x="0" y="0" width="160" height="110" fill="url(#pt)"/>
+<circle cx="400" cy="70" r="40" fill="url(#pto)"/>
+<rect x="0" y="268" width="480" height="52" fill="url(#pt)"/>
+<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+ <rect x="70" y="196" width="340" height="24" fill="#8a847d"/>
+ <path d="M90,220 V268 M390,220 V268" fill="none" stroke-width="5"/>
+ <path d="M300,196 V182 H340 V196 Z" fill="#1a1a1a"/>
+ <path d="M320,182 L302,120" fill="none" stroke-width="4"/>
+ <rect x="282" y="86" width="34" height="46" rx="16" fill="#1a1a1a" transform="rotate(-18 299 109)"/>
+ <path d="M288,98 l20,-6 M290,108 l20,-6 M293,118 l20,-6" fill="none" stroke="#8a847d" stroke-width="2"/>
+ <path d="M250,80 q-12,22 0,46 M232,70 q-20,34 0,68" fill="none" stroke="#eb671c"/>
+ <path d="M214,62 q-14,20 -10,40" fill="none" stroke="#eb671c" stroke-dasharray="2 9"/>
+ <rect x="118" y="174" width="96" height="22" fill="#f9b50f"/>
+ <path d="M124,174 H208 M124,182 H190" fill="none" stroke-width="2"/>
+ <path d="M104,170 C134,150 176,176 214,160 C232,154 244,160 250,170" fill="none" stroke-width="18"/>
+ <path d="M104,170 C134,150 176,176 214,160 C232,154 244,160 250,170" fill="none" stroke="#fbfaf8" stroke-width="12"/>
+ <path d="M250,170 L262,200 M250,170 L274,194" fill="none" stroke-width="9"/>
+ <path d="M250,170 L262,200 M250,170 L274,194" fill="none" stroke="#fbfaf8" stroke-width="4"/>
+ <circle cx="250" cy="170" r="7" fill="#fbfaf8"/>
+ <line x1="30" y1="268" x2="450" y2="268"/>
+</g></svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img" aria-label="Un cohete que despega entre dos torres sobre una planicie helada, mientras una figura solitaria lo mira desde el borde del hielo"><defs><pattern id="pt" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.6" fill="#1a1a1a" opacity=".22"/></pattern><pattern id="pto" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.7" fill="#eb671c" opacity=".55"/></pattern></defs><rect width="480" height="320" fill="#efebe6"/>
+<rect x="0" y="0" width="140" height="100" fill="url(#pt)"/>
+<circle cx="240" cy="96" r="70" fill="url(#pto)"/>
+<rect x="0" y="282" width="480" height="38" fill="url(#pt)"/>
+<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M10,282 V238 L120,226 L250,232 L360,224 L400,232 L410,282 Z" fill="#fbfaf8"/>
+ <path d="M410,282 L400,232 L470,236 V282" fill="none"/>
+ <path d="M188,234 V112 H214 V232 Z" fill="#8a847d"/>
+ <path d="M266,232 V112 H292 V234 Z" fill="#8a847d"/>
+ <path d="M188,140 H214 M188,172 H214 M188,204 H214 M266,140 H292 M266,172 H292 M266,204 H292" fill="none"/>
+ <path d="M214,130 H222 M258,130 H266" fill="none"/>
+ <path d="M240,40 Q256,58 256,82 V150 H224 V82 Q224,58 240,40 Z" fill="#fbfaf8"/>
+ <path d="M240,40 Q252,52 254,66 H226 Q228,52 240,40 Z" fill="#e84b49"/>
+ <path d="M224,132 L212,156 H224 Z M256,132 L268,156 H256 Z" fill="#eb671c"/>
+ <circle cx="240" cy="98" r="8" fill="#f9b50f"/>
+ <path d="M228,152 Q240,206 252,152 Z" fill="#f9b50f"/>
+ <path d="M234,154 Q240,184 246,154 Z" fill="#eb671c"/>
+ <path d="M60,250 l18,-6 M140,246 l22,4 M310,248 l20,-4" fill="none"/>
+</g>
+<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="#1a1a1a"><circle cx="384" cy="190" r="9"/><path d="M372,226 Q372,204 384,204 Q396,204 396,226 Z"/></g>
+</svg>

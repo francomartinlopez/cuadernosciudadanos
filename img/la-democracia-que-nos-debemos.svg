@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img" aria-label="Un gran libro de cuentas abierto con una columna de marcas en sus páginas, una vela encendida al lado y una flor de magnolia apoyada sobre el libro"><defs><pattern id="pt" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.6" fill="#1a1a1a" opacity=".22"/></pattern><pattern id="pto" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.7" fill="#eb671c" opacity=".55"/></pattern></defs><rect width="480" height="320" fill="#efebe6"/>
+<rect x="0" y="0" width="160" height="110" fill="url(#pt)"/>
+<circle cx="96" cy="128" r="40" fill="url(#pto)"/>
+<rect x="0" y="262" width="480" height="58" fill="url(#pt)"/>
+<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+ <rect x="80" y="170" width="32" height="92" fill="#fbfaf8"/>
+ <path d="M96,170 V158" fill="none" stroke-width="2"/>
+ <path d="M96,156 C86,144 92,128 96,118 C100,128 106,144 96,156 Z" fill="#f9b50f"/>
+ <path d="M150,250 L176,120 L306,132 L300,262 Z" fill="#fbfaf8"/>
+ <path d="M300,262 L306,132 L430,108 L452,240 Z" fill="#fbfaf8"/>
+ <path d="M150,250 L300,262 L452,240 L456,252 L300,274 L146,262 Z" fill="#8a847d"/>
+ <path d="M178,150 L290,158 M174,172 L288,180 M170,194 L286,202 M166,216 L284,224" fill="none" stroke-width="2"/>
+ <path d="M322,150 l8,-2 M322,170 l8,-2 M322,190 l8,-2 M322,210 l8,-2 M322,230 l8,-2" fill="none" stroke="#e84b49"/>
+ <path d="M342,146 L420,132 M342,166 L422,152 M342,186 L426,172 M342,206 L430,192 M342,226 L434,212" fill="none" stroke-width="2"/>
+ <path d="M300,262 C330,240 352,232 370,234" fill="none"/>
+ <path d="M372,236 C358,218 364,198 380,190 C382,206 380,222 372,236 Z" fill="#fbfaf8"/>
+ <path d="M372,236 C392,232 408,216 406,198 C392,206 380,220 372,236 Z" fill="#fbfaf8"/>
+ <path d="M372,236 C376,214 388,202 400,196" fill="none" stroke-width="2"/>
+ <circle cx="372" cy="236" r="4" fill="#f9b50f"/>
+ <line x1="10" y1="262" x2="140" y2="262"/><line x1="460" y1="262" x2="470" y2="262"/>
+</g></svg>

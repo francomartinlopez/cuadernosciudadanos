@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img" aria-label="Una ventanilla clausurada con tablas y cajitas vacías tiradas en el suelo; al lado, una escalera sube a una mesa alta donde una figura sin rostro custodia una gran caja fuerte"><defs><pattern id="pt" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.6" fill="#1a1a1a" opacity=".22"/></pattern><pattern id="pto" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.7" fill="#eb671c" opacity=".55"/></pattern></defs><rect width="480" height="320" fill="#efebe6"/>
+<rect x="330" y="0" width="150" height="96" fill="url(#pt)"/>
+<circle cx="70" cy="64" r="30" fill="url(#pto)"/>
+<rect x="0" y="276" width="480" height="44" fill="url(#pt)"/>
+<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+ <rect x="20" y="150" width="92" height="126" fill="#fbfaf8"/>
+ <rect x="34" y="176" width="64" height="46" fill="#8a847d"/>
+ <path d="M30,182 L102,214 M30,214 L102,182" fill="none" stroke-width="5"/>
+ <path d="M20,232 H112" fill="none"/>
+ <path d="M12,150 H120 L112,136 H20 Z" fill="#eb671c"/>
+ <rect x="120" y="262" width="16" height="13" fill="#fbfaf8" stroke-width="2.5"/>
+ <path d="M120,262 l5,-7 h16 l-5,7" fill="#fbfaf8" stroke-width="2.5"/>
+ <rect x="144" y="263" width="13" height="10" fill="#fbfaf8" stroke-width="2.5" transform="rotate(-18 150 268)"/>
+ <rect x="132" y="244" width="12" height="10" fill="#fbfaf8" stroke-width="2.5" transform="rotate(16 138 249)"/>
+ <path d="M178,276 V262 H196 V246 H214 V230 H232 V214 H250 V198" fill="none"/>
+ <path d="M178,262 h18 M196,246 h18 M214,230 h18 M232,214 h18" fill="none" stroke-width="2"/>
+ <path d="M150,252 Q200,150 262,176" fill="none" stroke="#eb671c" stroke-dasharray="2 9"/>
+ <path d="M254,168 L264,177 L251,182" fill="none" stroke="#eb671c"/>
+ <rect x="250" y="186" width="200" height="14" fill="#eb671c"/>
+ <path d="M266,200 V276 M434,200 V276" fill="none"/>
+ <circle cx="404" cy="118" r="15" fill="#fbfaf8"/>
+ <path d="M384,186 V150 Q384,136 404,136 Q424,136 424,150 V186" fill="#8a847d"/>
+ <rect x="282" y="108" width="98" height="78" rx="4" fill="#f9b50f"/>
+ <rect x="294" y="120" width="74" height="54" rx="3" fill="none" stroke-width="2.5"/>
+ <circle cx="331" cy="147" r="13" fill="#fbfaf8"/>
+ <path d="M331,147 L340,140 M331,134 V139 M318,147 H323" fill="none" stroke-width="2.5"/>
+ <rect x="372" y="138" width="8" height="18" fill="#1a1a1a"/>
+ <path d="M398,160 L380,150" fill="none"/>
+ <line x1="10" y1="276" x2="470" y2="276"/>
+</g></svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img" aria-label="Una caja de zapatos abierta de la que se escapan hojas sueltas y un disco, hacia un pequeño planeta rojo"><defs><pattern id="pt" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.6" fill="#1a1a1a" opacity=".22"/></pattern><pattern id="pto" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.7" fill="#eb671c" opacity=".55"/></pattern></defs><rect width="480" height="320" fill="#efebe6"/>
+<rect x="0" y="0" width="150" height="100" fill="url(#pt)"/>
+<circle cx="392" cy="74" r="44" fill="url(#pto)"/>
+<rect x="0" y="262" width="480" height="58" fill="url(#pt)"/>
+<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+ <circle cx="392" cy="74" r="20" fill="#e84b49"/>
+ <path d="M378,66 Q392,60 404,70 M382,84 Q394,88 406,80" fill="none" stroke-width="2"/>
+ <path d="M150,262 V196 H318 V262 Z" fill="#eb671c"/>
+ <path d="M150,196 L176,176 H344 L318,196 Z" fill="#8a847d"/>
+ <path d="M318,262 V196 L344,176 V240 Z" fill="#e8642a" opacity="0"/>
+ <path d="M318,262 L344,240 V176 L318,196 Z" fill="#f9b50f"/>
+ <path d="M344,240 L404,262 L414,248 L356,226 Z" fill="#f9b50f"/>
+ <path d="M196,182 L176,120 L218,108 L238,170" fill="#fbfaf8"/>
+ <path d="M186,132 L214,124 M190,144 L218,136 M194,156 L216,150" fill="none" stroke-width="2"/>
+ <path d="M236,180 L250,104 L294,112 L280,186" fill="#fbfaf8"/>
+ <path d="M254,122 L286,128 M252,136 L284,142 M250,150 L272,154" fill="none" stroke-width="2"/>
+ <path d="M228,96 L214,48 L252,40 L264,86 Z" fill="#fbfaf8"/>
+ <path d="M222,58 L248,52 M226,70 L252,64" fill="none" stroke-width="2"/>
+ <circle cx="316" cy="132" r="30" fill="#1a1a1a"/>
+ <circle cx="316" cy="132" r="20" fill="none" stroke="#8a847d" stroke-width="1.5"/>
+ <circle cx="316" cy="132" r="9" fill="#f9b50f" stroke-width="2"/>
+ <circle cx="316" cy="132" r="1.5" fill="#1a1a1a" stroke-width="1"/>
+ <path d="M300,98 q30,-30 66,-26" fill="none" stroke-dasharray="2 8"/>
+ <line x1="30" y1="262" x2="450" y2="262"/>
+</g></svg>
