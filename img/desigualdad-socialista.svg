@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img" aria-label="Tres figuras iguales de pie sobre el suelo; bajo tierra, debajo de la del medio, un sótano enorme lleno de bienes"><defs><pattern id="pt" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.6" fill="#1a1a1a" opacity=".22"/></pattern><pattern id="pto" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.7" fill="#eb671c" opacity=".55"/></pattern></defs><rect width="480" height="320" fill="#efebe6"/>
+<rect x="0" y="0" width="160" height="96" fill="url(#pt)"/>
+<circle cx="404" cy="56" r="30" fill="url(#pto)"/>
+<rect x="0" y="150" width="480" height="170" fill="url(#pt)"/>
+<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+ <circle cx="120" cy="88" r="12" fill="#fbfaf8"/><path d="M106,150 V112 Q120,102 134,112 V150 Z" fill="#8a847d"/>
+ <circle cx="240" cy="88" r="12" fill="#fbfaf8"/><path d="M226,150 V112 Q240,102 254,112 V150 Z" fill="#8a847d"/>
+ <circle cx="360" cy="88" r="12" fill="#fbfaf8"/><path d="M346,150 V112 Q360,102 374,112 V150 Z" fill="#8a847d"/>
+ <line x1="20" y1="150" x2="460" y2="150"/>
+ <line x1="240" y1="150" x2="240" y2="172" stroke-dasharray="2 7"/>
+ <rect x="130" y="172" width="220" height="124" fill="#fbfaf8"/>
+ <path d="M150,250 V218 L178,198 L206,218 V250 Z" fill="#eb671c"/>
+ <rect x="170" y="226" width="14" height="24" fill="#f9b50f"/>
+ <path d="M226,252 V238 L240,226 H280 L292,238 V252 Z" fill="#e84b49"/>
+ <circle cx="242" cy="256" r="8" fill="#1a1a1a"/><circle cx="278" cy="256" r="8" fill="#1a1a1a"/>
+ <rect x="306" y="214" width="28" height="38" fill="#f9b50f"/>
+ <path d="M306,226 H334 M306,240 H334" fill="none"/>
+ <path d="M158,286 H322" fill="none" stroke="#8a847d" stroke-width="5"/>
+ <rect x="206" y="180" width="68" height="14" fill="#f9b50f"/>
+</g></svg>
