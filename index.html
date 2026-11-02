@@ -220,11 +220,22 @@ h1,h2,h3{font-family:var(--fd);text-wrap:balance;margin:0;letter-spacing:-.01em}
 .cuerpo blockquote{margin:0 0 1.05em;padding:14px 18px;background:var(--sheet);border-left:4px solid var(--acc);font-size:.88em;line-height:1.55;white-space:pre-line}
 .cuerpo .sep{text-align:center;letter-spacing:.4em;color:var(--muted);margin:1.2em 0}
 .cuerpo .sep::first-letter{all:unset}
-.capindice{font-family:var(--fu);font-size:14.5px;margin-top:18px}
-.capindice ol{margin:0;padding-left:20px;display:grid;gap:4px}
-.capindice a{color:var(--acc);font-weight:600}
-.capnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:28px;font-family:var(--fu);font-weight:700;font-size:14px}
-.capnav a{border:1px solid var(--rule);border-radius:999px;padding:9px 16px;color:var(--acc)}
+.capnav{display:grid;gap:10px;margin-top:30px;font-family:var(--fu)}
+.btn-sig{display:flex;align-items:center;justify-content:space-between;gap:14px;background:var(--acc);color:#fff;border-radius:14px;padding:16px 20px;box-shadow:0 6px 18px rgba(196,80,15,.25)}
+.btn-sig:hover{filter:brightness(1.07)}
+.btn-sig small{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.9}
+.btn-sig span.t{display:block;font-family:var(--fd);font-size:calc(21px*var(--fs));font-weight:700;line-height:1.2}
+.btn-sig .fl{font-size:26px;font-weight:800;flex:none}
+.fin-obra{border:2px dashed var(--acc);border-radius:14px;padding:14px 18px;font-weight:700;font-size:15px}
+.fin-obra a{color:var(--acc)}
+.cap-ant{font-size:14px;font-weight:700;color:var(--acc);justify-self:start}
+.capindice{font-family:var(--fu);font-size:15px;margin-top:22px;background:var(--sheet);border:2px solid var(--acc);border-radius:14px;padding:16px 20px}
+.capindice h2{margin:0 0 10px!important;color:var(--acc)!important}
+.capindice ol{margin:0;padding-left:22px;display:grid;gap:6px}
+.capindice a{color:var(--ink);font-weight:600;text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:3px}
+.capindice a:hover{color:var(--acc)}
+.capindice li b{color:var(--acc)}
+.capindice li b::after{content:" · estás aquí";font-weight:500;color:var(--muted);font-size:13px}
 @media (max-width:560px){.galeria{grid-template-columns:1fr}}
 .mas-nivel{font-family:var(--fu);font-size:14px;margin-top:10px}
 .mas-nivel button{background:none;border:0;padding:0;color:var(--acc);font-weight:700;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
@@ -446,7 +457,10 @@ function medio(n){
 const etiquetaCap=x=>x.titulo.includes(" · ")?x.titulo.split(" · ").slice(1).join(" · "):"Capítulo "+x.cap;
 function capnav(n){
   if(!n.obra)return "";const caps=N.filter(x=>x.obra===n.obra).sort((a,b)=>a.cap-b.cap),i=caps.indexOf(n);
-  return `<div class="capnav">${i>0?`<a href="#${caps[i-1].id}">← ${esc(etiquetaCap(caps[i-1]))}</a>`:"<span></span>"}${i<caps.length-1?`<a href="#${caps[i+1].id}">${esc(etiquetaCap(caps[i+1]))} →</a>`:""}</div>
+  const sig=caps[i+1],ant=caps[i-1],tipo=x=>/^Cap[ií]tulo/.test(etiquetaCap(x))?"el capítulo siguiente":"la parte siguiente";
+  const nav=sig?`<a class="btn-sig" href="#${sig.id}"><span><small>Leer ${tipo(sig)}</small><span class="t">${esc(etiquetaCap(sig))}</span></span><span class="fl" aria-hidden="true">→</span></a>`
+    :`<div class="fin-obra">Fin de la obra. <a href="#${caps[0].id}">Volver al comienzo</a></div>`;
+  return `<div class="capnav">${nav}${ant?`<a class="cap-ant" href="#${ant.id}">← Anterior: ${esc(etiquetaCap(ant))}</a>`:""}</div>
   <div class="capindice"><h2 class="etq">Partes de la obra</h2><ol>${caps.map(x=>`<li>${x===n?`<b>${esc(etiquetaCap(x))}</b>`:`<a href="#${x.id}">${esc(etiquetaCap(x))}</a>`}</li>`).join("")}</ol></div>`;
 }
 function cuerpoObra(n){
@@ -461,12 +475,12 @@ function cuerpoObra(n){
     b+=`${fic?`<h2 class="etq">${poe?"Poema":"Fragmento"}</h2>`:""}<div class="cuerpo${poe?" poema":""}">${cuerpo(n.ext)}</div><div class="mas-nivel"><button data-niv="2">${fic?"Leer la obra completa":"Ver la ficha completa"}</button></div>`;
   }else{
     if(!fic)b+=medio(n);
-    b+=`<div class="cuerpo${poe?" poema":""}">${cuerpo(n.compTxt,true)}</div>`;
+    b+=`<div class="cuerpo${poe?" poema":""}">${cuerpo(n.compTxt,true)}</div>`+capnav(n);
     if(n.refs&&n.refs.length) b+=`<div class="refs"><h2>Referencias</h2><ol>${n.refs.map((r,i)=>`<li id="ref-${i+1}">${esc(r)}</li>`).join("")}</ol></div>`;
     if(n.bib&&n.bib.length) b+=`<div class="refs"><h2>Bibliografía</h2><ul>${n.bib.map(r=>`<li>${esc(r)}</li>`).join("")}</ul></div>`;
     b+=`<div class="citar"><b>Cómo citar esta obra</b>${citaDe(n)}<div style="margin-top:6px">Licencia CC BY 4.0. <a href="#citar" style="color:var(--acc);font-weight:700">Más sobre cómo citar</a></div></div>`;
   }
-  return b+capnav(n);
+  return b+(nivel===2?"":capnav(n));
 }
 function vNota(n){
   let b="";
@@ -506,6 +520,7 @@ function ruta(){return (location.hash||"#inicio").slice(1)||"inicio"}
 function render(){
   const r=ruta();let html,act=r;
   const nota=N.find(n=>n.id===r);
+  obraActual=nota?nota.obra:"";
   if(nota){html=vNota(nota);act=nota.sec}
   else if(CAT[r])html=vCat(r);
   else if(r==="contacto")html=vContacto();
@@ -530,7 +545,8 @@ document.addEventListener("click",e=>{const b=e.target.closest("[data-niv]");if(
   const cp=e.target.closest("[data-copiar]");if(cp){const t=cp.textContent;const ok=()=>{cp.textContent="Copiado";setTimeout(()=>cp.textContent=t,1600)};try{navigator.clipboard.writeText(cp.dataset.copiar).then(ok,()=>{cp.textContent="Copie el texto de arriba"})}catch(err){cp.textContent="Copie el texto de arriba"}return}
   const f=e.target.closest("[data-fs]");if(f){cambiarLetra(+f.dataset.fs);return}
   if(!panel.hidden&&!e.target.closest(".indice"))menu(false)});
-window.addEventListener("hashchange",()=>{menu(false);nivel=0;render();window.scrollTo(0,0)});
+let obraActual="";
+window.addEventListener("hashchange",()=>{menu(false);const nn=N.find(x=>x.id===ruta());if(!(nn&&nn.obra&&nn.obra===obraActual))nivel=0;render();window.scrollTo(0,0)});
 {const d=new Date(),dias=["domingo","lunes","martes","miércoles","jueves","viernes","sábado"];const t=`${dias[d.getDay()]} ${d.getDate()} de ${meses[d.getMonth()]} de ${d.getFullYear()}`;document.getElementById("hoy").textContent=t[0].toUpperCase()+t.slice(1)}
 render();
 </script>
