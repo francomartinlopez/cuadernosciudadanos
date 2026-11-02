@@ -217,6 +217,12 @@ h1,h2,h3{font-family:var(--fd);text-wrap:balance;margin:0;letter-spacing:-.01em}
 .galeria figure{margin:0}
 .galeria img{width:100%;border-radius:14px;display:block}
 .galeria figcaption{font-family:var(--fu);font-size:13px;color:var(--muted);margin-top:6px}
+.cuerpo blockquote{margin:0 0 1.05em;padding:14px 18px;background:var(--sheet);border-left:4px solid var(--acc);font-size:.88em;line-height:1.55;white-space:pre-line}
+.cuerpo .sep{text-align:center;letter-spacing:.4em;color:var(--muted);margin:1.2em 0}
+.cuerpo .sep::first-letter{all:unset}
+.capindice{font-family:var(--fu);font-size:14.5px;margin-top:18px}
+.capindice ol{margin:0;padding-left:20px;display:grid;gap:4px}
+.capindice a{color:var(--acc);font-weight:600}
 .capnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:28px;font-family:var(--fu);font-weight:700;font-size:14px}
 .capnav a{border:1px solid var(--rule);border-radius:999px;padding:9px 16px;color:var(--acc)}
 @media (max-width:560px){.galeria{grid-template-columns:1fr}}
@@ -354,7 +360,8 @@ function extra(n,corto){
   if(nivel===2&&!corto) h+=`<p>${esc(n.ext[0])}</p>`;
   return h+"</div>";
 }
-const ord=[...N].sort((a,b)=>b.fecha.localeCompare(a.fecha));
+const primerCap=n=>!n.obra||n.cap===Math.min(...N.filter(x=>x.obra===n.obra).map(x=>x.cap));
+const ord=[...N].sort((a,b)=>b.fecha.localeCompare(a.fecha)).filter(primerCap);
 
 /* ---------- Vistas ---------- */
 function vPortada(){
@@ -420,7 +427,7 @@ function vCat(k){const c=CAT[k];
 function segHTML(n){return NIV.map((t,i)=>`<button type="button" aria-pressed="${nivel===i}" data-niv="${i}">${t}${n?`<small>${tiempo(n.w[i])}</small>`:""}</button>`).join("")}
 const sinCitas=t=>t.replace(/ ?\[(\d+(?:[,–-]\s?\d+)*)\]/g,"");
 const conCitas=t=>t.replace(/\[(\d+(?:[,–-]\s?\d+)*)\]/g,(m,g)=>`<sup class="cita">[${g.split(/,\s?/).map(x=>{const k=x.split(/[–-]/)[0];return `<button type="button" data-ref="${k}">${x}</button>`}).join(", ")}]</sup>`);
-function cuerpo(arr,citas){return arr.map(p=>p.startsWith("## ")?`<h2>${esc(p.slice(3))}</h2>`:`<p>${citas?conCitas(esc(p)):esc(sinCitas(p))}</p>`).join("")}
+function cuerpo(arr,citas){return arr.map(p=>p.startsWith("## ")?`<h2>${esc(p.slice(3))}</h2>`:p==="***"?`<p class="sep" aria-hidden="true">* * *</p>`:p.startsWith("> ")?`<blockquote>${citas?conCitas(esc(p.slice(2))):esc(sinCitas(p.slice(2)))}</blockquote>`:`<p>${citas?conCitas(esc(p)):esc(sinCitas(p))}</p>`).join("")}
 const citaDe=n=>`${n.autor==="Redacción"?"Cuadernos ciudadanos":n.autor.split(" ").slice(-1)[0]+", "+n.autor.split(" ").slice(0,-1).join(" ")} (${n.fecha.slice(0,4)}). “${n.titulo}”. <i>Cuadernos ciudadanos</i>, ${fLarga(n.fecha)}. https://cuadernosciudadanos.netlify.app/#${n.id}`;
 const correcciones=n=>n.corr.length?`<div class="correc"><h2>Correcciones</h2>${n.corr.map(c=>`<p><b>${fLarga(c.fecha)}.</b> ${esc(c.texto)}</p>`).join("")}</div>`:"";
 const FIC=["Cuento","Poema","Novela"],MED=["Video","Audio","Imágenes"];
@@ -437,9 +444,11 @@ function medio(n){
   const tipo=n.fmt==="Video"?"video":"audio",src=embed(n.medio&&n.medio.url),alto=/spotify/.test(src)?152:166;
   return `<div class="medio ${tipo}">${src?`<iframe src="${src}" title="${esc(n.titulo)}" loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen${tipo==="audio"?` style="height:${alto}px"`:""}></iframe>`:`<div class="medio-vacio">Aquí va el ${tipo==="video"?"video (YouTube o Vimeo)":"audio (Spotify o SoundCloud)"}.</div>`}</div>`;
 }
+const etiquetaCap=x=>x.titulo.includes(" · ")?x.titulo.split(" · ").slice(1).join(" · "):"Capítulo "+x.cap;
 function capnav(n){
   if(!n.obra)return "";const caps=N.filter(x=>x.obra===n.obra).sort((a,b)=>a.cap-b.cap),i=caps.indexOf(n);
-  return `<div class="capnav">${i>0?`<a href="#${caps[i-1].id}">← Capítulo ${caps[i-1].cap}</a>`:"<span></span>"}${i<caps.length-1?`<a href="#${caps[i+1].id}">Capítulo ${caps[i+1].cap} →</a>`:""}</div>`;
+  return `<div class="capnav">${i>0?`<a href="#${caps[i-1].id}">← ${esc(etiquetaCap(caps[i-1]))}</a>`:"<span></span>"}${i<caps.length-1?`<a href="#${caps[i+1].id}">${esc(etiquetaCap(caps[i+1]))} →</a>`:""}</div>
+  <div class="capindice"><h2 class="etq">Partes de la obra</h2><ol>${caps.map(x=>`<li>${x===n?`<b>${esc(etiquetaCap(x))}</b>`:`<a href="#${x.id}">${esc(etiquetaCap(x))}</a>`}</li>`).join("")}</ol></div>`;
 }
 function cuerpoObra(n){
   const fic=FIC.includes(n.fmt),poe=n.fmt==="Poema";
