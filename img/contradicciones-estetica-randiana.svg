@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img" aria-label="Una cabaña de cuatro troncos con techo de ramas, un engranaje detrás y una figura sobre un pedestal"><defs><pattern id="pt" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.6" fill="#1a1a1a" opacity=".22"/></pattern><pattern id="pto" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.7" fill="#eb671c" opacity=".55"/></pattern></defs><rect width="480" height="320" fill="#efebe6"/>
+<circle cx="350" cy="110" r="72" fill="url(#pto)"/>
+<path d="M412.0,110.0L409.9,126.0L398.3,122.9L393.3,135.0L403.7,141.0L393.8,153.8L385.4,145.4L375.0,153.3L381.0,163.7L366.0,169.9L362.9,158.3L350.0,160.0L350.0,172.0L334.0,169.9L337.1,158.3L325.0,153.3L319.0,163.7L306.2,153.8L314.6,145.4L306.7,135.0L296.3,141.0L290.1,126.0L301.7,122.9L300.0,110.0L288.0,110.0L290.1,94.0L301.7,97.1L306.7,85.0L296.3,79.0L306.2,66.2L314.6,74.6L325.0,66.7L319.0,56.3L334.0,50.1L337.1,61.7L350.0,60.0L350.0,48.0L366.0,50.1L362.9,61.7L375.0,66.7L381.0,56.3L393.8,66.2L385.4,74.6L393.3,85.0L403.7,79.0L409.9,94.0L398.3,97.1L400.0,110.0Z" fill="#f9b50f" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="350" cy="110" r="18" fill="#efebe6" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="0" y="262" width="480" height="58" fill="url(#pt)"/>
+<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M96,128 L190,72 L284,128 Z" fill="#eb671c"/>
+ <path d="M120,128 L190,88 L260,128 M150,128 L190,104 L230,128" fill="none"/>
+ <line x1="96" y1="128" x2="284" y2="128"/>
+ <path d="M112,134 V262 M134,134 V262 M246,134 V262 M268,134 V262" fill="none" stroke-width="7"/>
+ <path d="M112,134 V262 M134,134 V262 M246,134 V262 M268,134 V262" fill="none" stroke="#8a847d" stroke-width="3"/>
+ <path d="M106,150 l-10,-10 M274,160 l10,-12 M128,200 l-9,-6" fill="none"/>
+ <rect x="372" y="214" width="56" height="48" fill="#fbfaf8"/>
+ <line x1="30" y1="262" x2="450" y2="262"/>
+</g>
+<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="#1a1a1a"><circle cx="400" cy="178" r="9"/><path d="M388,214 Q388,192 400,192 Q412,192 412,214 Z"/><path d="M406,196 L424,176" fill="none"/></g></svg>
