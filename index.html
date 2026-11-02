@@ -299,7 +299,6 @@ footer a:hover{color:var(--ink)}
   <div>
     <p class="logo">Cuadernos <em>ciudadanos</em></p>
     <p>Las notas de opinión expresan la mirada de su autor. Los textos se publican bajo licencia Creative Commons Atribución 4.0: se pueden copiar y difundir citando la fuente.</p>
-    <p style="font-size:12px">Actualizado el 1 de noviembre de 2026.</p>
   </div>
   <div><h3>La revista</h3><ul>
     <li><a href="#erratas">Fe de erratas</a></li>
@@ -376,21 +375,21 @@ function vPortada(){
     <a href="#${p.id}">${ilu(p)}</a>
     <div>${volanta(p)}<a href="#${p.id}"><h2>${p.titulo}</h2></a><p class="bajada">${p.bajada}</p>${firma(p)}${extra(p)}</div>
   </section>
-  <section class="destacadas" aria-label="Destacadas">
+  ${dest.length?`<section class="destacadas" aria-label="Destacadas">
     ${dest.map(n=>`<article class="card"><a href="#${n.id}">${ilu(n)}</a>${volanta(n)}<a href="#${n.id}"><h3>${n.titulo}</h3></a><p class="bajada">${n.bajada}</p>${firma(n)}${extra(n,true)}</article>`).join("")}
-  </section>
-  <div class="columnas">
-    <section><div class="titbloque"><h2>Últimas</h2></div>
+  </section>`:""}
+  ${(ult.length||nots.length||ops.length)?`<div class="columnas">
+    ${ult.length?`<section><div class="titbloque"><h2>Últimas</h2></div>
       ${ult.map(n=>`<article class="fila"><div>${volanta(n)}<a href="#${n.id}"><h3>${n.titulo}</h3></a><p class="bajada">${n.bajada}</p>${firma(n)}${extra(n,true)}</div><a href="#${n.id}" tabindex="-1">${ilu(n)}</a></article>`).join("")}
-    </section>
-    <aside><div class="titbloque"><h2>Noticias</h2><a href="#noticias">Ver todas</a></div>
+    </section>`:"<div></div>"}
+    <aside>${nots.length?`<div class="titbloque"><h2>Noticias</h2><a href="#noticias">Ver todas</a></div>
       ${nots.map(n=>`<article class="op">${volanta(n)}<a href="#${n.id}"><h3 style="font-style:normal;font-weight:700;margin-top:5px">${n.titulo}</h3></a><div class="firma" style="margin-top:6px">${fCorta(n.fecha)}</div></article>`).join("")}
-      <div class="titbloque" style="margin-top:22px"><h2>Opinión</h2><a href="#opinion">Ver todas</a></div>
-      ${ops.map(n=>`<article class="op"><div class="autor"><span class="avatar">${n.autor.split(" ").map(x=>x[0]).slice(0,2).join("")}</span><span class="firma"><b>${n.autor}</b><br>${fCorta(n.fecha)}</span></div><a href="#${n.id}"><h3>${n.titulo}</h3></a><p class="bajada" style="font-size:15.5px;margin-top:6px">${n.bajada}</p></article>`).join("")}
+`:""}${ops.length?`<div class="titbloque" style="margin-top:22px"><h2>Opinión</h2><a href="#opinion">Ver todas</a></div>
+      ${ops.map(n=>`<article class="op"><div class="autor"><span class="avatar">${n.autor.split(" ").map(x=>x[0]).slice(0,2).join("")}</span><span class="firma"><b>${n.autor}</b><br>${fCorta(n.fecha)}</span></div><a href="#${n.id}"><h3>${n.titulo}</h3></a><p class="bajada" style="font-size:15.5px;margin-top:6px">${n.bajada}</p></article>`).join("")}`:""}
     </aside>
-  </div>
+  </div>`:""}
   <section class="secciones" aria-label="Secciones">
-    ${SEC.map(([id,nom])=>{const n=ord.find(x=>x.sec===id);return `<div><div class="titbloque"><h2>${nom}</h2><a href="#${id}">Ver todas</a></div>${n?`<div class="secc-nota">${n.fmt==="Opinión"?"":""}<a href="#${n.id}"><h3>${n.titulo}</h3></a><div class="firma"><b>${n.autor}</b> — ${fCorta(n.fecha)}</div></div>`:""}</div>`}).join("")}
+    ${SEC.filter(([id])=>ord.some(x=>x.sec===id)).map(([id,nom])=>{const n=ord.find(x=>x.sec===id);return `<div><div class="titbloque"><h2>${nom}</h2><a href="#${id}">Ver todas</a></div>${n?`<div class="secc-nota">${n.fmt==="Opinión"?"":""}<a href="#${n.id}"><h3>${n.titulo}</h3></a><div class="firma"><b>${n.autor}</b> — ${fCorta(n.fecha)}</div></div>`:""}</div>`}).join("")}
   </section></div>`;
 }
 function grilla(lista){

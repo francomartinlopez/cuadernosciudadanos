@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img" aria-label="Un colectivo con las luces prendidas en una parada de noche, con una pasajera esperando"><defs><pattern id="pt" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.6" fill="#1a1a1a" opacity=".22"/></pattern><pattern id="pto" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.7" fill="#eb671c" opacity=".55"/></pattern></defs><rect width="480" height="320" fill="#efebe6"/>
-<rect width="480" height="200" fill="url(#pt)"/><circle cx="400" cy="60" r="26" fill="#fbfaf8" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="412" cy="52" r="22" fill="#efebe6"/>
-<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="60" y="130" width="250" height="110" rx="16" fill="#eb671c"/>
-<rect x="80" y="150" width="44" height="40" rx="4" fill="#f9b50f"/><rect x="134" y="150" width="44" height="40" rx="4" fill="#f9b50f"/><rect x="188" y="150" width="44" height="40" rx="4" fill="#f9b50f"/><rect x="250" y="150" width="44" height="70" rx="4" fill="#fbfaf8"/>
-<circle cx="110" cy="244" r="18" fill="#1a1a1a"/><circle cx="260" cy="244" r="18" fill="#1a1a1a"/>
-<line x1="380" y1="262" x2="380" y2="130"/><rect x="362" y="112" width="36" height="24" rx="4" fill="#fbfaf8"/>
-<line x1="20" y1="262" x2="460" y2="262"/></g><g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="#fbfaf8"><circle cx="420" cy="223.5" r="10.559999999999999"/><path d="M403.5,262 Q403.5,236.7 420,236.7 Q436.5,236.7 436.5,262 Z"/></g>
-<rect x="0" y="262" width="480" height="58" fill="url(#pt)"/></svg>
