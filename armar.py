@@ -65,6 +65,10 @@ for ruta in sorted(glob.glob("notas/*.json")):
             for g in gal:
                 if not os.path.exists(g["src"]):
                     errores.append(f"{ruta}: no existe la imagen {g['src']}")
+    for t in n.get("completo", []) + n.get("extendido", []):
+        mm = re.match(r"^!\[(.*)\]\((.+)\)$", t)
+        if mm and not os.path.exists(mm.group(2)):
+            errores.append(f"{ruta}: no existe la figura {mm.group(2)}")
     n["palabras"] = [
         palabras(n.get("resumido", [])) + palabras(n.get("bajada", "")),
         palabras(n.get("extendido", [])),

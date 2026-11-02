@@ -58,9 +58,20 @@ button{font:inherit;color:inherit}
 
 /* Masthead */
 .mast{padding-top:22px;padding-bottom:16px}
-.mast-top{display:flex;justify-content:space-between;gap:12px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.mast-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
 .logo{display:block;font-family:var(--fd);font-weight:700;font-size:clamp(40px,8vw,84px);line-height:.95;letter-spacing:-.02em;margin:14px 0 8px}
 .logo em{font-style:italic;font-weight:500}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.buscador{display:flex;align-items:center;border:1px solid var(--rule);border-radius:999px;background:var(--paper,#fff);overflow:hidden;text-transform:none;letter-spacing:0}
+.buscador input{border:0;background:transparent;font:500 15px var(--fu);color:var(--ink);padding:7px 4px 7px 14px;width:min(240px,52vw);outline:none}
+.buscador button{border:0;background:transparent;color:var(--ink);cursor:pointer;padding:6px 12px 6px 6px;display:flex}
+.buscador button svg{width:17px;height:17px}
+@media (max-width:560px){.buscador{flex:1 1 100%}.buscador input{width:100%;flex:1}}
+.buscador:focus-within{border-color:var(--acc)}
+.resultado{padding:18px 0;border-bottom:1px solid var(--rule)}
+.resultado h3{margin:6px 0 4px}
+.resultado .frag{font-size:calc(16px*var(--fs));color:var(--muted);margin:6px 0}
+.resultado mark{background:#f9b50f55;color:inherit;padding:0 2px;border-radius:3px}
 .mast .logo{display:flex;align-items:center;gap:.22em}
 .marca{width:1.05em;height:1.05em;flex:none}
 .lema{font-family:var(--fd);font-style:italic;font-size:clamp(16px,2.2vw,20px);color:var(--muted);margin:0}
@@ -182,6 +193,11 @@ h1,h2,h3{font-family:var(--fd);text-wrap:balance;margin:0;letter-spacing:-.01em}
 .cuerpo{font-family:var(--fd);font-size:20px;line-height:1.62;max-width:65ch}
 .cuerpo p{margin:0 0 1.05em}
 .cuerpo h3{font-family:var(--fu);font-size:calc(14px*var(--fs));letter-spacing:.06em;text-transform:uppercase;color:var(--acc);margin:1.6em 0 .6em;font-weight:800}
+.parte-actual{font-family:var(--fu);font-weight:800;color:var(--acc);font-size:calc(15px*var(--fs));margin:8px 0 0;letter-spacing:.02em}
+.parte-actual span{color:var(--muted);font-weight:600}
+.cuerpo .fig{margin:1.4em 0;font-family:var(--fu)}
+.cuerpo .fig img{width:100%;height:auto;border-radius:14px;background:#fff;border:1px solid var(--rule)}
+.cuerpo .fig figcaption{font-size:13.5px;color:var(--muted);margin-top:6px;line-height:1.4}
 .cuerpo h2{font-size:26px;margin:1.4em 0 .5em;font-weight:700}
 .cuerpo > p:first-of-type::first-letter{font-size:3.3em;float:left;line-height:.85;padding:6px 8px 0 0;font-weight:700;color:var(--acc)}
 .resumen-box{background:var(--sheet);border-left:4px solid var(--acc);padding:18px 22px;margin:22px 0}
@@ -291,7 +307,7 @@ footer a:hover{color:var(--ink)}
 
 
 <header class="wrap mast">
-  <div class="mast-top"><span id="hoy"></span></div>
+  <div class="mast-top"><span id="hoy"></span><form class="buscador" id="buscador" role="search"><label class="vh" for="q">Buscar en la revista</label><input id="q" type="search" placeholder="Buscar palabras…" autocomplete="off" enterkeyhint="search"><button type="submit" aria-label="Buscar"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10.5 10.5 14 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button></form></div>
   <a class="logo" href="#inicio"><svg class="marca" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="gl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f9b50f"/><stop offset=".45" stop-color="#eb671c"/><stop offset="1" stop-color="#e84b49"/></linearGradient></defs><path d="M32 16 C25 11 15 10 6 12 V52 C15 50 25 51 32 56 Z" fill="url(#gl)"/><path d="M32 16 C39 11 49 10 58 12 V52 C49 50 39 51 32 56 Z" fill="url(#gl)" opacity=".82"/><path d="M12 22 C18 21 23 22 27 24 M12 30 C18 29 23 30 27 32 M12 38 C18 37 23 38 27 40" stroke="#fff" stroke-width="2.4" stroke-linecap="round" fill="none"/><g fill="#fff" transform="translate(32 0) skewY(-8.7) translate(-32 0)"><path transform="translate(34.38 40.5) scale(0.0104 -0.0104)" d="M940 119Q1005 119 1066.5 131.0Q1128 143 1200 173L1111 107L1293 423H1367L1322 51Q1228 14 1113.0 -6.0Q998 -26 865 -26Q678 -26 532.0 18.5Q386 63 285.0 151.0Q184 239 131.5 367.5Q79 496 79 663Q79 877 176.5 1038.0Q274 1199 457.0 1289.0Q640 1379 896 1379Q966 1379 1035.0 1370.0Q1104 1361 1193 1340L1110 1322L1240 1426H1296L1355 911L1272 899L1075 1240L1171 1135Q1090 1190 1017.0 1211.0Q944 1232 862 1232Q753 1232 670.5 1202.0Q588 1172 532.0 1112.0Q476 1052 447.0 961.5Q418 871 418 751Q418 591 455.5 472.5Q493 354 562.5 275.5Q632 197 728.0 158.0Q824 119 940 119Z"/><path transform="translate(47.89 40.5) scale(0.0104 -0.0104)" d="M516 816Q460 816 411.5 772.5Q363 729 327.0 656.5Q291 584 271.0 495.0Q251 406 251 314Q251 207 286.5 162.5Q322 118 396 118Q442 118 484.0 135.5Q526 153 566.0 193.0Q606 233 645 302H709Q656 180 599.5 109.5Q543 39 477.5 8.5Q412 -22 331 -22Q198 -22 128.0 51.0Q58 124 58 270Q58 404 100.0 519.5Q142 635 215.0 722.0Q288 809 384.0 858.0Q480 907 589 907Q698 907 751.0 864.5Q804 822 804 764Q804 719 774.0 694.0Q744 669 701 668Q686 668 667.5 688.5Q649 709 624 741Q599 774 572.5 795.0Q546 816 516 816Z"/></g></svg><span>Cuadernos <em>ciudadanos</em></span></a>
   <p class="lema">Ensayos, análisis e investigación para pensar la Argentina</p>
 </header>
@@ -345,8 +361,10 @@ const CAT={noticias:["Noticias","Noticia","Noticias breves de interés público,
 
 /* ---------- Notas (vienen de datos.js, que arma armar.py) ---------- */
 const N=(window.NOTAS||[]).map(o=>({id:o.id,sec:o.seccion,fmt:o.formato,titulo:o.titulo,bajada:o.bajada,autor:o.autor,fecha:o.fecha,img:o.imagen,alt:o.alt,
-  res:o.resumido,ext:o.extendido,compTxt:o.completo,refs:o.referencias,w:o.palabras,portada:o.portada||"",obra:o.obra||"",cap:o.capitulo||0,medio:o.medio||null,gal:o.galeria||[],bib:o.bibliografia,corr:o.correcciones||[],
+  res:o.resumido,ext:o.extendido,compTxt:o.completo,refs:o.referencias,w:o.palabras,portada:o.portada||"",obra:o.obra||"",obraBaj:o.obra_bajada||"",cap:o.capitulo||0,medio:o.medio||null,gal:o.galeria||[],bib:o.bibliografia,corr:o.correcciones||[],
   inv:o.investigacion?{resumen:o.investigacion.resumen,claves:o.investigacion.palabras_clave,metodo:o.investigacion.metodo}:null}));
+const tit=n=>n.obra?n.titulo.split(" · ")[0]:n.titulo;
+const baj=n=>n.obra&&n.obraBaj?n.obraBaj:n.bajada;
 const ilu=n=>`<div class="ilu"><img src="${n.img}" alt="${n.alt.replace(/"/g,"&quot;")}" loading="lazy" width="480" height="320"></div>`;
 
 /* ---------- Estado ---------- */
@@ -385,28 +403,28 @@ function vPortada(){
   return `<div class="wrap">
   <section class="principal">
     <a href="#${p.id}">${ilu(p)}</a>
-    <div>${volanta(p)}<a href="#${p.id}"><h2>${p.titulo}</h2></a><p class="bajada">${p.bajada}</p>${firma(p)}${extra(p)}</div>
+    <div>${volanta(p)}<a href="#${p.id}"><h2>${tit(p)}</h2></a><p class="bajada">${baj(p)}</p>${firma(p)}${extra(p)}</div>
   </section>
   ${dest.length?`<section class="destacadas" aria-label="Destacadas">
-    ${dest.map(n=>`<article class="card"><a href="#${n.id}">${ilu(n)}</a>${volanta(n)}<a href="#${n.id}"><h3>${n.titulo}</h3></a><p class="bajada">${n.bajada}</p>${firma(n)}${extra(n,true)}</article>`).join("")}
+    ${dest.map(n=>`<article class="card"><a href="#${n.id}">${ilu(n)}</a>${volanta(n)}<a href="#${n.id}"><h3>${tit(n)}</h3></a><p class="bajada">${baj(n)}</p>${firma(n)}${extra(n,true)}</article>`).join("")}
   </section>`:""}
   ${(ult.length||nots.length||ops.length)?`<div class="columnas">
     ${ult.length?`<section><div class="titbloque"><h2>Últimas</h2></div>
-      ${ult.map(n=>`<article class="fila"><div>${volanta(n)}<a href="#${n.id}"><h3>${n.titulo}</h3></a><p class="bajada">${n.bajada}</p>${firma(n)}${extra(n,true)}</div><a href="#${n.id}" tabindex="-1">${ilu(n)}</a></article>`).join("")}
+      ${ult.map(n=>`<article class="fila"><div>${volanta(n)}<a href="#${n.id}"><h3>${tit(n)}</h3></a><p class="bajada">${baj(n)}</p>${firma(n)}${extra(n,true)}</div><a href="#${n.id}" tabindex="-1">${ilu(n)}</a></article>`).join("")}
     </section>`:"<div></div>"}
     <aside>${nots.length?`<div class="titbloque"><h2>Noticias</h2><a href="#noticias">Ver todas</a></div>
-      ${nots.map(n=>`<article class="op">${volanta(n)}<a href="#${n.id}"><h3 style="font-style:normal;font-weight:700;margin-top:5px">${n.titulo}</h3></a><div class="firma" style="margin-top:6px">${fCorta(n.fecha)}</div></article>`).join("")}
+      ${nots.map(n=>`<article class="op">${volanta(n)}<a href="#${n.id}"><h3 style="font-style:normal;font-weight:700;margin-top:5px">${tit(n)}</h3></a><div class="firma" style="margin-top:6px">${fCorta(n.fecha)}</div></article>`).join("")}
 `:""}${ops.length?`<div class="titbloque" style="margin-top:22px"><h2>Opinión</h2><a href="#opinion">Ver todas</a></div>
-      ${ops.map(n=>`<article class="op"><div class="autor"><span class="avatar">${n.autor.split(" ").map(x=>x[0]).slice(0,2).join("")}</span><span class="firma"><b>${n.autor}</b><br>${fCorta(n.fecha)}</span></div><a href="#${n.id}"><h3>${n.titulo}</h3></a><p class="bajada" style="font-size:15.5px;margin-top:6px">${n.bajada}</p></article>`).join("")}`:""}
+      ${ops.map(n=>`<article class="op"><div class="autor"><span class="avatar">${n.autor.split(" ").map(x=>x[0]).slice(0,2).join("")}</span><span class="firma"><b>${n.autor}</b><br>${fCorta(n.fecha)}</span></div><a href="#${n.id}"><h3>${tit(n)}</h3></a><p class="bajada" style="font-size:15.5px;margin-top:6px">${baj(n)}</p></article>`).join("")}`:""}
     </aside>
   </div>`:""}
   <section class="secciones" aria-label="Secciones">
-    ${SEC.filter(([id])=>ord.some(x=>x.sec===id)).map(([id,nom])=>{const n=ord.find(x=>x.sec===id);return `<div><div class="titbloque"><h2>${nom}</h2><a href="#${id}">Ver todas</a></div>${n?`<div class="secc-nota">${n.fmt==="Opinión"?"":""}<a href="#${n.id}"><h3>${n.titulo}</h3></a><div class="firma"><b>${n.autor}</b> — ${fCorta(n.fecha)}</div></div>`:""}</div>`}).join("")}
+    ${SEC.filter(([id])=>ord.some(x=>x.sec===id)).map(([id,nom])=>{const n=ord.find(x=>x.sec===id);return `<div><div class="titbloque"><h2>${nom}</h2><a href="#${id}">Ver todas</a></div>${n?`<div class="secc-nota">${n.fmt==="Opinión"?"":""}<a href="#${n.id}"><h3>${tit(n)}</h3></a><div class="firma"><b>${n.autor}</b> — ${fCorta(n.fecha)}</div></div>`:""}</div>`}).join("")}
   </section></div>`;
 }
 function grilla(lista){
   if(!lista.length) return `<p class="vacio">Todavía no hay notas en esta sección.</p>`;
-  return `<div class="grilla">${lista.map(n=>`<article class="card"><a href="#${n.id}">${ilu(n)}</a>${volanta(n)}<a href="#${n.id}"><h3>${n.titulo}</h3></a><p class="bajada">${n.bajada}</p>${firma(n)}${extra(n,true)}</article>`).join("")}</div>`;
+  return `<div class="grilla">${lista.map(n=>`<article class="card"><a href="#${n.id}">${ilu(n)}</a>${volanta(n)}<a href="#${n.id}"><h3>${tit(n)}</h3></a><p class="bajada">${baj(n)}</p>${firma(n)}${extra(n,true)}</article>`).join("")}</div>`;
 }
 function vSeccion(id){const s=SEC.find(x=>x[0]===id);
   return `<div class="wrap"><header class="cab-seccion"><div class="volanta">Sección</div><h1>${s[1]}</h1><p>${s[2]}</p></header>${grilla(ord.filter(n=>n.sec===id))}</div>`}
@@ -419,10 +437,26 @@ function vContacto(){
     <div class="via"><div><b>Teléfono y WhatsApp</b><a class="dato" href="https://wa.me/5493415117224" target="_blank" rel="noopener">+54 9 341 511-7224</a></div>
       <div class="acc"><a class="prim" href="https://wa.me/5493415117224" target="_blank" rel="noopener">Escribir por WhatsApp</a><a href="tel:+5493415117224">Llamar</a><button type="button" data-copiar="+5493415117224">Copiar</button></div></div>
   </div></div>`}
+const sinAcento=t=>t.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+const plano=t=>String(t).replace(/^#+ |^> /,"").replace(/\*\*/g,"").replace(/\s*\[\d+(?:[,\-–]\s*\d+)*\]/g,"").replace(/^!\[(.*)\]\(.+\)$/,"$1");
+const textoNota=n=>[n.titulo,n.bajada,n.autor,...(n.res||[]),...(n.ext||[]),...(n.compTxt||[])].map(plano).join("\n");
+function vBuscar(q){
+  const pal=sinAcento(q).split(/\s+/).filter(w=>w.length>1);
+  const base=`<div class="wrap"><header class="cab-seccion"><div class="volanta">Buscador</div><h1>${q?`Resultados para “${esc(q)}”`:"Buscar"}</h1>`;
+  if(!pal.length)return base+`<p>Escriba una o más palabras en el buscador de arriba.</p></header></div>`;
+  const res=[...N].sort((a,b)=>b.fecha.localeCompare(a.fecha)||a.cap-b.cap).map(n=>{const t=textoNota(n),tn=sinAcento(t);if(!pal.every(w=>tn.includes(w)))return null;
+    const k=pal.reduce((s,w)=>s+tn.split(w).length-1,0)+(pal.every(w=>sinAcento(n.titulo).includes(w))?50:0);
+    const i=tn.indexOf(pal[0]),a=Math.max(0,i-90),b=Math.min(t.length,i+160);
+    let f=(a?"… ":"")+t.slice(a,b).replace(/\n/g," ")+(b<t.length?" …":"");
+    let fe=esc(f);const fn=sinAcento(fe);let out="",pos=0;const re=new RegExp(pal.map(w=>w.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")).join("|"),"g");let m;
+    while((m=re.exec(fn))){out+=fe.slice(pos,m.index)+"<mark>"+fe.slice(m.index,m.index+m[0].length)+"</mark>";pos=m.index+m[0].length}
+    out+=fe.slice(pos);return{n,k,frag:out}}).filter(Boolean).sort((x,y)=>y.k-x.k);
+  return base+`<p>${res.length?res.length===1?"Una nota contiene":res.length+" notas contienen":"Ninguna nota contiene"} ${pal.length>1?"todas esas palabras":"esa palabra"}.</p></header>
+  <div class="resultados">${res.map(({n,frag})=>`<article class="resultado">${volanta(n)}<a href="#${n.id}"><h3>${esc(n.titulo)}</h3></a><p class="frag">${frag}</p>${firma(n)}</article>`).join("")}</div></div>`}
 function vErratas(){
   const lista=[];N.forEach(n=>n.corr.forEach(c=>lista.push({n,c})));lista.sort((a,b)=>b.c.fecha.localeCompare(a.c.fecha));
   return `<div class="wrap"><header class="cab-seccion"><div class="volanta">La revista</div><h1>Fe de erratas</h1><p>Cuando una nota publicada tiene un error, se corrige en el texto y se deja constancia aquí y al pie de la nota, con la fecha y lo que se cambió. Las notas no se borran ni se reescriben en silencio.</p></header>
-  <div class="contacto">${lista.length?lista.map(({n,c})=>`<div class="via"><div><b>${fLarga(c.fecha)} · ${SN[n.sec]}</b><a class="dato" style="font-size:calc(21px*var(--fs))" href="#${n.id}">${n.titulo}</a><p style="margin:6px 0 0;font-size:15px">${esc(c.texto)}</p></div></div>`).join(""):`<p>Hasta ahora no hubo correcciones.</p>`}
+  <div class="contacto">${lista.length?lista.map(({n,c})=>`<div class="via"><div><b>${fLarga(c.fecha)} · ${SN[n.sec]}</b><a class="dato" style="font-size:calc(21px*var(--fs))" href="#${n.id}">${tit(n)}</a><p style="margin:6px 0 0;font-size:15px">${esc(c.texto)}</p></div></div>`).join(""):`<p>Hasta ahora no hubo correcciones.</p>`}
   <p style="font-size:calc(17px*var(--fs))">Para avisar de un error, escriba por <a href="#contacto" style="color:var(--acc)">mail o WhatsApp</a> indicando la nota y el dato a corregir.</p></div></div>`}
 function vCitar(){
   const ej=N[0];
@@ -439,7 +473,8 @@ function segHTML(n){return NIV.map((t,i)=>`<button type="button" aria-pressed="$
 const sinCitas=t=>t.replace(/ ?\[(\d+(?:[,–-]\s?\d+)*)\]/g,"");
 const conCitas=t=>t.replace(/\[(\d+(?:[,–-]\s?\d+)*)\]/g,(m,g)=>`<sup class="cita">[${g.split(/,\s?/).map(x=>{const k=x.split(/[–-]/)[0];return `<button type="button" data-ref="${k}">${x}</button>`}).join(", ")}]</sup>`);
 const neg=t=>t.replace(/\*\*(.+?)\*\*/g,"<b>$1</b>");
-function cuerpo(arr,citas){return arr.map(p=>p.startsWith("### ")?`<h3>${esc(p.slice(4))}</h3>`:p.startsWith("## ")?`<h2>${esc(p.slice(3))}</h2>`:p==="***"?`<p class="sep" aria-hidden="true">* * *</p>`:p.startsWith("> ")?`<blockquote>${neg(citas?conCitas(esc(p.slice(2))):esc(sinCitas(p.slice(2))))}</blockquote>`:`<p>${neg(citas?conCitas(esc(p)):esc(sinCitas(p)))}</p>`).join("")}
+const figura=p=>{const m=p.match(/^!\[(.*)\]\((.+)\)$/);return m?`<figure class="fig"><img src="${m[2]}" alt="${esc(m[1])}" loading="lazy">${m[1]?`<figcaption>${neg(esc(m[1]))}</figcaption>`:""}</figure>`:null};
+function cuerpo(arr,citas){return arr.map(p=>figura(p)||(p.startsWith("### ")?`<h3>${esc(p.slice(4))}</h3>`:p.startsWith("## ")?`<h2>${esc(p.slice(3))}</h2>`:p==="***"?`<p class="sep" aria-hidden="true">* * *</p>`:p.startsWith("> ")?`<blockquote>${neg(citas?conCitas(esc(p.slice(2))):esc(sinCitas(p.slice(2))))}</blockquote>`:`<p>${neg(citas?conCitas(esc(p)):esc(sinCitas(p)))}</p>`)).join("")}
 const citaDe=n=>`${n.autor==="Redacción"?"Cuadernos ciudadanos":n.autor.split(" ").slice(-1)[0]+", "+n.autor.split(" ").slice(0,-1).join(" ")} (${n.fecha.slice(0,4)}). “${n.titulo}”. <i>Cuadernos ciudadanos</i>, ${fLarga(n.fecha)}. https://cuadernosciudadanos.netlify.app/#${n.id}`;
 const correcciones=n=>n.corr.length?`<div class="correc"><h2>Correcciones</h2>${n.corr.map(c=>`<p><b>${fLarga(c.fecha)}.</b> ${esc(c.texto)}</p>`).join("")}</div>`:"";
 const FIC=["Cuento","Poema","Novela"],MED=["Video","Audio","Imágenes"];
@@ -504,7 +539,7 @@ function vNota(n){
   return `<article class="nota">
     <div class="migas"><a href="#inicio">Portada</a><span>/</span><a href="#${n.sec}">${SN[n.sec]}</a>${n.fmt==="Opinión"?'<span>/</span><a href="#opinion">Opinión</a>':n.fmt==="Noticia"?'<span>/</span><a href="#noticias">Noticias</a>':""}</div>
     <div style="margin-top:18px">${volanta(n)}</div>
-    <h1>${n.titulo}</h1><p class="bajada">${n.bajada}</p>
+    <h1>${tit(n)}</h1>${n.obra?`<p class="parte-actual">${esc(etiquetaCap(n))} <span>· ${N.filter(x=>x.obra===n.obra).sort((a,b)=>a.cap-b.cap).indexOf(n)+1} de ${N.filter(x=>x.obra===n.obra).length}</span></p>`:""}<p class="bajada">${n.bajada}</p>
     <div class="nota-meta"><div class="firma">${chip(n)}Por <b>${n.autor}</b> — ${fLarga(n.fecha)}${n.corr.length?` · <a href="#erratas" style="color:var(--acc)">Corregida el ${fLarga(n.corr[n.corr.length-1].fecha)}</a>`:""}</div></div>
     <figure>${ilu(n)}<figcaption>Ilustración: Cuadernos ciudadanos</figcaption></figure>
     <div class="nota-meta" style="border-top:0;margin-bottom:6px"><div class="lectura">Tiempo de lectura: <b>${tiempo(n.w[nivel])}</b> · ${NIV[nivel]}</div><div class="nota-ctrl"><div class="seg" role="group" aria-label="Nivel de lectura de esta nota">${segHTML(n)}</div><div class="letra" role="group" aria-label="Tamaño de letra"><button type="button" data-fs="-1" aria-label="Achicar la letra">A−</button><button type="button" data-fs="1" aria-label="Agrandar la letra">A+</button></div></div></div>
@@ -525,6 +560,7 @@ function render(){
   obraActual=nota?nota.obra:"";
   if(nota){html=vNota(nota);act=nota.sec}
   else if(CAT[r])html=vCat(r);
+  else if(r.startsWith("buscar")){const q=decodeURIComponent(r.slice(7));html=vBuscar(q);act="";document.getElementById("q").value=q}
   else if(r==="contacto")html=vContacto();
   else if(r==="erratas")html=vErratas();
   else if(r==="citar")html=vCitar();
@@ -535,7 +571,7 @@ function render(){
   document.getElementById("indice").innerHTML=`<a href="#inicio"${ac("inicio")}>Portada</a>`+SEC.map(([id,nom])=>`<a href="#${id}"${ac(id)}>${nom}</a>`).join("")+`<span class="sep"></span><a href="#noticias"${ac("noticias")}>Noticias</a><a href="#opinion"${ac("opinion")}>Opinión</a>`;
   document.getElementById("panelLista").innerHTML=`<li><a href="#inicio"${ac("inicio")}>Portada</a></li>`+SEC.map(([id,nom])=>`<li><a href="#${id}"${ac(id)}>${nom}</a></li>`).join("")+`<li class="extra-cat"><a href="#noticias"${ac("noticias")}>Noticias</a></li><li class="extra-cat"><a href="#opinion"${ac("opinion")}>Opinión</a></li><li class="extra-cat"><a href="#contacto"${ac("contacto")}>Contacto</a></li>`;
   aplicarLetra();
-  document.title=nota?nota.titulo+" · Cuadernos ciudadanos":"Cuadernos ciudadanos";
+  document.title=nota?tit(nota)+(nota.obra?" · "+etiquetaCap(nota):"")+" · Cuadernos ciudadanos":"Cuadernos ciudadanos";
   const cur=document.querySelector('.indice a[aria-current="page"]');if(cur)cur.scrollIntoView({block:"nearest",inline:"center"});
 }
 const panel=document.getElementById("panel"),btnMenu=document.getElementById("btnMenu");
@@ -548,6 +584,7 @@ document.addEventListener("click",e=>{const b=e.target.closest("[data-niv]");if(
   const f=e.target.closest("[data-fs]");if(f){cambiarLetra(+f.dataset.fs);return}
   if(!panel.hidden&&!e.target.closest(".indice"))menu(false)});
 let obraActual="";
+document.getElementById("buscador").addEventListener("submit",e=>{e.preventDefault();const q=document.getElementById("q").value.trim();if(q){location.hash="buscar="+encodeURIComponent(q);document.getElementById("q").blur()}});
 window.addEventListener("hashchange",()=>{menu(false);const nn=N.find(x=>x.id===ruta());if(!(nn&&nn.obra&&nn.obra===obraActual))nivel=0;render();window.scrollTo(0,0)});
 {const d=new Date(),dias=["domingo","lunes","martes","miércoles","jueves","viernes","sábado"];const t=`${dias[d.getDay()]} ${d.getDate()} de ${meses[d.getMonth()]} de ${d.getFullYear()}`;document.getElementById("hoy").textContent=t[0].toUpperCase()+t.slice(1)}
 render();
