@@ -532,14 +532,15 @@ function vNota(n){
   if(n.fmt==="Noticia") b+=`<div class="aviso-op">Noticia: información de corto plazo. Se actualiza si cambian los hechos.</div>`;
   if(FIC.includes(n.fmt)||MED.includes(n.fmt)){b+=cuerpoObra(n)}
   else if(nivel===0){
-    b+=`<div class="resumen-box"><h2>En resumen</h2><ul>${n.res.map(x=>`<li>${esc(sinCitas(x))}</li>`).join("")}</ul></div><div class="mas-nivel">¿Quiere leer más? <button data-niv="1">Pasar al nivel Extendido</button></div>`;
+    b+=`<div class="resumen-box"><h2>En resumen</h2><ul>${n.res.map(x=>`<li>${esc(sinCitas(x))}</li>`).join("")}</ul></div><div class="mas-nivel">¿Quiere leer más? <button data-niv="1">Pasar al nivel Extendido</button></div>`;b+=capnav(n);
   }else if(nivel===1){
-    b+=`<div class="cuerpo">${cuerpo(n.ext)}</div><div class="mas-nivel"><button data-niv="2">Leer el texto completo, con referencias</button></div>`;
+    b+=`<div class="cuerpo">${cuerpo(n.ext)}</div><div class="mas-nivel"><button data-niv="2">Leer el texto completo, con referencias</button></div>`;b+=capnav(n);
   }else{
     if(n.inv) b+=`<div class="ficha"><div><b>Resumen</b>${esc(n.inv.resumen)}</div><div><b>Palabras clave</b>${esc([].concat(n.inv.claves).join(", "))}</div><div><b>Método</b>${esc(n.inv.metodo)}</div></div>`;
     b+=esperando(n)||`<div class="cuerpo">${cuerpo(n.compTxt,true)}</div>`;
     if(n.refs&&n.refs.length) b+=`<div class="refs"><h2>Referencias</h2><ol>${n.refs.map((r,i)=>`<li id="ref-${i+1}">${neg(esc(r))}</li>`).join("")}</ol></div>`;
     if(n.bib&&n.bib.length) b+=`<div class="refs"><h2>Bibliografía</h2><ul>${n.bib.map(r=>`<li>${neg(esc(r))}</li>`).join("")}</ul></div>`;
+    b+=capnav(n);
     b+=`<div class="citar"><b>Cómo citar esta nota</b>${citaDe(n)}<div style="margin-top:6px">Licencia CC BY 4.0. <a href="#citar" style="color:var(--acc);font-weight:700">Más sobre cómo citar</a></div></div>`;
   }
   const mas=ord.filter(x=>x.id!==n.id&&x.sec===n.sec).concat(ord.filter(x=>x.id!==n.id&&x.sec!==n.sec)).slice(0,3);
