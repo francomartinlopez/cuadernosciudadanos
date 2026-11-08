@@ -480,7 +480,7 @@ const sinCitas=t=>t.replace(/ ?\[(\d+(?:[,–-]\s?\d+)*)\]/g,"");
 const conCitas=t=>t.replace(/\[(\d+(?:[,–-]\s?\d+)*)\]/g,(m,g)=>`<sup class="cita">[${g.split(/,\s?/).map(x=>{const k=x.split(/[–-]/)[0];return `<button type="button" data-ref="${k}">${x}</button>`}).join(", ")}]</sup>`);
 const neg=t=>t.replace(/\*\*(.+?)\*\*/g,"<b>$1</b>").replace(/(^|[^*\w])\*(?![\s*])([^*\n]+?)\*(?![*\w])/g,"$1<i>$2</i>");
 const figura=p=>{const m=p.match(/^!\[(.*)\]\((.+)\)$/);return m?`<figure class="fig"><img src="${m[2]}" alt="${esc(m[1])}" loading="lazy">${m[1]?`<figcaption>${neg(esc(m[1]))}</figcaption>`:""}</figure>`:null};
-function cuerpo(arr,citas){return arr.map(p=>figura(p)||(p.startsWith("### ")?`<h3>${esc(p.slice(4))}</h3>`:p.startsWith("## ")?`<h2>${esc(p.slice(3))}</h2>`:p==="***"?`<p class="sep" aria-hidden="true">* * *</p>`:p.startsWith("> ")?`<blockquote>${neg(citas?conCitas(esc(p.slice(2))):esc(sinCitas(p.slice(2))))}</blockquote>`:`<p>${neg(citas?conCitas(esc(p)):esc(sinCitas(p)))}</p>`)).join("")}
+function cuerpo(arr,citas){return arr.map(p=>figura(p)||(p.startsWith("### ")?`<h3>${neg(esc(p.slice(4)))}</h3>`:p.startsWith("## ")?`<h2>${neg(esc(p.slice(3)))}</h2>`:p==="***"?`<p class="sep" aria-hidden="true">* * *</p>`:p.startsWith("> ")?`<blockquote>${neg(citas?conCitas(esc(p.slice(2))):esc(sinCitas(p.slice(2))))}</blockquote>`:`<p>${neg(citas?conCitas(esc(p)):esc(sinCitas(p)))}</p>`)).join("")}
 const citaDe=n=>`${n.autor==="Redacción"?"Cuadernos ciudadanos":n.autor.split(" ").slice(-1)[0]+", "+n.autor.split(" ").slice(0,-1).join(" ")} (${n.fecha.slice(0,4)}). “${n.titulo}”. <i>Cuadernos ciudadanos</i>, ${fLarga(n.fecha)}. https://cuadernosciudadanos.netlify.app/#${n.id}`;
 const correcciones=n=>n.corr.length?`<div class="correc"><h2>Correcciones</h2>${n.corr.map(c=>`<p><b>${fLarga(c.fecha)}.</b> ${esc(c.texto)}</p>`).join("")}</div>`:"";
 const FIC=["Cuento","Poema","Novela"],MED=["Video","Audio","Imágenes"];
@@ -510,7 +510,7 @@ function cuerpoObra(n){
   const fic=FIC.includes(n.fmt),poe=n.fmt==="Poema";
   let b="";
   if(nivel===0){
-    b+=`<div class="presenta"><h2 class="etq">Presentación</h2>${n.res.map(x=>`<p>${esc(sinCitas(x))}</p>`).join("")}</div>`;
+    b+=`<div class="presenta"><h2 class="etq">Presentación</h2>${n.res.map(x=>`<p>${neg(esc(sinCitas(x)))}</p>`).join("")}</div>`;
     if(!fic)b+=medio(n);
     b+=`<div class="mas-nivel"><button data-niv="${fic?1:2}">${fic?"Leer un fragmento":"Ver la obra con su ficha completa"}</button></div>`;
   }else if(nivel===1){
@@ -532,7 +532,7 @@ function vNota(n){
   if(n.fmt==="Noticia") b+=`<div class="aviso-op">Noticia: información de corto plazo. Se actualiza si cambian los hechos.</div>`;
   if(FIC.includes(n.fmt)||MED.includes(n.fmt)){b+=cuerpoObra(n)}
   else if(nivel===0){
-    b+=`<div class="resumen-box"><h2>En resumen</h2><ul>${n.res.map(x=>`<li>${esc(sinCitas(x))}</li>`).join("")}</ul></div><div class="mas-nivel">¿Quiere leer más? <button data-niv="1">Pasar al nivel Extendido</button></div>`;b+=capnav(n);
+    b+=`<div class="resumen-box"><h2>En resumen</h2><ul>${n.res.map(x=>`<li>${neg(esc(sinCitas(x)))}</li>`).join("")}</ul></div><div class="mas-nivel">¿Quiere leer más? <button data-niv="1">Pasar al nivel Extendido</button></div>`;b+=capnav(n);
   }else if(nivel===1){
     b+=`<div class="cuerpo">${cuerpo(n.ext)}</div><div class="mas-nivel"><button data-niv="2">Leer el texto completo, con referencias</button></div>`;b+=capnav(n);
   }else{
