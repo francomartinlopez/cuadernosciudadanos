@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img" aria-label="Una figura sin rostro, de pie sobre una loma, mira con un catalejo un gran hemisferio terrestre que asoma en el horizonte como un sol naciente, mitad iluminado y mitad en sombra"><defs><pattern id="pt" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.6" fill="#1a1a1a" opacity=".22"/></pattern><pattern id="pto" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.7" fill="#eb671c" opacity=".55"/></pattern><clipPath id="cielo"><rect x="0" y="0" width="480" height="212"/></clipPath><clipPath id="sombra"><rect x="318" y="0" width="200" height="212"/></clipPath></defs><rect width="480" height="320" fill="#efebe6"/>
+<rect x="360" y="0" width="120" height="70" fill="url(#pt)"/>
+<rect x="0" y="212" width="480" height="108" fill="url(#pt)"/>
+<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M318,62 V46 M246,84 L236,72 M390,84 L400,72 M210,128 L194,122 M426,128 L442,122" fill="none" stroke-width="2.5"/>
+ <g clip-path="url(#cielo)">
+  <circle cx="318" cy="212" r="120" fill="#f9b50f"/>
+  <circle cx="318" cy="212" r="120" fill="#8a847d" clip-path="url(#sombra)"/>
+  <circle cx="318" cy="212" r="120" fill="url(#pto)" clip-path="url(#sombra)"/>
+  <path d="M318,92 V212 M318,92 Q258,140 258,212 M318,92 Q378,140 378,212 M318,92 Q214,130 210,212 M318,92 Q422,130 426,212" fill="none" stroke-width="2.5"/>
+  <path d="M226,136 Q318,152 410,136 M206,176 Q318,194 430,176" fill="none" stroke-width="2.5"/>
+  <circle cx="318" cy="212" r="120" fill="none"/>
+ </g>
+ <line x1="10" y1="212" x2="470" y2="212"/>
+ <path d="M0,240 Q72,204 150,234 Q196,256 214,320 L0,320 Z" fill="#eb671c"/>
+ <path d="M10,272 Q80,246 160,280" fill="none" stroke="#efebe6" stroke-width="2.5"/>
+ <path d="M84,158 V192 M84,192 L75,221 M84,192 L93,221 M84,168 L104,152 M84,170 L110,160" fill="none"/>
+ <circle cx="84" cy="146" r="11" fill="#fbfaf8"/>
+ <path d="M93,140 L146,122 L150,132 L97,150 Z" fill="#fbfaf8"/>
+ <path d="M146,122 L157,118 L161,130 L150,132 Z" fill="#e84b49"/>
+ <path d="M220,290 Q300,268 380,286 M260,252 Q320,240 400,250" fill="none" stroke-width="2" opacity=".5"/>
+</g></svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img" aria-label="Un mapa esquemático de la Argentina dividido en regiones de colores, con estacas rojas clavadas en el norte, en Buenos Aires, en Neuquén y en la Patagonia, de las que cuatro figuras sin rostro tiran con sogas desde afuera, hacia lados opuestos">
+<defs><pattern id="pt" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.6" fill="#1a1a1a" opacity=".22"/></pattern><pattern id="pto" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.7" fill="#eb671c" opacity=".55"/></pattern><clipPath id="arg"><path d="M230.2,20.0 L240.1,20.0 L248.0,24.7 L257.9,20.0 L269.8,34.1 L292.2,46.7 L285.6,61.6 L302.8,62.4 L312.0,48.3 L318.6,53.8 L316.0,61.6 L304.8,67.1 L292.2,84.4 L288.3,106.3 L287.0,114.2 L294.9,124.4 L292.9,132.3 L298.2,133.0 L291.6,147.2 L279.7,151.1 L261.9,152.7 L261.2,163.7 L254.0,169.9 L244.1,167.6 L242.7,176.2 L252.6,181.7 L246.7,184.1 L241.4,189.6 L239.4,200.5 L226.9,208.4 L238.1,222.5 L225.6,234.3 L217.7,252.4 L221.0,257.9 L203.8,255.5 L195.2,247.6 L189.3,235.9 L193.9,220.2 L198.5,212.3 L199.2,192.7 L197.9,177.0 L200.5,161.3 L203.8,137.8 L207.8,122.0 L210.4,106.3 L211.7,82.8 L219.0,67.1 L221.6,55.3 L219.6,39.6 L228.9,27.9 Z"/><path d="M219.6,260.6 L241.4,277.1 L232.8,279.4 L219.6,278.3 Z"/></clipPath></defs><rect width="480" height="320" fill="#efebe6"/>
+<rect x="330" y="0" width="150" height="150" fill="url(#pto)"/>
+<rect x="0" y="288" width="480" height="32" fill="url(#pt)"/>
+<g clip-path="url(#arg)"><path d="M177.4,12.2 L243.4,12.2 L246.0,71.0 L177.4,78.9 Z" fill="#f9b50f"/><path d="M243.4,12.2 L329.2,12.2 L329.2,71.8 L246.0,71.0 Z" fill="#eb671c"/><path d="M177.4,78.9 L246.0,71.0 L263.2,118.1 L177.4,128.3 Z" fill="#fbfaf8"/><path d="M246.0,71.0 L329.2,71.8 L329.2,111.1 L263.2,118.1 Z" fill="#f9b50f"/><path d="M263.2,118.1 L329.2,111.1 L329.2,169.2 L256.6,165.2 Z" fill="#eb671c"/><path d="M177.4,128.3 L263.2,118.1 L256.6,165.2 L177.4,170.7 Z" fill="#8a847d"/><path d="M177.4,170.7 L256.6,165.2 L329.2,169.2 L329.2,210.0 L177.4,210.0 Z" fill="#fbfaf8"/><path d="M177.4,210.0 L329.2,210.0 L329.2,286.9 L177.4,286.9 Z" fill="#f9b50f"/></g>
+<g stroke="#1a1a1a" stroke-linecap="round" stroke-linejoin="round" fill="none">
+<g clip-path="url(#arg)" stroke-width="2"><path d="M243.4,12.2 L246.0,71.0"/><path d="M177.4,78.9 L246.0,71.0 L329.2,71.8"/><path d="M246.0,71.0 L263.2,118.1"/><path d="M177.4,128.3 L263.2,118.1 L329.2,111.1"/><path d="M263.2,118.1 L256.6,165.2"/><path d="M177.4,170.7 L256.6,165.2 L329.2,169.2"/><path d="M177.4,210.0 L329.2,210.0"/></g>
+<path d="M230.2,20.0 L240.1,20.0 L248.0,24.7 L257.9,20.0 L269.8,34.1 L292.2,46.7 L285.6,61.6 L302.8,62.4 L312.0,48.3 L318.6,53.8 L316.0,61.6 L304.8,67.1 L292.2,84.4 L288.3,106.3 L287.0,114.2 L294.9,124.4 L292.9,132.3 L298.2,133.0 L291.6,147.2 L279.7,151.1 L261.9,152.7 L261.2,163.7 L254.0,169.9 L244.1,167.6 L242.7,176.2 L252.6,181.7 L246.7,184.1 L241.4,189.6 L239.4,200.5 L226.9,208.4 L238.1,222.5 L225.6,234.3 L217.7,252.4 L221.0,257.9 L203.8,255.5 L195.2,247.6 L189.3,235.9 L193.9,220.2 L198.5,212.3 L199.2,192.7 L197.9,177.0 L200.5,161.3 L203.8,137.8 L207.8,122.0 L210.4,106.3 L211.7,82.8 L219.0,67.1 L221.6,55.3 L219.6,39.6 L228.9,27.9 Z" stroke-width="3"/><path d="M219.6,260.6 L241.4,277.1 L232.8,279.4 L219.6,278.3 Z" stroke-width="3"/>
+<path d="M215.7,148.7 L68,236" stroke-width="2.5" stroke="#1a1a1a"/>
+<path d="M72,288 L58,254 L52,288 M58,254 L46,226 M46,226 L68,236" stroke-width="3"/>
+<circle cx="41" cy="214" r="9" fill="#fbfaf8" stroke-width="3"/>
+<path d="M230.2,40.4 L362,236" stroke-width="2.5" stroke="#1a1a1a"/>
+<path d="M358,288 L372,254 L378,288 M372,254 L384,226 M384,226 L362,236" stroke-width="3"/>
+<circle cx="389" cy="214" r="9" fill="#fbfaf8" stroke-width="3"/>
+<path d="M279.7,128.3 L430,236" stroke-width="2.5" stroke="#1a1a1a"/>
+<path d="M426,288 L440,254 L446,288 M440,254 L452,226 M452,226 L430,236" stroke-width="3"/>
+<circle cx="457" cy="214" r="9" fill="#fbfaf8" stroke-width="3"/>
+<path d="M213.0,238.2 L148,236" stroke-width="2.5" stroke="#1a1a1a"/>
+<path d="M152,288 L138,254 L132,288 M138,254 L126,226 M126,226 L148,236" stroke-width="3"/>
+<circle cx="121" cy="214" r="9" fill="#fbfaf8" stroke-width="3"/>
+<circle cx="215.7" cy="148.7" r="5" fill="#e84b49" stroke-width="2.5"/>
+<circle cx="230.2" cy="40.4" r="5" fill="#e84b49" stroke-width="2.5"/>
+<circle cx="279.7" cy="128.3" r="5" fill="#e84b49" stroke-width="2.5"/>
+<circle cx="213.0" cy="238.2" r="5" fill="#e84b49" stroke-width="2.5"/>
+<line x1="20" y1="288" x2="460" y2="288" stroke-width="3"/>
+</g></svg>

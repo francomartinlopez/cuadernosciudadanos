@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img" aria-label="Una figura con banda presidencial de pie sobre una tarima entre dos telones naranjas, movida por hilos que suben hasta una cruceta sostenida por una mano gris que asoma desde lo alto"><defs><pattern id="pt" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.6" fill="#1a1a1a" opacity=".22"/></pattern><pattern id="pto" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.7" fill="#eb671c" opacity=".55"/></pattern></defs><rect width="480" height="320" fill="#efebe6"/>
+<rect x="0" y="270" width="480" height="50" fill="url(#pt)"/>
+<circle cx="350" cy="196" r="34" fill="url(#pto)"/>
+<g stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+ <rect x="-4" y="-4" width="488" height="40" fill="#8a847d"/>
+ <path d="M84,36 Q104,150 78,270 L28,270 Q46,150 28,36 Z" fill="#eb671c"/>
+ <path d="M54,52 Q70,150 54,258" fill="none" stroke-width="2"/>
+ <path d="M396,36 Q376,150 402,270 L452,270 Q434,150 452,36 Z" fill="#eb671c"/>
+ <path d="M426,52 Q410,150 426,258" fill="none" stroke-width="2"/>
+ <g stroke-width="1.6"><line x1="186" y1="86" x2="192" y2="196"/><line x1="314" y1="86" x2="288" y2="196"/><line x1="240" y1="86" x2="240" y2="124"/><line x1="214" y1="86" x2="228" y2="236"/><line x1="266" y1="86" x2="254" y2="236"/></g>
+ <rect x="176" y="76" width="148" height="12" rx="3" fill="#f9b50f"/>
+ <path d="M226,34 V66 H254 V34" fill="#8a847d"/>
+ <rect x="218" y="58" width="44" height="40" rx="12" fill="#8a847d"/>
+ <path d="M222,82 H258 M224,92 H256" fill="none" stroke-width="2.5"/>
+ <rect x="172" y="256" width="136" height="16" fill="#fbfaf8"/>
+ <rect x="150" y="270" width="180" height="16" fill="#fbfaf8"/>
+ <line x1="10" y1="286" x2="470" y2="286"/>
+ <circle cx="240" cy="140" r="15" fill="#fbfaf8"/>
+ <path d="M220,162 Q240,154 260,162 L264,224 L216,224 Z" fill="#fbfaf8"/>
+ <path d="M222,164 L258,216" fill="none" stroke="#e84b49" stroke-width="7"/>
+ <path d="M222,168 L192,196 M258,168 L288,196" fill="none"/>
+ <path d="M228,224 L228,256 M252,224 L254,256" fill="none"/>
+</g></svg>
